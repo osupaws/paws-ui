@@ -1,0 +1,82 @@
+# ===================================================================
+# PAWS UI-KIT .GITIGNORE
+# Combined and cleaned from user-provided and generated rules.
+# ===================================================================
+
+# Dependencies
+# -------------------------------------------------------------------
+# Ignore the node_modules directory, where all third-party libraries are installed.
+node_modules
+# Ignore lockfiles from other package managers if you're standardizing on npm.
+/pnpm-lock.yaml
+
+
+# Build & Distribution Artifacts
+# -------------------------------------------------------------------
+# Ignore Vite's default build output directory.
+dist
+# Ignore Vite's SSR build output directory.
+dist-ssr
+# Ignore Storybook's static build output directory.
+storybook-static
+# Ignore TypeScript's build cache file.
+*.tsbuildinfo
+
+
+# Caching
+# -------------------------------------------------------------------
+# Ignore Vite's cache directory.
+.vite/
+
+
+# Logs
+# -------------------------------------------------------------------
+# Ignore any directory named 'logs' and all files ending in .log
+logs
+*.log
+# Ignore specific debug logs from various package managers and tools.
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*storybook.log
+
+
+# Local Environment Variables
+# -------------------------------------------------------------------
+# Never commit environment variables. They are machine-specific and may contain secrets.
+.env
+.env.local
+.env.*.local
+*.local
+
+
+# Testing
+# -------------------------------------------------------------------
+# Ignore test coverage reports.
+coverage
+# Ignore Cypress testing artifacts.
+/cypress/videos/
+/cypress/screenshots/
+
+
+# IDE & Editor Configuration
+# -------------------------------------------------------------------
+# Ignore user-specific IDE settings, but keep team-wide recommendations.
+.vscode/*
+!.vscode/extensions.json
+
+# Ignore settings from other editors.
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# OS-specific files
+# -------------------------------------------------------------------
+# Ignore macOS folder metadata files.
+.DS_Store

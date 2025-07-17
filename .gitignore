@@ -7,8 +7,6 @@
 # -------------------------------------------------------------------
 # Ignore the node_modules directory, where all third-party libraries are installed.
 node_modules
-# Ignore lockfiles from other package managers if you're standardizing on npm.
-/pnpm-lock.yaml
 
 
 # Build & Distribution Artifacts

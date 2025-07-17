@@ -1,25 +1,22 @@
-import type { StorybookConfig } from '@storybook/vue3-vite';
+import type { StorybookConfig } from "@storybook/vue3-vite";
 
 const config: StorybookConfig = {
-  "stories": [
-    "../src/**/*.mdx",
-    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
-  ],
+	stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
 
-  "addons": [
-    "@chromatic-com/storybook",
-    "@storybook/addon-docs",
-    "@storybook/addon-a11y",
-    "@storybook/addon-vitest"
-  ],
+	addons: [
+		"@chromatic-com/storybook",
+		"@storybook/addon-docs",
+		"@storybook/addon-a11y",
+		"@storybook/addon-vitest"
+	],
 
-  "framework": {
-    "name": "@storybook/vue3-vite",
-    "options": {}
-  },
+	framework: {
+		name: "@storybook/vue3-vite",
+		options: {}
+	},
 
-  core: {
-    disableWhatsNewNotifications: true
-  }
+	core: {
+		disableWhatsNewNotifications: true
+	}
 };
 export default config;

@@ -1,0 +1,20 @@
+.pawsButton {
+  font-family: 'Wix Madefor Display', sans-serif;
+  border: none;
+  color: var(--paws-color-text-on-accent);
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: filter 0.2s;
+  &:hover {
+    filter: brightness(1.15);
+  }
+  &.primary {
+    background-color: var(--paws-color-accent-primary);
+    font-weight: bold;
+  }
+  &.secondary {
+    background-color: var(--paws-color-accent-secondary);
+  }
+}

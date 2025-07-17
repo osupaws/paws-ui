@@ -1,5 +1,7 @@
 import type { Preview } from '@storybook/vue3-vite'
 
+import '../src/themes/paws-dark.css'
+
 const preview: Preview = {
   parameters: {
     controls: {

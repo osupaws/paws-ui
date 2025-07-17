@@ -5,8 +5,8 @@
   </button>
 </template>
 
-<script setup>
-import { computed } from 'vue';
+<script setup lang="ts">
+import { computed } from 'vue'
 
 // This defines the "props" that can be passed to our component from the outside.
 const props = defineProps({
@@ -20,15 +20,15 @@ const props = defineProps({
     type: String,
     default: 'primary', // 'primary' or 'secondary'
   },
-});
+})
 
 // This is a computed property that generates the correct CSS class based on the variant prop.
 const buttonClass = computed(() => {
   return {
     '--primary': props.variant === 'primary',
     '--secondary': props.variant === 'secondary',
-  };
-});
+  }
+})
 </script>
 
 <style scoped>

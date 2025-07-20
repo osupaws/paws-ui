@@ -1,33 +1,33 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
-import PawsButton from "./PawsButton.vue";
+import PawsButton from "@components/PawsButton/PawsButton.vue";
 
 const meta = {
-	title: "Paws UI Kit/Button",
-	component: PawsButton,
-	tags: ["autodocs"],
-	argTypes: {
-		label: { control: "text" },
-		variant: {
-			control: { type: "radio" },
-			options: ["primary", "secondary"]
-		}
-	}
+  title: "Paws UI Kit/Button",
+  component: PawsButton,
+  tags: ["autodocs"],
+  argTypes: {
+    label: { control: "text" },
+    variant: {
+      control: { type: "radio" },
+      options: ["primary", "secondary"],
+    },
+  },
 } satisfies Meta<typeof PawsButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-	args: {
-		label: "Primary Button",
-		variant: "primary"
-	}
+  args: {
+    label: "Primary Button",
+    variant: "primary",
+  },
 };
 
 export const Secondary: Story = {
-	args: {
-		label: "Secondary Button",
-		variant: "secondary"
-	}
+  args: {
+    label: "Secondary Button",
+    variant: "secondary",
+  },
 };

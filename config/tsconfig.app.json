@@ -1,0 +1,21 @@
+{
+	"extends": "@vue/tsconfig/tsconfig.json",
+	"compilerOptions": {
+		"composite": true,
+		"baseUrl": "..",
+		"paths": {
+			"@/*": ["src/*"],
+			"@components/*": ["src/components/*"]
+		},
+		"lib": ["ESNext", "DOM", "DOM.Iterable"],
+		"types": ["vite/client", "vitest/globals"]
+	},
+	"include": [
+		"../src/**/*.ts",
+		"../src/**/*.d.ts",
+		"../src/**/*.tsx",
+		"../src/**/*.vue",
+		"./vitest.shims.d.ts"
+	],
+	"exclude": ["../node_modules", "../dist"]
+}

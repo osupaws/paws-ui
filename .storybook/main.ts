@@ -1,4 +1,6 @@
 import type { StorybookConfig } from "@storybook/vue3-vite";
+import { mergeConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
 const config: StorybookConfig = {
 	stories: ["../src/components/**/*.mdx", "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -18,6 +20,16 @@ const config: StorybookConfig = {
 	core: {
 		disableWhatsNewNotifications: true
 	},
-	staticDirs: ["../src/icons"]
+	staticDirs: ["../src/icons"],
+	viteFinal: (config) => {
+		return mergeConfig(config, {
+			plugins: [vue()],
+			resolve: {
+				alias: {
+					"@": "/src"
+				}
+			}
+		});
+	}
 };
 export default config;

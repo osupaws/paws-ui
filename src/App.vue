@@ -1,47 +1,34 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
-import TheWelcome from "./components/TheWelcome.vue";
+import PawsButton from "./components/PawsButton/PawsButton.vue";
+import PawsInput from "./components/PawsInput/PawsInput.vue";
+import MultiSwitch from "./components/MultiSwitch/MultiSwitch.vue";
 </script>
 
 <template>
-	<header>
-		<img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-		<div class="wrapper">
-			<HelloWorld msg="You did it!" />
+	<div class="container">
+		<h1>Paws UI Kit</h1>
+		<div class="component-section">
+			<h2>PawsButton</h2>
+			<PawsButton label="Primary Button" variant="primary" />
+			<PawsButton label="Secondary Button" variant="secondary" />
 		</div>
-	</header>
-
-	<main>
-		<TheWelcome />
-	</main>
+		<div class="component-section">
+			<h2>PawsInput</h2>
+			<PawsInput placeholder="Enter text here..." />
+		</div>
+		<div class="component-section">
+			<h2>MultiSwitch</h2>
+			<MultiSwitch :options="['settings', 'window']" model-value="window" />
+		</div>
+	</div>
 </template>
 
 <style scoped>
-header {
-	line-height: 1.5;
+.container {
+	padding: 2rem;
 }
 
-.logo {
-	display: block;
-	margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-	header {
-		display: flex;
-		place-items: center;
-		padding-right: calc(var(--section-gap) / 2);
-	}
-
-	.logo {
-		margin: 0 2rem 0 0;
-	}
-
-	header .wrapper {
-		display: flex;
-		place-items: flex-start;
-		flex-wrap: wrap;
-	}
+.component-section {
+	margin-bottom: 2rem;
 }
 </style>

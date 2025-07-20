@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { ref, watch } from "vue";
 
-import MultiSwitch from "../components/MultiSwitch.vue";
+import MultiSwitch from "./MultiSwitch.vue";
 
 const meta = {
 	title: "Components/MultiSwitch",

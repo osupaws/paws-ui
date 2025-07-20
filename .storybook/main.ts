@@ -1,7 +1,7 @@
 import type { StorybookConfig } from "@storybook/vue3-vite";
 
 const config: StorybookConfig = {
-	stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+	stories: ["../src/components/**/*.mdx", "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
 
 	addons: [
 		"@chromatic-com/storybook",
@@ -17,6 +17,7 @@ const config: StorybookConfig = {
 
 	core: {
 		disableWhatsNewNotifications: true
-	}
+	},
+	staticDirs: ["../src/icons"]
 };
 export default config;

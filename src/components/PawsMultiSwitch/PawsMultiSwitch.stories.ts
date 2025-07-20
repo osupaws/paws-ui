@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { ref, watch } from "vue";
 
-import MultiSwitch from "./MultiSwitch.vue";
+import PawsMultiSwitch from "./PawsMultiSwitch.vue";
 
 const meta = {
-	title: "Components/MultiSwitch",
-	component: MultiSwitch,
+	title: "Paws UI Kit/Multi Switch",
+	component: PawsMultiSwitch,
 	tags: ["autodocs"],
 	argTypes: {
 		size: {
@@ -14,7 +14,7 @@ const meta = {
 		}
 	},
 	render: (args, { argTypes }) => ({
-		components: { MultiSwitch },
+		components: { PawsMultiSwitch },
 		setup() {
 			const selectedOption = ref(args.modelValue);
 
@@ -39,9 +39,10 @@ const meta = {
 
 			return { args, selectedOption };
 		},
-		template: '<MultiSwitch :options="args.options" :size="args.size" v-model="selectedOption" />'
+		template:
+			'<PawsMultiSwitch :options="args.options" :size="args.size" v-model="selectedOption" />'
 	})
-} satisfies Meta<typeof MultiSwitch>;
+} satisfies Meta<typeof PawsMultiSwitch>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

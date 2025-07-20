@@ -6,7 +6,7 @@ import folderIconRaw from "../../icons/folderIcon.svg?raw";
 import PawsInput from "./PawsInput.vue";
 const meta = {
 	// Use a consistent naming convention for the Storybook sidebar
-	title: "Paws UI/Input",
+	title: "Paws UI Kit/Input",
 	component: PawsInput,
 	tags: ["autodocs"],
 	argTypes: {

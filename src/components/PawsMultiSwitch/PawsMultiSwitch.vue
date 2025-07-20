@@ -1,5 +1,5 @@
 <template>
-	<div ref="switchRef" :class="[styles.multiSwitch, switchClass]">
+	<div ref="switchRef" :class="[styles.pawsMultiSwitch, switchClass]">
 		<!-- Highlighter Element -->
 		<div :class="styles.highlighter" :style="highlighterStyle" />
 
@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import { computed, onMounted, reactive, ref, watch } from "vue";
 
-import styles from "./MultiSwitch.module.css";
+import styles from "./PawsMultiSwitch.module.css";
 
 // --- THE FIX: PART 1 ---
 // Define the props using a TypeScript interface for full type safety.

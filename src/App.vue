@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import PawsButton from "./components/PawsButton/PawsButton.vue";
 import PawsInput from "./components/PawsInput/PawsInput.vue";
-import MultiSwitch from "./components/MultiSwitch/MultiSwitch.vue";
+import MultiSwitch from "./components/PawsMultiSwitch/PawsMultiSwitch.vue";
 </script>
 
 <template>

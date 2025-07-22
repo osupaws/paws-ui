@@ -3,7 +3,7 @@
   border: 2px solid transparent;
   border-radius: 16px;
   color: var(--paws-color-text-primary);
-  font-family: 'Wix Madefor Display', sans-serif;
+  font-family: var(--paws-font-family);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -12,7 +12,7 @@
   justify-content: center;
   width: 56px;
   height: 56px;
-  padding: 0; /* Remove padding to allow flex to center content perfectly */
+  padding: 0;
 
   &:hover {
     filter: brightness(1.15);

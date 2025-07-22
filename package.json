@@ -15,6 +15,7 @@
 		"build-storybook": "storybook build"
 	},
 	"dependencies": {
+		"@storybook/core-events": "9.0.0-alpha.1",
 		"vue": "^3.5.17"
 	},
 	"devDependencies": {
@@ -25,7 +26,9 @@
 		"@storybook/addon-docs": "^9.0.17",
 		"@storybook/addon-essentials": "9.0.0-alpha.12",
 		"@storybook/addon-vitest": "^9.0.17",
+		"@storybook/manager-api": "9.0.0-alpha.1",
 		"@storybook/test": "9.0.0-alpha.2",
+		"@storybook/theming": "9.0.0-alpha.1",
 		"@storybook/vue3": "^9.0.17",
 		"@storybook/vue3-vite": "^9.0.17",
 		"@stylistic/eslint-plugin": "^5.2.0",

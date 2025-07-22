@@ -1,66 +1,73 @@
 .inputWrapper {
-	position: relative;
-	display: flex;
-	align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 
-	.pawsInput {
-		width: 100%;
-		padding: 7px 16px;
-		background-color: var(--paws-color-bg-dark);
-		border: 1px solid var(--paws-color-border);
-		border-radius: 12px;
-		color: var(--paws-color-text-primary);
-		font-family: "Wix Madefor Display", sans-serif;
-		font-size: 1em;
-		transition: border-color 0.2s;
-		box-sizing: border-box;
-		height: 32px;
+  .pawsInput {
+    width: 100%;
+    padding: 7px 16px;
+    background-color: var(--paws-color-bg-dark);
+    border: 1px solid var(--paws-color-border);
+    border-radius: 10px;
+    color: var(--paws-color-text-primary);
+    font-family: var(--paws-font-family);
+    font-size: 1em;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+    height: 32px;
 
-		&:focus {
-			outline: none;
-			border-color: var(--paws-color-accent-primary);
-		}
+    &:focus {
+      outline: none;
+      border-color: var(--paws-color-accent-primary);
+    }
 
-		&:disabled {
-			background-color: var(--paws-color-bg-disabled);
-			color: var(--paws-color-text-disabled);
-			cursor: not-allowed;
+    &:disabled {
+      background-color: var(--paws-color-bg-disabled);
+      color: var(--paws-color-text-disabled);
+      cursor: not-allowed;
 
-			& + .iconAdornment {
-				color: var(--paws-color-text-disabled);
-			}
-		}
+      & + .iconAdornment {
+        color: var(--paws-color-text-disabled);
+      }
+    }
 
-		&.withIcon {
-			padding-left: 36px;
-		}
-	}
+    &.withIcon {
+      padding-left: 36px;
+    }
+  }
 
-	.iconAdornment {
-		position: absolute;
-		left: 8px;
-		top: 50%;
-		transform: translateY(-50%);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: var(--paws-color-text-secondary);
-		pointer-events: none;
-		width: 20px;
-		height: 20px;
+  .iconAdornment {
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--paws-color-text-secondary);
+    pointer-events: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 7px;
 
-		> :deep(div) {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 100%;
-			height: 100%;
-		}
+    &.clickable {
+      pointer-events: all;
+      cursor: pointer;
+      background-color: #474747;
+    }
 
-		:global(svg) {
-			width: 20px;
-			height: 20px;
-			display: block;
-		}
-	}
+    > :deep(div) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    :global(svg) {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+  }
 }

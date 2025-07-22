@@ -1,7 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
 import folderIconRaw from "../../icons/folderIcon.svg?raw";
+import ArrowIcon from "../../icons/ArrowIcon.vue";
 import PawsInput from "./PawsInput.vue";
+
+const icons = {
+  None: null,
+  Folder: folderIconRaw,
+  Arrow: ArrowIcon,
+};
+
 const meta = {
   title: "Paws UI Kit/Input",
   component: PawsInput,
@@ -10,25 +18,46 @@ const meta = {
     modelValue: { control: "text" },
     placeholder: { control: "text" },
     disabled: { control: "boolean" },
-    icon: {
-      control: false,
-      description: "Slot for the leading icon adornment.",
+    isIconClickable: { control: "boolean" },
+    iconName: {
+      name: "icon",
+      control: { type: "select" },
+      options: Object.keys(icons),
+      description: "Select an icon to display.",
       table: {
         category: "Slots",
-        type: { summary: "template" },
       },
     },
+    icon: {
+      control: false,
+    },
+    onIconClick: { action: "icon-clicked" },
   },
   render: (args) => ({
-    components: { PawsInput },
+    components: { PawsInput, ArrowIcon },
     setup() {
-      return { args };
+      // @ts-ignore
+      const selectedIcon = icons[args.iconName];
+      const isComponent = typeof selectedIcon !== "string" && selectedIcon !== null;
+      return { args, selectedIcon, isComponent };
     },
-    template: '<PawsInput v-model="args.modelValue" v-bind="args" />',
+    template: `
+      <PawsInput
+        v-model="args.modelValue"
+        v-bind="args"
+        @icon-click="args.onIconClick"
+      >
+        <template #icon v-if="selectedIcon">
+          <div v-if="!isComponent" v-html="selectedIcon"></div>
+          <component v-else :is="selectedIcon" />
+        </template>
+      </PawsInput>
+    `,
   }),
   args: {
     modelValue: "",
     disabled: false,
+    iconName: "None",
   },
 } satisfies Meta<typeof PawsInput>;
 
@@ -42,20 +71,9 @@ export const Default: Story = {
 };
 
 export const AdornedWithIcon: Story = {
-  render: (args) => ({
-    components: { PawsInput },
-    setup() {
-      return { args, folderIconRaw };
-    },
-    template: `
-       <PawsInput v-model="args.modelValue" v-bind="args">
-        <template #icon>
-          <div v-html="folderIconRaw"></div>
-        </template>
-      </PawsInput>
-    `,
-  }),
   args: {
     placeholder: "Path to folder...",
+    iconName: "Folder",
+    isIconClickable: true
   },
 };

@@ -1,21 +1,28 @@
+import "../src/assets/fonts.css";
 import "../src/themes/paws-dark.css";
-
+import "../src/themes/paws-light.css";
 import type { Preview } from "@storybook/vue3-vite";
 
 const preview: Preview = {
-  parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
+  decorators: [
+    (story, context) => {
+      // Use the 'theme' global to apply the correct class
+      const theme = context.globals.theme || 'light';
+      return {
+        template: `<div class="${theme}-theme" style="padding: 20px; background-color: var(--paws-color-bg-darkest)"><story/></div>`,
+      };
     },
-
-    a11y: {
-      // 'todo' - show a11y violations in the test UI only
-      // 'error' - fail CI on a11y violations
-      // 'off' - skip a11y checks entirely
-      test: "todo",
+  ],
+  globalTypes: {
+    theme: {
+      name: 'Theme',
+      description: 'Global theme for components',
+      defaultValue: 'light',
+      toolbar: {
+        icon: 'mirror',
+        items: ['light', 'dark'],
+        showName: true,
+      },
     },
   },
 };

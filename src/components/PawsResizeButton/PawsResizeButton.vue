@@ -1,29 +1,33 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import styles from './PawsResizeButton.module.css'
-import ArrowIcon from '@/icons/ArrowIcon.vue'
+import ArrowIcon from "@components/Icon/ArrowIcon.vue";
+import { computed, ref } from "vue";
+
+import styles from "./PawsResizeButton.module.css";
 
 const props = defineProps({
-  initialState: {
-    type: String,
-    default: 'compact',
-  },
-})
+	initialState: {
+		type: String,
+		default: "compact",
+	},
+});
 
-const buttonState = ref(props.initialState)
+const buttonState = ref(props.initialState);
 
-const toggleState = () => {
-  buttonState.value = buttonState.value === 'compact' ? 'wide' : 'compact'
-}
+const toggleState = (): void => {
+	buttonState.value = buttonState.value === "compact" ? "wide" : "compact";
+};
 
 const arrowClass = computed(() => ({
-  [styles.arrow]: true,
-  [styles.wide]: buttonState.value === 'wide',
-}))
+	[styles.arrow]: true,
+	[styles.wide]: buttonState.value === "wide",
+}));
 </script>
 
 <template>
-  <button :class="[styles.resizeButton, styles[buttonState]]" @click="toggleState">
-    <ArrowIcon :class="arrowClass" />
-  </button>
+	<button
+		:class="[styles.resizeButton, styles[buttonState]]"
+		@click="toggleState"
+	>
+		<ArrowIcon :class="arrowClass" />
+	</button>
 </template>

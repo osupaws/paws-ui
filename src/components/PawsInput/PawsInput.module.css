@@ -1,88 +1,88 @@
 .inputWrapper {
-  display: flex;
-  align-items: center;
-  padding: 0 3px;
-  background-color: var(--paws-color-bg-lighter);
-  border: 1px solid var(--paws-color-border);
-  border-radius: 10px;
-  transition: border-color 0.2s;
-  box-sizing: border-box;
-  height: 32px;
+	display: flex;
+	align-items: center;
+	padding: 0 3px;
+	background-color: var(--paws-color-bg-lighter);
+	border: 1px solid var(--paws-color-border);
+	border-radius: 10px;
+	transition: border-color 0.2s;
+	box-sizing: border-box;
+	height: 32px;
 
-  &.focused {
-    border-color: var(--paws-color-accent-primary);
-  }
+	&.focused {
+		border-color: var(--paws-color-accent-primary);
+	}
 
-  &.disabled {
-    background-color: var(--paws-color-bg-disabled);
-    cursor: not-allowed;
-  }
+	&.disabled {
+		background-color: var(--paws-color-bg-disabled);
+		cursor: not-allowed;
+	}
 }
 
 .pawsInput {
-  flex-grow: 1;
-  width: 100%;
-  padding: 7px 13px;
-  background-color: transparent;
-  border: none;
-  color: var(--paws-color-text-primary);
-  font-family: var(--paws-font-family);
-  font-size: 1em;
+	flex-grow: 1;
+	width: 100%;
+	padding: 7px 13px;
+	background-color: transparent;
+	border: none;
+	color: var(--paws-color-text-primary);
+	font-family: var(--paws-font-family);
+	font-size: 1em;
 
-  &:focus {
-    outline: none;
-  }
+	&:focus {
+		outline: none;
+	}
 
-  &:disabled {
-    color: var(--paws-color-text-disabled);
-    cursor: not-allowed;
-    background-color: transparent;
-  }
+	&:disabled {
+		color: var(--paws-color-text-disabled);
+		cursor: not-allowed;
+		background-color: transparent;
+	}
 }
 
 .adornmentButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--paws-color-text-secondary);
-  background-color: var(--paws-color-bg-dark);
-  border: none;
-  border-radius: 7px;
-  height: 26px;
-  padding: 0 8px;
-  gap: 4px;
-  cursor: pointer;
-  flex-shrink: 0;
-  font-family: var(--paws-font-family);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--paws-color-text-secondary);
+	background-color: var(--paws-color-bg-dark);
+	border: none;
+	border-radius: 7px;
+	height: 26px;
+	padding: 0 8px;
+	gap: 4px;
+	cursor: pointer;
+	flex-shrink: 0;
+	font-family: var(--paws-font-family);
 
-  &:disabled {
-    background-color: var(--paws-color-button-disabled);
-    color: var(--paws-color-text-disabled);
-    cursor: not-allowed;
-  }
+	&:disabled {
+		background-color: var(--paws-color-button-disabled);
+		color: var(--paws-color-text-disabled);
+		cursor: not-allowed;
+	}
 
-  &.nonClickable {
-    cursor: default;
-    pointer-events: none;
-  }
+	&.nonClickable {
+		cursor: default;
+		pointer-events: none;
+	}
 
-  > :deep(div) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+	> :deep(div) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-  :global(svg) {
-    width: 20px;
-    height: 20px;
-    display: block;
-  }
+	:global(svg) {
+		width: 20px;
+		height: 20px;
+		display: block;
+	}
 }
 
 .buttonText {
-  font-family: var(--paws-font-family);
-  font-size: 0.9em;
-  font-weight: 500;
-  color: var(--paws-color-text-primary);
-  white-space: nowrap;
+	font-family: var(--paws-font-family);
+	font-size: 0.9em;
+	font-weight: 500;
+	color: var(--paws-color-text-primary);
+	white-space: nowrap;
 }

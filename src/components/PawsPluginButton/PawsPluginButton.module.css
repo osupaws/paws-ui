@@ -1,39 +1,39 @@
 .pawsPluginButton {
-  background-color: var(--paws-color-bg-darkest);
-  border: 2px solid transparent;
-  border-radius: 16px;
-  color: var(--paws-color-text-primary);
-  font-family: var(--paws-font-family);
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  padding: 0;
+	background-color: var(--paws-color-bg-darkest);
+	border: 2px solid transparent;
+	border-radius: 16px;
+	color: var(--paws-color-text-primary);
+	font-family: var(--paws-font-family);
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	padding: 0;
 
-  &:hover {
-    filter: brightness(1.15);
-  }
+	&:hover {
+		filter: brightness(1.15);
+	}
 
-  &.active {
-    border-color: var(--paws-color-accent-primary);
-  }
+	&.active {
+		border-color: var(--paws-color-accent-primary);
+	}
 
-  &.processing {
-    border-color: var(--paws-color-warning);
-    cursor: progress;
-  }
+	&.processing {
+		border-color: var(--paws-color-warning);
+		cursor: progress;
+	}
 
-  &.disabled {
-    background-color: var(--paws-color-bg-disabled);
-    color: var(--paws-color-text-disabled);
-    cursor: not-allowed;
+	&.disabled {
+		background-color: var(--paws-color-bg-disabled);
+		color: var(--paws-color-text-disabled);
+		cursor: not-allowed;
 
-    &:hover {
-      filter: none;
-    }
-  }
+		&:hover {
+			filter: none;
+		}
+	}
 }

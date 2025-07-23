@@ -17,11 +17,16 @@ const props = defineProps({
     type: String,
     default: "primary",
   },
+  size: {
+    type: String,
+    default: "normal",
+  },
 });
 const buttonClass = computed(() => {
   return {
     [styles.primary]: props.variant === "primary",
     [styles.secondary]: props.variant === "secondary",
+    [styles.small]: props.size === "small",
   };
 });
 </script>

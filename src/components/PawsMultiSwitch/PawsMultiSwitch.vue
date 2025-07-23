@@ -30,6 +30,8 @@ const props = withDefaults(defineProps<MultiSwitchProps>(), {
   size: "small",
 });
 
+export type { MultiSwitchProps };
+
 const emit = defineEmits<{
   (e: "update:modelValue", value: string): void;
 }>();

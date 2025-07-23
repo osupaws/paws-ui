@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import styles from './PawsResizeButton.module.css'
-import ArrowIcon from '../../icons/ArrowIcon.vue'
+import ArrowIcon from '@/icons/ArrowIcon.vue'
 
 const props = defineProps({
   initialState: {

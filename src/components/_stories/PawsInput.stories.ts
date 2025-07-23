@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
-import folderIconRaw from "../../icons/folderIcon.svg?raw";
-import ArrowIcon from "../../icons/ArrowIcon.vue";
-import PawsInput from "./PawsInput.vue";
+import folderIconRaw from "@/icons/folderIcon.svg?raw";
+import ArrowIcon from "@/icons/ArrowIcon.vue";
+import PawsInput from "@components/PawsInput/PawsInput.vue";
 
 const icons = {
   None: null,
@@ -10,7 +10,18 @@ const icons = {
   Arrow: ArrowIcon,
 };
 
-const meta = {
+// Define a type for the story's args that includes our custom iconName control
+type PawsInputStoryProps = {
+  modelValue?: string;
+  placeholder?: string;
+  disabled?: boolean;
+  isIconClickable?: boolean;
+  buttonText?: string;
+  iconName?: keyof typeof icons;
+  onIconClick?: () => void;
+};
+
+const meta: Meta<PawsInputStoryProps> = {
   title: "Paws UI Kit/Input",
   component: PawsInput,
   tags: ["autodocs"],
@@ -19,6 +30,7 @@ const meta = {
     placeholder: { control: "text" },
     disabled: { control: "boolean" },
     isIconClickable: { control: "boolean" },
+    buttonText: { control: "text" },
     iconName: {
       name: "icon",
       control: { type: "select" },
@@ -28,25 +40,19 @@ const meta = {
         category: "Slots",
       },
     },
-    icon: {
-      control: false,
-    },
     onIconClick: { action: "icon-clicked" },
   },
   render: (args) => ({
     components: { PawsInput, ArrowIcon },
     setup() {
-      // @ts-ignore
-      const selectedIcon = icons[args.iconName];
-      const isComponent = typeof selectedIcon !== "string" && selectedIcon !== null;
-      return { args, selectedIcon, isComponent };
+      const { iconName, ...props } = args;
+      const selectedIcon = icons[iconName || "None"];
+      const isComponent =
+        typeof selectedIcon !== "string" && selectedIcon !== null;
+      return { props, selectedIcon, isComponent };
     },
     template: `
-      <PawsInput
-        v-model="args.modelValue"
-        v-bind="args"
-        @icon-click="args.onIconClick"
-      >
+      <PawsInput v-bind="props">
         <template #icon v-if="selectedIcon">
           <div v-if="!isComponent" v-html="selectedIcon"></div>
           <component v-else :is="selectedIcon" />
@@ -56,10 +62,13 @@ const meta = {
   }),
   args: {
     modelValue: "",
+    placeholder: "",
     disabled: false,
+    isIconClickable: false,
+    buttonText: "",
     iconName: "None",
   },
-} satisfies Meta<typeof PawsInput>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -74,6 +83,25 @@ export const AdornedWithIcon: Story = {
   args: {
     placeholder: "Path to folder...",
     iconName: "Folder",
-    isIconClickable: true
+  },
+};
+
+export const WithButton: Story = {
+  args: {
+    placeholder: "Path to file...",
+    iconName: "Folder",
+    isIconClickable: true,
+    buttonText: "Browse",
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    placeholder: "Disabled",
+    modelValue: "some value",
+    disabled: true,
+    iconName: "Folder",
+    isIconClickable: true,
+    buttonText: "Browse",
   },
 };

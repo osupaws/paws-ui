@@ -1,7 +1,7 @@
 .resizeButton {
   width: 20px;
   height: 100px;
-  background-color: var(--paws-color-bg-dark);
+  background-color: var(--paws-color-bg-darkest);
   border: none;
   color: var(--paws-color-text-primary);
   display: flex;

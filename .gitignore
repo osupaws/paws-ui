@@ -58,7 +58,9 @@ coverage
 # Ignore Cypress testing artifacts.
 /cypress/videos/
 /cypress/screenshots/
-
+# Ignore temporary debug files
+image.png
+error.txt
 
 # IDE & Editor Configuration
 # -------------------------------------------------------------------

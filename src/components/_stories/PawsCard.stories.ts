@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import PawsCard from "./PawsCard.vue";
+import PawsCard from "@components/PawsCard/PawsCard.vue";
 
 const meta = {
   title: "Paws UI Kit/Card",

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { ref, watch } from "vue";
 
-import PawsMultiSwitch from "./PawsMultiSwitch.vue";
+import PawsMultiSwitch, { type MultiSwitchProps } from "@components/PawsMultiSwitch/PawsMultiSwitch.vue";
 
-const meta = {
+const meta: Meta<MultiSwitchProps> = {
   title: "Paws UI Kit/Multi Switch",
   component: PawsMultiSwitch,
   tags: ["autodocs"],

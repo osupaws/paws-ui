@@ -12,6 +12,10 @@ const meta = {
       control: { type: "radio" },
       options: ["primary", "secondary"],
     },
+    size: {
+      control: { type: "radio" },
+      options: ["normal", "small"],
+    },
   },
 } satisfies Meta<typeof PawsButton>;
 
@@ -29,5 +33,13 @@ export const Secondary: Story = {
   args: {
     label: "Secondary Button",
     variant: "secondary",
+  },
+};
+
+export const Small: Story = {
+  args: {
+    label: "Small Button",
+    variant: "primary",
+    size: "small",
   },
 };

@@ -1,24 +1,24 @@
 .resizeButton {
-  width: 20px;
-  height: 100px;
-  background-color: var(--paws-color-bg-darkest);
-  border: none;
-  color: var(--paws-color-text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-  padding: 0;
-  font-family: var(--paws-font-family);
+	width: 20px;
+	height: 100px;
+	background-color: var(--paws-color-bg-darkest);
+	border: none;
+	color: var(--paws-color-text-primary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+	padding: 0;
+	font-family: var(--paws-font-family);
 
-  .arrow {
-    width: 20px;
-    height: 20px;
+	.arrow {
+		width: 20px;
+		height: 20px;
 
-    &.wide {
-      transform: rotate(180deg);
-    }
-  }
+		&.wide {
+			transform: rotate(180deg);
+		}
+	}
 }

@@ -1,0 +1,17 @@
+.light-theme {
+	--paws-color-accent-primary: #b4355d;
+	--paws-color-accent-secondary: #62223e;
+	--paws-color-text-primary: #222222;
+	--paws-color-text-secondary: #555555;
+	--paws-color-text-on-accent: #ffffff;
+	--paws-color-success: #4caf50;
+	--paws-color-warning: #ffc107;
+	--paws-color-error: #f44336;
+	--paws-color-bg-darkest: #ffffff;
+	--paws-color-bg-dark: #f8f8f8;
+	--paws-color-bg-lighter: #f0f0f0;
+	--paws-color-bg-disabled: #e0e0e0;
+	--paws-color-text-disabled: #9e9e9e;
+	--paws-color-button-disabled: #ececec;
+	--paws-font-family: "Wix Madefor Display", system-ui, sans-serif;
+}

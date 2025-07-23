@@ -5,7 +5,6 @@ import vueParser from "vue-eslint-parser";
 import stylistic from "@stylistic/eslint-plugin";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import unusedImports from "eslint-plugin-unused-imports";
-import pathAlias from "eslint-plugin-path-alias";
 
 export default tseslint.config(
 	{
@@ -40,8 +39,7 @@ export default tseslint.config(
 		plugins: {
 			"@stylistic": stylistic,
 			"simple-import-sort": simpleImportSort,
-			"unused-imports": unusedImports,
-			"path-alias": pathAlias
+			"unused-imports": unusedImports
 		},
 		rules: {
 			"@typescript-eslint/no-empty-object-type": "off",
@@ -116,8 +114,7 @@ export default tseslint.config(
 			// Plugin rules.
 			"simple-import-sort/imports": "error",
 			"simple-import-sort/exports": "error",
-			"unused-imports/no-unused-imports": "error",
-			"path-alias/no-relative": "error"
+			"unused-imports/no-unused-imports": "error"
 		}
 	},
 	eslintConfigPrettier

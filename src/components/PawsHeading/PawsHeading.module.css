@@ -1,0 +1,24 @@
+.heading {
+	font-weight: var(--paws-heading--font-weight);
+	color: var(--paws-color-text-primary);
+}
+
+.sizeSm {
+	font-size: 16px;
+}
+
+.sizeLg {
+	font-size: 24px;
+}
+
+.sizeXl {
+	font-size: 28px;
+}
+
+.alignLeft {
+	text-align: left;
+}
+
+.alignCenter {
+	text-align: center;
+}

@@ -14,10 +14,6 @@
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
 	},
-	"dependencies": {
-		"@storybook/core-events": "9.0.0-alpha.1",
-		"vue": "^3.5.17"
-	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^4.0.1",
 		"@electron-toolkit/eslint-config-prettier": "^3.0.0",
@@ -26,6 +22,7 @@
 		"@storybook/addon-docs": "^9.0.17",
 		"@storybook/addon-essentials": "9.0.0-alpha.12",
 		"@storybook/addon-vitest": "^9.0.17",
+		"@storybook/core-events": "^8.6.14",
 		"@storybook/manager-api": "9.0.0-alpha.1",
 		"@storybook/test": "9.0.0-alpha.2",
 		"@storybook/theming": "9.0.0-alpha.1",
@@ -41,7 +38,6 @@
 		"@vue/eslint-config-typescript": "^14.5.1",
 		"@vue/tsconfig": "^0.7.0",
 		"eslint": "^9.29.0",
-		"eslint-plugin-path-alias": "^2.1.0",
 		"eslint-plugin-simple-import-sort": "^12.1.1",
 		"eslint-plugin-storybook": "^9.0.17",
 		"eslint-plugin-unused-imports": "^4.1.4",
@@ -55,6 +51,7 @@
 		"vite": "^7.0.0",
 		"vite-plugin-vue-devtools": "^7.7.7",
 		"vitest": "^3.2.4",
+		"vue": "^3.5.18",
 		"vue-eslint-parser": "^10.2.0",
 		"vue-tsc": "^2.2.10"
 	}

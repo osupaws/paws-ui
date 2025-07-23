@@ -7,20 +7,20 @@ const preview: Preview = {
   decorators: [
     (story, context) => {
       // Use the 'theme' global to apply the correct class
-      const theme = context.globals.theme || 'light';
+      const theme = context.globals.theme || "light";
       return {
-        template: `<div class="${theme}-theme" style="padding: 20px; background-color: var(--paws-color-bg-darkest)"><story/></div>`,
+        template: `<div class="${theme}-theme" style="padding: 20px; background-color: var(--paws-color-bg-dark)"><story/></div>`,
       };
     },
   ],
   globalTypes: {
     theme: {
-      name: 'Theme',
-      description: 'Global theme for components',
-      defaultValue: 'light',
+      name: "Theme",
+      description: "Global theme for components",
+      defaultValue: "light",
       toolbar: {
-        icon: 'mirror',
-        items: ['light', 'dark'],
+        icon: "mirror",
+        items: ["light", "dark"],
         showName: true,
       },
     },

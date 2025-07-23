@@ -1,7 +1,25 @@
-.pawsCard {
-  background-color: var(--paws-color-bg-darkest);
-  border-radius: 16px;
-  min-height: 100px;
-  min-width: 100px;
-  padding: 4px 20px 20px 20px;
+.card {
+	padding: 2px 16px 24px;
+	border-radius: 16px;
+}
+
+.cardTitle {
+	font-weight: 600;
+	font-size: 28px;
+}
+
+.cardContent {
+	margin-top: 6px;
+}
+
+.cardContentNoHeading {
+	margin-top: 22px;
+}
+
+.appearanceDark {
+	background-color: var(--paws-color-bg-darkest);
+}
+
+.appearanceLight {
+	background-color: var(--paws-color-bg-lighter);
 }

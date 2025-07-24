@@ -2,7 +2,7 @@
 import type { BaseIcon } from "@components/Icon/icon";
 
 const {
-	color = "#fff",
+	color = "currentColor",
 	width = "16px",
 	height = "16px",
 } = defineProps<BaseIcon>();

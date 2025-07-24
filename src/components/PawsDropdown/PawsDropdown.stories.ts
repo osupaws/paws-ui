@@ -9,6 +9,7 @@ const icons = {
 	Arrow: ArrowIcon,
 };
 
+// Define a type for the story's args that includes our custom iconName control
 type PawsDropdownStoryProps = {
 	modelValue?: string;
 	placeholder?: string;
@@ -18,7 +19,7 @@ type PawsDropdownStoryProps = {
 };
 
 const meta: Meta<PawsDropdownStoryProps> = {
-	title: "Components/PawsDropdown",
+	title: "Paws UI Kit/Dropdown",
 	component: PawsDropdown,
 	tags: ["autodocs"],
 	argTypes: {
@@ -37,7 +38,7 @@ const meta: Meta<PawsDropdownStoryProps> = {
 		},
 	},
 	render: (args) => ({
-		components: { PawsDropdown },
+		components: { PawsDropdown, ArrowIcon, FolderIcon },
 		setup() {
 			const { iconName, ...props } = args;
 			const selectedIcon = icons[iconName || "None"];
@@ -60,7 +61,7 @@ const meta: Meta<PawsDropdownStoryProps> = {
 		options: ["Option 1", "Option 2", "Option 3"],
 		iconName: "None",
 	},
-} satisfies Meta<typeof PawsDropdown>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

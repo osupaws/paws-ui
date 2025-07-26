@@ -1,3 +1,13 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  padding-left: 10px;
+}
+
 .inputWrapper {
 	display: flex;
 	align-items: center;

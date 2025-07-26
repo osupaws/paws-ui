@@ -1,6 +1,7 @@
 .heading {
 	font-weight: var(--paws-heading--font-weight);
 	color: var(--paws-color-text-primary);
+  margin: 0;
 }
 
 .sizeSm {

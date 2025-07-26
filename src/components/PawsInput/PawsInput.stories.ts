@@ -18,6 +18,7 @@ type PawsInputStoryProps = {
 	buttonText?: string;
 	iconName?: keyof typeof icons;
 	onIconClick?: () => void;
+  title?: string;
 };
 
 const meta: Meta<PawsInputStoryProps> = {
@@ -76,6 +77,13 @@ export const Default: Story = {
 	args: {
 		placeholder: "Enter text here...",
 	},
+};
+
+export const WithTitle: Story = {
+  args: {
+    ...Default.args,
+    title: "Title",
+  },
 };
 
 export const AdornedWithIcon: Story = {

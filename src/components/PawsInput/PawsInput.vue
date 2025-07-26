@@ -2,6 +2,7 @@
 import { computed, ref, useSlots } from "vue";
 
 import styles from "./PawsInput.module.css";
+import PawsHeading from "../PawsHeading/PawsHeading.vue";
 
 const model = defineModel<string>();
 
@@ -10,6 +11,7 @@ const props = defineProps<{
 	disabled?: boolean;
 	isIconClickable?: boolean;
 	buttonText?: string;
+  title?: string;
 }>();
 
 const emit = defineEmits<{ (e: "icon-click"): void }>();
@@ -27,36 +29,39 @@ const onIconClick = (): void => {
 </script>
 
 <template>
-	<div
-		:class="[
-			styles.inputWrapper,
-			{ [styles.disabled]: disabled, [styles.focused]: isFocused },
-		]"
-	>
-		<button
-			v-if="hasIconSlot"
-			:class="[
-				styles.adornmentButton,
-				{ [styles.nonClickable]: !isIconClickable },
-			]"
-			:disabled="disabled"
-			@click="onIconClick"
-		>
-			<slot name="icon"></slot>
+  <div :class="styles.wrapper">
+    <PawsHeading v-if="title" size="sm" :class="styles.title">{{ title }}</PawsHeading>
+	  <div
+		  :class="[
+			  styles.inputWrapper,
+			  { [styles.disabled]: disabled, [styles.focused]: isFocused },
+		  ]"
+	  >
+		  <button
+			  v-if="hasIconSlot"
+			  :class="[
+				  styles.adornmentButton,
+				  { [styles.nonClickable]: !isIconClickable },
+			  ]"
+			  :disabled="disabled"
+			  @click="onIconClick"
+		  >
+			  <slot name="icon"></slot>
 
-			<span v-if="buttonText" :class="styles.buttonText">
-				{{ buttonText }}
-			</span>
-		</button>
+			  <span v-if="buttonText" :class="styles.buttonText">
+				  {{ buttonText }}
+			  </span>
+		  </button>
 
-		<input
-			v-model="model"
-			type="text"
-			:class="styles.pawsInput"
-			:placeholder="placeholder"
-			:disabled="disabled"
-			@focus="isFocused = true"
-			@blur="isFocused = false"
-		/>
-	</div>
+		  <input
+			  v-model="model"
+			  type="text"
+			  :class="styles.pawsInput"
+			  :placeholder="placeholder"
+			  :disabled="disabled"
+			  @focus="isFocused = true"
+			  @blur="isFocused = false"
+		  />
+	  </div>
+  </div>
 </template>

@@ -1,0 +1,30 @@
+.pawsCheckbox {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	user-select: none;
+	gap: 10px;
+}
+
+.input {
+	display: none;
+}
+
+.checkbox {
+	display: block;
+	width: 24px;
+	height: 24px;
+	border-radius: 6px;
+	background-color: var(--paws-color-bg-disabled);
+	transition: background-color 0.2s;
+}
+
+.input:checked + .checkbox {
+	background-color: var(--paws-color-accent-primary);
+}
+
+.label {
+	font-size: 20px;
+	font-weight: 520;
+	color: var(--paws-color-text-primary);
+}

@@ -15,7 +15,7 @@
 	width: 24px;
 	height: 24px;
 	border-radius: 6px;
-	background-color: #e2e2e2;
+	background-color: var(--paws-color-bg-disabled);
 	transition: background-color 0.2s;
 }
 

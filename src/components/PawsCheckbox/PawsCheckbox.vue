@@ -1,20 +1,17 @@
 <script setup lang="ts">
 import styles from "./PawsCheckbox.module.css";
 
-export interface PawsCheckboxProps {
-	label: string;
-	checked?: boolean;
-}
+const model = defineModel<boolean>();
 
-withDefaults(defineProps<PawsCheckboxProps>(), {
-	checked: false,
-});
+defineProps<{
+	label: string;
+}>();
 </script>
 
 <template>
-	<label :class="styles.checkbox">
-		<input type="checkbox" checked="checked" />
-		<span :class="styles.checkmark"></span>
-		<span>{{ label }}</span>
+	<label :class="styles.pawsCheckbox">
+		<input type="checkbox" v-model="model" :class="styles.input" />
+		<span :class="styles.checkbox"></span>
+		<span :class="styles.label">{{ label }}</span>
 	</label>
 </template>

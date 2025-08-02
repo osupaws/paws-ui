@@ -1,8 +1,9 @@
-import PawsMultiSwitch, {
-	type MultiSwitchProps,
-} from "@components/PawsMultiSwitch/PawsMultiSwitch.vue";
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { ref, watch } from "vue";
+
+import PawsMultiSwitch, {
+	type MultiSwitchProps,
+} from "@/components/PawsMultiSwitch/PawsMultiSwitch.vue";
 
 const meta: Meta<MultiSwitchProps> = {
 	title: "Paws UI Kit/Multi Switch",

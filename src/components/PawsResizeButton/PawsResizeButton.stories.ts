@@ -1,5 +1,6 @@
-import PawsResizeButton from "@components/PawsResizeButton/PawsResizeButton.vue";
 import type { Meta, StoryObj } from "@storybook/vue3";
+
+import PawsResizeButton from "@/components/PawsResizeButton/PawsResizeButton.vue";
 
 const meta: Meta<typeof PawsResizeButton> = {
 	title: "Paws UI Kit/Resize Button",

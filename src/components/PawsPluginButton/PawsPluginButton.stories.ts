@@ -1,5 +1,6 @@
-import PawsPluginButton from "@components/PawsPluginButton/PawsPluginButton.vue";
 import type { Meta, StoryObj } from "@storybook/vue3";
+
+import PawsPluginButton from "@/components/PawsPluginButton/PawsPluginButton.vue";
 
 const meta = {
 	title: "Paws UI Kit/Plugin Button",

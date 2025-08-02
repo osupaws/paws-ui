@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import PawsDropdown from "@components/PawsDropdown/PawsDropdown.vue";
-import ArrowIcon from "@components/Icon/ArrowIcon.vue";
-import FolderIcon from "@components/Icon/FolderIcon.vue";
+
+import ArrowIcon from "@/components/Icon/ArrowIcon.vue";
+import FolderIcon from "@/components/Icon/FolderIcon.vue";
+import PawsDropdown from "@/components/PawsDropdown/PawsDropdown.vue";
 
 const icons = {
 	None: null,

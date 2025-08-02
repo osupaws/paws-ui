@@ -1,12 +1,8 @@
 {
 	"extends": "@tsconfig/node22/tsconfig.json",
 	"include": [
-		"../env.d.ts",
+		"../src/env.d.ts",
 		"vite.config.*",
-		"vitest.config.*",
-		"cypress.config.*",
-		"nightwatch.conf.*",
-		"playwright.config.*",
 		"eslint.config.*"
 	],
 	"compilerOptions": {
@@ -19,8 +15,7 @@
 
 		"baseUrl": "..",
 		"paths": {
-			"@/*": ["src/*"],
-			"@components/*": ["src/components/*"]
+			"@/*": ["src/*"]
 		}
 	}
 }

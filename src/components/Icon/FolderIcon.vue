@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { BaseIcon } from "@components/Icon/icon";
+import type { BaseIcon } from "@/components/Icon/icon";
 
 const {
 	color = "currentColor",

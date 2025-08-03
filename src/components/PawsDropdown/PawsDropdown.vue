@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed, ref, useSlots } from "vue";
-import ArrowIcon from "@components/Icon/ArrowIcon.vue";
+
+import ArrowIcon from "@/components/Icon/ArrowIcon.vue";
+
 import styles from "./PawsDropdown.module.css";
 
 const model = defineModel<string>();
@@ -37,11 +39,11 @@ const selectOption = (option: string) => {
 	>
 		<button
 			:class="styles.dropdownButton"
-			@click="toggleDropdown"
 			:disabled="disabled"
+			@click="toggleDropdown"
 		>
 			<div v-if="hasIconSlot" :class="styles.iconWrapper">
-				<slot name="icon"></slot>
+				<slot name="icon" />
 			</div>
 			<span :class="styles.selectedOption">{{ model || placeholder }}</span>
 			<ArrowIcon :class="[styles.arrow, { [styles.rotate]: isOpen }]" />

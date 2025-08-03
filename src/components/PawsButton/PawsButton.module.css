@@ -15,7 +15,7 @@
 		font-weight: bold;
 	}
 	&.secondary {
-		background-color: var(--paws-color- accent-secondary);
+		background-color: var(--paws-color-accent-secondary);
 	}
 	&.small {
 		height: 20px;

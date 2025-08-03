@@ -1,10 +1,10 @@
-import tseslint from "@electron-toolkit/eslint-config-ts";
-import eslintConfigPrettier from "@electron-toolkit/eslint-config-prettier";
+import tseslint from "typescript-eslint";
 import eslintPluginVue from "eslint-plugin-vue";
 import vueParser from "vue-eslint-parser";
-import stylistic from "@stylistic/eslint-plugin";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import unusedImports from "eslint-plugin-unused-imports";
+import eslintPluginPrettier from "eslint-plugin-prettier";
+import eslintConfigPrettier from "eslint-config-prettier";
 
 export default tseslint.config(
 	{
@@ -35,13 +35,17 @@ export default tseslint.config(
 		}
 	},
 	{
-		files: ["**/*.{ts,mts,tsx,vue}"],
+		files: ["**/*.{ts,vue}"],
 		plugins: {
-			"@stylistic": stylistic,
 			"simple-import-sort": simpleImportSort,
-			"unused-imports": unusedImports
+			"unused-imports": unusedImports,
+			"prettier": eslintPluginPrettier
 		},
 		rules: {
+			// Prettier rule to show formatting errors
+			"prettier/prettier": "error",
+
+			// Vue-specific rules (non-stylistic)
 			"@typescript-eslint/no-empty-object-type": "off",
 			"@typescript-eslint/no-explicit-any": "off",
 			"vue/require-default-prop": "off",
@@ -54,26 +58,8 @@ export default tseslint.config(
 					}
 				}
 			],
-			"@stylistic/jsx-quotes": ["error", "prefer-double"],
-			"@stylistic/quotes": ["error", "double", { avoidEscape: true }],
-			"@stylistic/no-mixed-spaces-and-tabs": "error",
-			"@stylistic/arrow-parens": ["error", "as-needed"],
-			"@stylistic/eol-last": ["error", "always"],
-			"@stylistic/no-multi-spaces": "error",
-			"@stylistic/no-trailing-spaces": "error",
-			"@stylistic/no-whitespace-before-property": "error",
-			"@stylistic/semi": ["error", "always"],
-			"@stylistic/semi-style": ["error", "last"],
-			"@stylistic/space-in-parens": ["error", "never"],
-			"@stylistic/block-spacing": ["error", "always"],
-			"@stylistic/object-curly-spacing": ["error", "always"],
-			"@stylistic/spaced-comment": ["error", "always", { markers: ["!"] }],
-			"@stylistic/no-extra-semi": "error",
 
-			// TS Rules
-			"@stylistic/func-call-spacing": ["error", "never"],
-
-			// ESLint Rules
+			// Code Quality Rules
 			yoda: "error",
 			eqeqeq: ["error", "always", { null: "ignore" }],
 			"prefer-destructuring": [
@@ -111,11 +97,12 @@ export default tseslint.config(
 			"prefer-const": "error",
 			"prefer-spread": "error",
 
-			// Plugin rules.
+			// Import sorting
 			"simple-import-sort/imports": "error",
 			"simple-import-sort/exports": "error",
 			"unused-imports/no-unused-imports": "error"
 		}
 	},
+	// Add this LAST to disable any conflicting formatting rules
 	eslintConfigPrettier
 );

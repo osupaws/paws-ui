@@ -81,3 +81,6 @@ error.txt
 # -------------------------------------------------------------------
 # Ignore macOS folder metadata files.
 .DS_Store
+
+# npm pack
+paws-ui*.tgz

@@ -1,7 +1,8 @@
-import ArrowIcon from "@components/Icon/ArrowIcon.vue";
-import FolderIcon from "@components/Icon/FolderIcon.vue";
-import PawsInput from "@components/PawsInput/PawsInput.vue";
 import type { Meta, StoryObj } from "@storybook/vue3";
+
+import ArrowIcon from "@/components/Icon/ArrowIcon.vue";
+import FolderIcon from "@/components/Icon/FolderIcon.vue";
+import PawsInput from "@/components/PawsInput/PawsInput.vue";
 
 const icons = {
 	None: null,
@@ -18,7 +19,7 @@ type PawsInputStoryProps = {
 	buttonText?: string;
 	iconName?: keyof typeof icons;
 	onIconClick?: () => void;
-  title?: string;
+	title?: string;
 };
 
 const meta: Meta<PawsInputStoryProps> = {
@@ -80,10 +81,10 @@ export const Default: Story = {
 };
 
 export const WithTitle: Story = {
-  args: {
-    ...Default.args,
-    title: "Title",
-  },
+	args: {
+		...Default.args,
+		title: "Title",
+	},
 };
 
 export const AdornedWithIcon: Story = {

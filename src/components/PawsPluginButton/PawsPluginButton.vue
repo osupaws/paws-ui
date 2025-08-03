@@ -3,7 +3,7 @@
 		:class="[styles.pawsPluginButton, stateClass]"
 		:disabled="state === 'disabled'"
 	>
-		<slot></slot>
+		<slot />
 	</button>
 </template>
 

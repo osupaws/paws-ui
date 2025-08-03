@@ -1,15 +1,6 @@
-/**
- * Stylesheet for Storybook only!
- */
-
 @font-face {
 	font-family: "Wix Madefor Display";
 	src: url("../assets/fonts/WixMadeforDisplay.ttf") format("truetype");
 	font-weight: 400 800;
 	font-style: normal;
-}
-
-.theme-root {
-	font-family: var(--paws-font-family), sans-serif;
-	color: var(--paws-color-text-primary);
 }

@@ -4,12 +4,7 @@ import { mergeConfig } from "vite";
 
 const config: StorybookConfig = {
 	stories: ["../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-	addons: [
-		"@chromatic-com/storybook",
-		"@storybook/addon-docs",
-		"@storybook/addon-a11y",
-		"@storybook/addon-vitest",
-	],
+	addons: ["@chromatic-com/storybook", "@storybook/addon-docs"],
 	framework: {
 		name: "@storybook/vue3-vite",
 		options: {},
@@ -23,7 +18,6 @@ const config: StorybookConfig = {
 			resolve: {
 				alias: {
 					"@": "/src",
-					"@components": "/src/components",
 				},
 			},
 		});

@@ -4,18 +4,12 @@
 		"composite": true,
 		"baseUrl": "..",
 		"paths": {
-			"@/*": ["src/*"],
-			"@components/*": ["src/components/*"]
+			"@/*": ["src/*"]
 		},
-		"lib": ["ESNext", "DOM", "DOM.Iterable"],
-		"types": ["vitest/globals"]
+		"lib": ["ESNext", "DOM", "DOM.Iterable"]
 	},
 	"include": [
 		"../src/**/*.ts",
-		"../src/**/*.d.ts",
-		"../src/**/*.tsx",
-		"../src/**/*.vue",
-		"./vitest.shims.d.ts"
-	],
-	"exclude": ["../node_modules", "../dist"]
+		"../src/**/*.vue"
+	]
 }

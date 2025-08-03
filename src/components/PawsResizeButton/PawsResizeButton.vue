@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import ArrowIcon from "@components/Icon/ArrowIcon.vue";
 import { computed, ref } from "vue";
+
+import ArrowIcon from "@/components/Icon/ArrowIcon.vue";
 
 import styles from "./PawsResizeButton.module.css";
 

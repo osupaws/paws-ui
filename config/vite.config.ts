@@ -1,49 +1,30 @@
-/// <reference types="vitest/config" />
-// https://vite.dev/config/
-import path from "node:path";
-import { fileURLToPath, URL } from "node:url";
-
-import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import vue from "@vitejs/plugin-vue";
+import path from "path";
 import { defineConfig } from "vite";
-import vueDevTools from "vite-plugin-vue-devtools";
-const dirname =
-	typeof __dirname !== "undefined" ? __dirname : path.dirname(fileURLToPath(import.meta.url));
+import vueDts from "vite-plugin-dts";
 
-// More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-	plugins: [vue(), vueDevTools()],
+	plugins: [vueDts({ rollupTypes: true }), vue()],
 	resolve: {
 		alias: {
-			"@": fileURLToPath(new URL("../src", import.meta.url))
+			"@": path.resolve(__dirname, "../src")
 		}
 	},
-	test: {
-		projects: [
-			{
-				extends: true,
-				plugins: [
-					// The plugin will run tests for the stories defined in your Storybook config
-					// See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
-					storybookTest({
-						configDir: path.join(dirname, "../.storybook")
-					})
-				],
-				test: {
-					name: "storybook",
-					browser: {
-						enabled: true,
-						headless: true,
-						provider: "playwright",
-						instances: [
-							{
-								browser: "chromium"
-							}
-						]
-					},
-					setupFiles: ["../.storybook/vitest.setup.ts"]
+	build: {
+		sourcemap: true,
+		lib: {
+			name: "@paws/ui",
+			entry: path.resolve(__dirname, "../src/index.ts"),
+			formats: ["cjs", "es"],
+			fileName: "index"
+		},
+		rollupOptions: {
+			external: ["vue"],
+			output: {
+				globals: {
+					vue: "Vue"
 				}
 			}
-		]
+		}
 	}
 });

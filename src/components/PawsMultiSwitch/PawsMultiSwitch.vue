@@ -5,7 +5,7 @@
 		<button
 			v-for="option in options"
 			:key="option"
-			:ref="(el) => (optionRefs[option] = el as HTMLButtonElement)"
+			:ref="el => (optionRefs[option] = el as HTMLButtonElement)"
 			:class="[styles.option, { [styles.active]: modelValue === option }]"
 			type="button"
 			@click="selectOption(option)"
@@ -27,7 +27,7 @@ interface MultiSwitchProps {
 }
 
 const props = withDefaults(defineProps<MultiSwitchProps>(), {
-	size: "small",
+	size: "small"
 });
 
 export type { MultiSwitchProps };
@@ -39,7 +39,7 @@ const emit = defineEmits<{
 const switchClass = computed(() => {
 	return {
 		[styles.small]: props.size === "small",
-		[styles.large]: props.size === "large",
+		[styles.large]: props.size === "large"
 	};
 });
 
@@ -72,7 +72,7 @@ const updateHighlighter = (): void => {
 		highlighterStyle.value = {
 			width: `${optionRect.width}px`,
 			height: `${optionRect.height}px`,
-			transform: `translateX(${relativeLeft}px)`,
+			transform: `translateX(${relativeLeft}px)`
 		};
 	}
 };
@@ -82,13 +82,13 @@ watch(
 	() => {
 		updateHighlighter();
 	},
-	{ flush: "post" },
+	{ flush: "post" }
 );
 
 onMounted(() => {
 	if (!props.options.includes(props.modelValue)) {
 		console.warn(
-			`[MultiSwitch] Initial modelValue "${props.modelValue}" is not in the options array. Defaulting to the first option.`,
+			`[MultiSwitch] Initial modelValue "${props.modelValue}" is not in the options array. Defaulting to the first option.`
 		);
 		if (props.options.length > 0) {
 			selectOption(props.options[0]);

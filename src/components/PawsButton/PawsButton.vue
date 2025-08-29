@@ -11,22 +11,22 @@ import styles from "./PawsButton.module.css";
 const props = defineProps({
 	label: {
 		type: String,
-		required: true,
+		required: true
 	},
 	variant: {
 		type: String,
-		default: "primary",
+		default: "primary"
 	},
 	size: {
 		type: String,
-		default: "normal",
-	},
+		default: "normal"
+	}
 });
 const buttonClass = computed(() => {
 	return {
 		[styles.primary]: props.variant === "primary",
 		[styles.secondary]: props.variant === "secondary",
-		[styles.small]: props.size === "small",
+		[styles.small]: props.size === "small"
 	};
 });
 </script>

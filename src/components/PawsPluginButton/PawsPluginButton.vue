@@ -15,15 +15,15 @@ import styles from "./PawsPluginButton.module.css";
 const props = withDefaults(
 	defineProps<{ state?: "default" | "active" | "disabled" | "processing" }>(),
 	{
-		state: "default",
-	},
+		state: "default"
+	}
 );
 
 const stateClass = computed(() => {
 	return {
 		[styles.active]: props.state === "active",
 		[styles.disabled]: props.state === "disabled",
-		[styles.processing]: props.state === "processing",
+		[styles.processing]: props.state === "processing"
 	};
 });
 </script>

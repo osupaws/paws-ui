@@ -10,13 +10,13 @@ const meta = {
 		label: { control: "text" },
 		variant: {
 			control: { type: "radio" },
-			options: ["primary", "secondary"],
+			options: ["primary", "secondary"]
 		},
 		size: {
 			control: { type: "radio" },
-			options: ["normal", "small"],
-		},
-	},
+			options: ["normal", "small"]
+		}
+	}
 } satisfies Meta<typeof PawsButton>;
 
 export default meta;
@@ -25,21 +25,21 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
 	args: {
 		label: "Primary Button",
-		variant: "primary",
-	},
+		variant: "primary"
+	}
 };
 
 export const Secondary: Story = {
 	args: {
 		label: "Secondary Button",
-		variant: "secondary",
-	},
+		variant: "secondary"
+	}
 };
 
 export const Small: Story = {
 	args: {
 		label: "Small Button",
 		variant: "primary",
-		size: "small",
-	},
+		size: "small"
+	}
 };

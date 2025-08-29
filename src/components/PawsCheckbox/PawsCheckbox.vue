@@ -10,8 +10,8 @@ defineProps<{
 
 <template>
 	<label :class="styles.pawsCheckbox">
-		<input type="checkbox" v-model="model" :class="styles.input" />
-		<span :class="styles.checkbox"></span>
+		<input v-model="model" type="checkbox" :class="styles.input" />
+		<span :class="styles.checkbox" />
 		<span :class="styles.label">{{ label }}</span>
 	</label>
 </template>

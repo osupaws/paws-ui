@@ -4,7 +4,7 @@ import type { BaseIcon } from "@/components/Icon/icon";
 const {
 	color = "currentColor",
 	width = "20px",
-	height = "20px",
+	height = "20px"
 } = defineProps<BaseIcon>();
 </script>
 

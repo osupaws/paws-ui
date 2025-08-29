@@ -34,7 +34,7 @@ const selectOption = (option: string) => {
 	<div
 		:class="[
 			styles.dropdownWrapper,
-			{ [styles.disabled]: disabled, [styles.open]: isOpen },
+			{ [styles.disabled]: disabled, [styles.open]: isOpen }
 		]"
 	>
 		<button

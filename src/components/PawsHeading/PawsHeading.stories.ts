@@ -9,34 +9,34 @@ const meta = {
 	argTypes: {
 		size: {
 			control: "select",
-			options: ["sm", "lg", "xl"],
+			options: ["sm", "lg", "xl"]
 		},
 		fontWeight: {
-			control: "text",
+			control: "text"
 		},
 		align: {
 			control: "select",
-			options: ["left", "center"],
-		},
+			options: ["left", "center"]
+		}
 	},
 	args: {
 		size: "sm",
 		fontWeight: "500",
-		align: "left",
+		align: "left"
 	},
-	render: (args) => ({
+	render: args => ({
 		components: { PawsHeading },
 		setup() {
 			return {
-				args,
+				args
 			};
 		},
 		template: `
       <PawsHeading :size="args.size" :font-weight="args.fontWeight">
         {{ args.default }}
       </PawsHeading>
-    `,
-	}),
+    `
+	})
 } satisfies Meta<typeof PawsHeading>;
 
 type Story = StoryObj<typeof meta>;
@@ -45,53 +45,53 @@ export default meta;
 
 export const Default: Story = {
 	args: {
-		default: "Heading",
-	},
+		default: "Heading"
+	}
 };
 
 export const SizeSm: Story = {
 	name: "Size: sm",
 	args: {
-		default: "Heading",
-	},
+		default: "Heading"
+	}
 };
 
 export const SizeLg: Story = {
 	name: "Size: lg",
 	args: {
 		default: "Heading",
-		size: "lg",
-	},
+		size: "lg"
+	}
 };
 
 export const SizeXl: Story = {
 	name: "Size: xl",
 	args: {
 		default: "Heading",
-		size: "xl",
-	},
+		size: "xl"
+	}
 };
 
 export const fontWeightMedium: Story = {
 	name: "Font Weight: medium",
 	args: {
 		default: "Heading",
-		fontWeight: "500",
-	},
+		fontWeight: "500"
+	}
 };
 
 export const fontWeightSemibold: Story = {
 	name: "Font Weight: semibold",
 	args: {
 		default: "Heading",
-		fontWeight: "600",
-	},
+		fontWeight: "600"
+	}
 };
 
 export const fontWeightBold: Story = {
 	name: "Font Weight: bold",
 	args: {
 		default: "Heading",
-		fontWeight: "700",
-	},
+		fontWeight: "700"
+	}
 };

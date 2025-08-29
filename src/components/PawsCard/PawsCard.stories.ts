@@ -10,17 +10,17 @@ const meta = {
 	argTypes: {
 		appearance: {
 			control: "select",
-			options: ["dark", "light"],
-		},
+			options: ["dark", "light"]
+		}
 	},
 	args: {
-		appearance: "dark",
+		appearance: "dark"
 	},
-	render: (args) => ({
+	render: args => ({
 		components: { PawsCard, PawsHeading },
 		setup() {
 			return {
-				args,
+				args
 			};
 		},
 		template: `
@@ -35,8 +35,8 @@ const meta = {
 					{{ args.default }}
 				</PawsCard>
 			</div>
-		`,
-	}),
+		`
+	})
 } satisfies Meta<typeof PawsCard>;
 
 export default meta;
@@ -46,6 +46,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		default: "Card Content",
-		appearance: "dark",
-	},
+		appearance: "dark"
+	}
 };

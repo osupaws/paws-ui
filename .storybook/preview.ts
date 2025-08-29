@@ -10,9 +10,9 @@ const preview: Preview = {
 			// Use the 'theme' global to apply the correct class
 			const theme = context.globals.theme || "light";
 			return {
-				template: `<div class="paws--${theme}-theme theme-root" style="padding: 20px; background-color: var(--paws-color-bg-dark)"><story/></div>`,
+				template: `<div class="paws--${theme}-theme theme-root" style="padding: 20px; background-color: var(--paws-color-bg-dark)"><story/></div>`
 			};
-		},
+		}
 	],
 	globalTypes: {
 		theme: {
@@ -22,10 +22,10 @@ const preview: Preview = {
 			toolbar: {
 				icon: "mirror",
 				items: ["light", "dark"],
-				showName: true,
-			},
-		},
-	},
+				showName: true
+			}
+		}
+	}
 };
 
 export default preview;

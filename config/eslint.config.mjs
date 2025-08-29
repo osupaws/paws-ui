@@ -5,6 +5,17 @@ import simpleImportSort from "eslint-plugin-simple-import-sort";
 import unusedImports from "eslint-plugin-unused-imports";
 import eslintPluginPrettier from "eslint-plugin-prettier";
 import eslintConfigPrettier from "eslint-config-prettier";
+import fs from "fs";
+import path from "path";
+
+// Load Prettier options from config/.prettierrc so ESLint's prettier rule uses the same settings
+const prettierConfigPath = path.resolve(process.cwd(), "config/.prettierrc");
+let prettierOptions = {};
+
+try {
+	const raw = fs.readFileSync(prettierConfigPath, "utf8");
+	prettierOptions = JSON.parse(raw);
+} catch {}
 
 export default tseslint.config(
 	{
@@ -39,11 +50,11 @@ export default tseslint.config(
 		plugins: {
 			"simple-import-sort": simpleImportSort,
 			"unused-imports": unusedImports,
-			"prettier": eslintPluginPrettier
+			prettier: eslintPluginPrettier
 		},
 		rules: {
 			// Prettier rule to show formatting errors
-			"prettier/prettier": "error",
+			"prettier/prettier": ["error", prettierOptions],
 
 			// Vue-specific rules (non-stylistic)
 			"@typescript-eslint/no-empty-object-type": "off",
@@ -103,6 +114,6 @@ export default tseslint.config(
 			"unused-imports/no-unused-imports": "error"
 		}
 	},
-	// Add this LAST to disable any conflicting formatting rules
+	// Always keep eslint-config-prettier last to turn off conflicting stylistic rules
 	eslintConfigPrettier
 );

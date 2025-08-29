@@ -34,5 +34,5 @@ export {
 	PawsInput,
 	PawsMultiSwitch,
 	PawsPluginButton,
-	PawsResizeButton,
+	PawsResizeButton
 };

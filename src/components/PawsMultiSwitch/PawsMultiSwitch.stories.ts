@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import { ref, watch } from "vue";
 
 import PawsMultiSwitch, {
-	type MultiSwitchProps,
+	type MultiSwitchProps
 } from "@/components/PawsMultiSwitch/PawsMultiSwitch.vue";
 
 const meta: Meta<MultiSwitchProps> = {
@@ -12,8 +12,8 @@ const meta: Meta<MultiSwitchProps> = {
 	argTypes: {
 		size: {
 			control: { type: "radio" },
-			options: ["small", "large"],
-		},
+			options: ["small", "large"]
+		}
 	},
 	render: (args, { argTypes }) => ({
 		components: { PawsMultiSwitch },
@@ -22,13 +22,13 @@ const meta: Meta<MultiSwitchProps> = {
 
 			watch(
 				() => args.modelValue,
-				(newValue) => {
+				newValue => {
 					selectedOption.value = newValue;
-				},
+				}
 			);
 			watch(
 				() => args.options,
-				(newOptions) => {
+				newOptions => {
 					if (argTypes.modelValue.options) {
 						argTypes.modelValue.options = newOptions;
 					}
@@ -36,14 +36,14 @@ const meta: Meta<MultiSwitchProps> = {
 						selectedOption.value = newOptions[0];
 					}
 				},
-				{ immediate: true, deep: true },
+				{ immediate: true, deep: true }
 			);
 
 			return { args, selectedOption };
 		},
 		template:
-			'<PawsMultiSwitch :options="args.options" :size="args.size" v-model="selectedOption" />',
-	}),
+			'<PawsMultiSwitch :options="args.options" :size="args.size" v-model="selectedOption" />'
+	})
 } satisfies Meta<typeof PawsMultiSwitch>;
 
 export default meta;
@@ -53,13 +53,13 @@ export const Small: Story = {
 	args: {
 		options: ["settings", "window"],
 		modelValue: "window",
-		size: "small",
-	},
+		size: "small"
+	}
 };
 
 export const Large: Story = {
 	args: {
 		...Small.args,
-		size: "large",
-	},
+		size: "large"
+	}
 };

@@ -7,7 +7,7 @@ import PawsDropdown from "@/components/PawsDropdown/PawsDropdown.vue";
 const icons = {
 	None: null,
 	Folder: FolderIcon,
-	Arrow: ArrowIcon,
+	Arrow: ArrowIcon
 };
 
 // Define a type for the story's args that includes our custom iconName control
@@ -34,11 +34,11 @@ const meta: Meta<PawsDropdownStoryProps> = {
 			options: Object.keys(icons),
 			description: "Select an icon to display.",
 			table: {
-				category: "Slots",
-			},
-		},
+				category: "Slots"
+			}
+		}
 	},
-	render: (args) => ({
+	render: args => ({
 		components: { PawsDropdown, ArrowIcon, FolderIcon },
 		setup() {
 			const { iconName, ...props } = args;
@@ -54,14 +54,14 @@ const meta: Meta<PawsDropdownStoryProps> = {
           <component v-else :is="selectedIcon" />
         </template>
       </PawsDropdown>
-    `,
+    `
 	}),
 	args: {
 		placeholder: "Select an option",
 		disabled: false,
 		options: ["Option 1", "Option 2", "Option 3"],
-		iconName: "None",
-	},
+		iconName: "None"
+	}
 };
 
 export default meta;
@@ -69,13 +69,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		modelValue: "Option 1",
-	},
+		modelValue: "Option 1"
+	}
 };
 
 export const WithIcon: Story = {
 	args: {
 		modelValue: "Option 1",
-		iconName: "Folder",
-	},
+		iconName: "Folder"
+	}
 };

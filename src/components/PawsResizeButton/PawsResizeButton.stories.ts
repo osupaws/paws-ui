@@ -10,16 +10,16 @@ const meta: Meta<typeof PawsResizeButton> = {
 		initialState: {
 			control: { type: "radio" },
 			options: ["compact", "wide"],
-			description: "The initial state of the button",
-		},
+			description: "The initial state of the button"
+		}
 	},
 	parameters: {
 		docs: {
 			description: {
-				component: "A button to resize a window, with compact and wide states.",
-			},
-		},
-	},
+				component: "A button to resize a window, with compact and wide states."
+			}
+		}
+	}
 };
 
 export default meta;
@@ -27,12 +27,12 @@ type Story = StoryObj<typeof PawsResizeButton>;
 
 export const Compact: Story = {
 	args: {
-		initialState: "compact",
-	},
+		initialState: "compact"
+	}
 };
 
 export const Wide: Story = {
 	args: {
-		initialState: "wide",
-	},
+		initialState: "wide"
+	}
 };

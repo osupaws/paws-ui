@@ -9,7 +9,7 @@ export interface PawsCardProps {
 
 const props = withDefaults(defineProps<PawsCardProps>(), {
 	appearance: "dark",
-	headingAlign: "left",
+	headingAlign: "left"
 });
 
 const slots = useSlots();
@@ -18,7 +18,7 @@ const hasHeading = !!slots.heading;
 
 const appearance = computed(() => ({
 	[styles.appearanceDark]: props.appearance === "dark",
-	[styles.appearanceLight]: props.appearance === "light",
+	[styles.appearanceLight]: props.appearance === "light"
 }));
 </script>
 
@@ -29,7 +29,7 @@ const appearance = computed(() => ({
 		<div
 			:class="[
 				styles.cardContent,
-				{ [styles.cardContentNoHeading]: !hasHeading },
+				{ [styles.cardContentNoHeading]: !hasHeading }
 			]"
 		>
 			<slot />

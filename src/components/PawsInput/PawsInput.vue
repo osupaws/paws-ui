@@ -36,14 +36,14 @@ const onIconClick = (): void => {
 		<div
 			:class="[
 				styles.inputWrapper,
-				{ [styles.disabled]: disabled, [styles.focused]: isFocused },
+				{ [styles.disabled]: disabled, [styles.focused]: isFocused }
 			]"
 		>
 			<button
 				v-if="hasIconSlot"
 				:class="[
 					styles.adornmentButton,
-					{ [styles.nonClickable]: !isIconClickable },
+					{ [styles.nonClickable]: !isIconClickable }
 				]"
 				:disabled="disabled"
 				@click="onIconClick"

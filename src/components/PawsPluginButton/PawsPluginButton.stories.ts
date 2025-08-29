@@ -9,14 +9,14 @@ const meta = {
 	argTypes: {
 		state: {
 			control: { type: "radio" },
-			options: ["default", "active", "disabled", "processing"],
+			options: ["default", "active", "disabled", "processing"]
 		},
 		default: {
 			control: "text",
-			description: "The content of the button, e.g., text or an icon.",
-		},
+			description: "The content of the button, e.g., text or an icon."
+		}
 	},
-	render: (args) => ({
+	render: args => ({
 		components: { PawsPluginButton },
 		setup() {
 			return { args };
@@ -25,8 +25,8 @@ const meta = {
       <PawsPluginButton :state="args.state">
         {{ args.default }}
       </PawsPluginButton>
-    `,
-	}),
+    `
+	})
 } satisfies Meta<typeof PawsPluginButton>;
 
 export default meta;
@@ -35,27 +35,27 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		default: "My Plugin",
-		state: "default",
-	},
+		state: "default"
+	}
 };
 
 export const Active: Story = {
 	args: {
 		...Default.args,
-		state: "active",
-	},
+		state: "active"
+	}
 };
 
 export const Processing: Story = {
 	args: {
 		...Default.args,
-		state: "processing",
-	},
+		state: "processing"
+	}
 };
 
 export const Disabled: Story = {
 	args: {
 		...Default.args,
-		state: "disabled",
-	},
+		state: "disabled"
+	}
 };

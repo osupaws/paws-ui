@@ -12,17 +12,17 @@ export interface PawsHeadingProps {
 const props = withDefaults(defineProps<PawsHeadingProps>(), {
 	size: "sm",
 	fontWeight: "medium",
-	align: "left",
+	align: "left"
 });
 
 const size = computed(() => ({
 	[styles.sizeSm]: props.size === "sm",
 	[styles.sizeLg]: props.size === "lg",
-	[styles.sizeXl]: props.size === "xl",
+	[styles.sizeXl]: props.size === "xl"
 }));
 const align = computed(() => ({
 	[styles.alignLeft]: props.align === "left",
-	[styles.alignCenter]: props.align === "center",
+	[styles.alignCenter]: props.align === "center"
 }));
 </script>
 

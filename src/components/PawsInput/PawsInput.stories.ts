@@ -7,7 +7,7 @@ import PawsInput from "@/components/PawsInput/PawsInput.vue";
 const icons = {
 	None: null,
 	Folder: FolderIcon,
-	Arrow: ArrowIcon,
+	Arrow: ArrowIcon
 };
 
 // Define a type for the story's args that includes our custom iconName control
@@ -38,12 +38,12 @@ const meta: Meta<PawsInputStoryProps> = {
 			options: Object.keys(icons),
 			description: "Select an icon to display.",
 			table: {
-				category: "Slots",
-			},
+				category: "Slots"
+			}
 		},
-		onIconClick: { action: "icon-clicked" },
+		onIconClick: { action: "icon-clicked" }
 	},
-	render: (args) => ({
+	render: args => ({
 		components: { PawsInput, ArrowIcon },
 		setup() {
 			const { iconName, ...props } = args;
@@ -59,7 +59,7 @@ const meta: Meta<PawsInputStoryProps> = {
           <component v-else :is="selectedIcon" />
         </template>
       </PawsInput>
-    `,
+    `
 	}),
 	args: {
 		modelValue: "",
@@ -67,8 +67,8 @@ const meta: Meta<PawsInputStoryProps> = {
 		disabled: false,
 		isIconClickable: false,
 		buttonText: "",
-		iconName: "None",
-	},
+		iconName: "None"
+	}
 };
 
 export default meta;
@@ -76,22 +76,22 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		placeholder: "Enter text here...",
-	},
+		placeholder: "Enter text here..."
+	}
 };
 
 export const WithTitle: Story = {
 	args: {
 		...Default.args,
-		title: "Title",
-	},
+		title: "Title"
+	}
 };
 
 export const AdornedWithIcon: Story = {
 	args: {
 		placeholder: "Path to folder...",
-		iconName: "Folder",
-	},
+		iconName: "Folder"
+	}
 };
 
 export const WithButton: Story = {
@@ -99,8 +99,8 @@ export const WithButton: Story = {
 		placeholder: "Path to file...",
 		iconName: "Folder",
 		isIconClickable: true,
-		buttonText: "Browse",
-	},
+		buttonText: "Browse"
+	}
 };
 
 export const Disabled: Story = {
@@ -110,6 +110,6 @@ export const Disabled: Story = {
 		disabled: true,
 		iconName: "Folder",
 		isIconClickable: true,
-		buttonText: "Browse",
-	},
+		buttonText: "Browse"
+	}
 };

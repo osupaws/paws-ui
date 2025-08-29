@@ -7,20 +7,20 @@ const config: StorybookConfig = {
 	addons: ["@chromatic-com/storybook", "@storybook/addon-docs"],
 	framework: {
 		name: "@storybook/vue3-vite",
-		options: {},
+		options: {}
 	},
 	core: {
-		disableWhatsNewNotifications: true,
+		disableWhatsNewNotifications: true
 	},
-	viteFinal: (config) => {
+	viteFinal: config => {
 		return mergeConfig(config, {
 			plugins: [vue()],
 			resolve: {
 				alias: {
-					"@": "/src",
-				},
-			},
+					"@": "/src"
+				}
+			}
 		});
-	},
+	}
 };
 export default config;

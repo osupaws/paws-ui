@@ -8,8 +8,8 @@ import styles from "./PawsResizeButton.module.css";
 const props = defineProps({
 	initialState: {
 		type: String,
-		default: "compact",
-	},
+		default: "compact"
+	}
 });
 
 const buttonState = ref(props.initialState);
@@ -20,7 +20,7 @@ const toggleState = (): void => {
 
 const arrowClass = computed(() => ({
 	[styles.arrow]: true,
-	[styles.wide]: buttonState.value === "wide",
+	[styles.wide]: buttonState.value === "wide"
 }));
 </script>
 

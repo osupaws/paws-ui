@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import PawsHeading from "@/components/PawsHeading/PawsHeading.vue";
 
 const meta = {
-	title: "Paws UI Kit/Heading",
+	title: "Paws UI/Heading",
 	component: PawsHeading,
 	tags: ["autodocs"],
 	argTypes: {

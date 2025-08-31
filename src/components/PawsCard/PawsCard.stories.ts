@@ -4,7 +4,7 @@ import PawsCard from "@/components/PawsCard/PawsCard.vue";
 import PawsHeading from "@/components/PawsHeading/PawsHeading.vue";
 
 const meta = {
-	title: "Paws UI Kit/Card",
+	title: "Paws UI/Card",
 	component: PawsCard,
 	tags: ["autodocs"],
 	argTypes: {
@@ -26,7 +26,7 @@ const meta = {
 		template: `
 			<div style="max-width: 420px">
 				<PawsCard :appearance="args.appearance">
-					<template v-slot:heading>
+					<template #heading>
 						<PawsHeading size="xl" font-weight="semibold">
 							Card
 						</PawsHeading>

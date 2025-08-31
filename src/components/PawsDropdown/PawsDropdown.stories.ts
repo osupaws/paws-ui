@@ -20,7 +20,7 @@ type PawsDropdownStoryProps = {
 };
 
 const meta: Meta<PawsDropdownStoryProps> = {
-	title: "Paws UI Kit/Dropdown",
+	title: "Paws UI/Dropdown",
 	component: PawsDropdown,
 	tags: ["autodocs"],
 	argTypes: {

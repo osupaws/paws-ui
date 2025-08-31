@@ -24,7 +24,26 @@
 }
 
 .label {
-	font-size: 20px;
 	font-weight: 520;
 	color: var(--paws-color-text-primary);
+}
+
+.labelFontSizeXs {
+	font-size: 11px;
+}
+
+.labelFontSizeSm {
+	font-size: 12px;
+}
+
+.labelFontSizeMd {
+	font-size: 14px;
+}
+
+.labelFontSizeLg {
+	font-size: 16px;
+}
+
+.labelFontSizeXl {
+	font-size: 20px;
 }

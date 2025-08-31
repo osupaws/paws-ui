@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import PawsField from "@/components/PawsField/PawsField.vue";
 
 const meta = {
-	title: "Paws UI Kit/Field",
+	title: "Paws UI/Field",
 	component: PawsField,
 	tags: ["autodocs"],
 	render: args => ({

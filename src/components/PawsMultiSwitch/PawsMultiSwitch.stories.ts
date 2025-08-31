@@ -6,7 +6,7 @@ import PawsMultiSwitch, {
 } from "@/components/PawsMultiSwitch/PawsMultiSwitch.vue";
 
 const meta: Meta<MultiSwitchProps> = {
-	title: "Paws UI Kit/Multi Switch",
+	title: "Paws UI/Multi Switch",
 	component: PawsMultiSwitch,
 	tags: ["autodocs"],
 	argTypes: {

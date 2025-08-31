@@ -1,4 +1,4 @@
-# Paws UI Kit
+# Paws UI
 
 The official Vue 3 component library for the Paws application.
 

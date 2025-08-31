@@ -23,7 +23,7 @@ type PawsInputStoryProps = {
 };
 
 const meta: Meta<PawsInputStoryProps> = {
-	title: "Paws UI Kit/Input",
+	title: "Paws UI/Input",
 	component: PawsInput,
 	tags: ["autodocs"],
 	argTypes: {

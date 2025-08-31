@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import PawsButton from "@/components/PawsButton/PawsButton.vue";
 
 const meta = {
-	title: "Paws UI Kit/Button",
+	title: "Paws UI/Button",
 	component: PawsButton,
 	tags: ["autodocs"],
 	argTypes: {

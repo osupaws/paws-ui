@@ -1,5 +1,6 @@
 .field {
 	font-family: var(--paws-font-family);
+	color: var(--paws-color-text-primary);
 }
 
 .field:not(:last-child) {

@@ -1,4 +1,5 @@
 .pawsCheckbox {
+	font-family: var(--paws-font-family);
 	display: flex;
 	align-items: center;
 	cursor: pointer;
@@ -24,8 +25,9 @@
 }
 
 .label {
-	font-weight: 520;
+	font-weight: 600;
 	color: var(--paws-color-text-primary);
+	position: relative;
 }
 
 .labelFontSizeXs {

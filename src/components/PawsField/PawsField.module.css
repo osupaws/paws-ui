@@ -1,3 +1,7 @@
+.field {
+	font-family: var(--paws-font-family);
+}
+
 .field:not(:last-child) {
 	margin-bottom: 8px;
 }

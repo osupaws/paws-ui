@@ -1,5 +1,5 @@
 {
-	"name": "@paws/ui",
+	"name": "@osupaws/paws-ui",
 	"version": "1.0.0",
 	"description": "Paws UI component library",
 	"private": false,

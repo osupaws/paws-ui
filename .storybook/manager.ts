@@ -1,19 +1,18 @@
-import { GLOBALS_UPDATED } from "@storybook/core-events";
-import { addons } from "@storybook/manager-api";
-import { themes } from "@storybook/theming";
+import { GLOBALS_UPDATED } from "storybook/internal/core-events";
+import { addons } from "storybook/manager-api";
+import { themes } from "storybook/theming";
 
-// Set the initial theme
+// Устанавливаем начальную тему интерфейса
 addons.setConfig({
 	theme: themes.light
 });
 
 const channel = addons.getChannel();
 
-// Listen for the official event when globals are updated
-channel.on(GLOBALS_UPDATED, event => {
+// Слушаем событие изменения глобальных параметров (темы)
+channel.on(GLOBALS_UPDATED, (event: { globals: { theme?: string } }) => {
 	const { theme } = event.globals;
 	if (theme) {
-		// Update the Storybook UI theme
 		addons.setConfig({
 			theme: theme === "dark" ? themes.dark : themes.light
 		});

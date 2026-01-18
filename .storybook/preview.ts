@@ -2,7 +2,18 @@ import "../src/css/fonts.css";
 import "../src/css/themes/paws-light.css";
 import "../src/css/themes/paws-dark.css";
 
+import { setup } from "@storybook/vue3";
 import type { Preview } from "@storybook/vue3-vite";
+
+import PawsTooltip from "../src/components/PawsTooltip/PawsTooltip.vue";
+import { vPawsTooltip } from "../src/directives/vTooltip";
+import { setPawsUiConfig } from "../src/services/TooltipService";
+
+// Register global components and directives for Storybook
+setup(app => {
+	app.component("PawsTooltip", PawsTooltip);
+	app.directive("paws-tooltip", vPawsTooltip);
+});
 
 const preview: Preview = {
 	parameters: {
@@ -16,16 +27,18 @@ const preview: Preview = {
 			test: "todo"
 		},
 		backgrounds: {
-			disable: true // Disable default backgrounds to avoid conflict with our theme system
+			disable: true
 		}
 	},
 	decorators: [
 		(_, context) => {
 			const theme = context.globals.theme || "light";
+			setPawsUiConfig({ theme: theme as "light" | "dark" });
 			return {
 				template: `
-          <div class="paws--${theme}-theme" style="padding: 2.5rem; min-height: 100vh; background-color: var(--paws-color-bg-dark); color: var(--paws-color-fg-primary);">
+          <div class="paws--${theme}-theme" style="padding: 2.5rem; min-height: 100vh; background-color: var(--paws-color-bg-dark); color: var(--paws-color-text-primary);">
             <story/>
+            <PawsTooltip />
           </div>
         `
 			};

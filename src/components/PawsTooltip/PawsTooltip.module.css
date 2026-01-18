@@ -1,0 +1,24 @@
+.tooltip {
+	position: fixed;
+	z-index: 9999;
+	padding: 4px 8px;
+	background-color: var(--paws-color-bg-darkest);
+	color: var(--paws-color-text-primary);
+	border: 1px solid var(--paws-color-bg-lighter);
+	border-radius: 4px;
+	font-family: "Wix Madefor Display", sans-serif;
+	font-weight: 500;
+	font-size: 11px;
+	pointer-events: none;
+	white-space: pre-wrap;
+	max-width: 200px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bottom {
+	transform: translateX(-50%);
+}
+
+.top {
+	transform: translateX(-50%) translateY(-100%);
+}

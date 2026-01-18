@@ -1,34 +1,40 @@
 # Paws UI
 
-The official Vue 3 component library for the Paws application.
+Official component library for the Paws ecosystem. Built with Vue 3 and TypeScript.
 
-This project uses **Storybook** as the primary development environment for building and testing components in isolation.
+## Documentation Navigation
 
-## Quick Start
+- [Documentation Index](./docs/index.md)
+- [Quick Start Guide](./docs/getting-started.md)
+- [Theming and Layers](./docs/theming.md)
+- [Component API Reference](./docs/components.md)
 
-1.  **Clone the repository:**
+## Development Requirements
 
-    ```bash
-    git clone https://github.com/shsh-x/Paws-UI-Kit.git
-    cd Paws-UI-Kit
-    ```
+- **Node.js**: >= 22.17
+- **Package Manager**: pnpm
 
-2.  **Install dependencies:**
+## Building Locally
 
-    ```bash
-    npm install
-    ```
+To contribute or create a modified version of the library:
 
-3.  **Run the Storybook server:**
-    ```bash
-    npm run storybook
-    ```
+```bash
+# Install dependencies
+pnpm install
 
-This will launch the Storybook interface in your browser. All component development happens here.
+# Run internal testing environment
+pnpm storybook
 
-## Contributing
+# Build distribution bundle
+pnpm build
+```
 
-To add a new component:
+## Summary of Tech
 
-1.  Create your `.vue` component file in `src/components/`.
-2.  Create a corresponding `.stories.js` file for it in `src/stories/` to make it appear in Storybook.
+- **Core**: Vue 3 (Composition API)
+- **Styling**: CSS Modules + Cascade Layers
+- **Build**: Vite + vue-tsc
+
+---
+
+Paws Team

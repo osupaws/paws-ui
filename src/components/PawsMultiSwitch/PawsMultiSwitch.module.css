@@ -1,6 +1,7 @@
 .pawsMultiSwitch {
 	display: inline-flex;
 	align-items: center;
+	align-self: flex-start;
 	position: relative;
 	box-sizing: border-box;
 	user-select: none;

@@ -5,12 +5,29 @@ import "../src/css/themes/paws-dark.css";
 import type { Preview } from "@storybook/vue3-vite";
 
 const preview: Preview = {
+	parameters: {
+		controls: {
+			matchers: {
+				color: /(background|color)$/i,
+				date: /Date$/i
+			}
+		},
+		a11y: {
+			test: "todo"
+		},
+		backgrounds: {
+			disable: true // Disable default backgrounds to avoid conflict with our theme system
+		}
+	},
 	decorators: [
 		(_, context) => {
-			// Use the 'theme' global to apply the correct class
 			const theme = context.globals.theme || "light";
 			return {
-				template: `<div class="paws--${theme}-theme theme-root" style="padding: 20px; background-color: var(--paws-color-bg-dark)"><story/></div>`
+				template: `
+          <div class="paws--${theme}-theme" style="padding: 2.5rem; min-height: 100vh; background-color: var(--paws-color-bg-dark); color: var(--paws-color-fg-primary);">
+            <story/>
+          </div>
+        `
 			};
 		}
 	],
@@ -21,8 +38,12 @@ const preview: Preview = {
 			defaultValue: "light",
 			toolbar: {
 				icon: "mirror",
-				items: ["light", "dark"],
-				showName: true
+				items: [
+					{ value: "light", left: "☀️", title: "Light" },
+					{ value: "dark", left: "🌙", title: "Dark" }
+				],
+				showName: true,
+				dynamicTitle: true
 			}
 		}
 	}

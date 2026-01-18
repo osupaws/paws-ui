@@ -1,6 +1,7 @@
 .card {
 	padding: 2px 16px 24px;
 	border-radius: 16px;
+	align-self: flex-start;
 }
 
 .cardTitle {

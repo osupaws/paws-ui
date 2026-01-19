@@ -10,13 +10,14 @@ const icons = {
 	Arrow: ArrowIcon
 };
 
-// Define a type for the story's args that includes our custom iconName control
 type PawsDropdownStoryProps = {
 	modelValue?: string;
 	placeholder?: string;
 	disabled?: boolean;
 	options?: string[];
 	iconName?: keyof typeof icons;
+	label?: string;
+	tooltip?: string;
 };
 
 const meta: Meta<PawsDropdownStoryProps> = {
@@ -28,14 +29,14 @@ const meta: Meta<PawsDropdownStoryProps> = {
 		placeholder: { control: "text" },
 		disabled: { control: "boolean" },
 		options: { control: "object" },
+		label: { control: "text" },
+		tooltip: { control: "text" },
 		iconName: {
 			name: "icon",
 			control: { type: "select" },
 			options: Object.keys(icons),
-			description: "Select an icon to display.",
-			table: {
-				category: "Slots"
-			}
+			description: "Select an icon to display in the left area.",
+			table: { category: "Slots" }
 		}
 	},
 	render: args => ({
@@ -43,15 +44,12 @@ const meta: Meta<PawsDropdownStoryProps> = {
 		setup() {
 			const { iconName, ...props } = args;
 			const selectedIcon = icons[iconName || "None"];
-			const isComponent =
-				typeof selectedIcon !== "string" && selectedIcon !== null;
-			return { props, selectedIcon, isComponent };
+			return { props, selectedIcon };
 		},
 		template: `
       <PawsDropdown v-bind="props">
         <template #icon v-if="selectedIcon">
-          <div v-if="!isComponent" v-html="selectedIcon"></div>
-          <component v-else :is="selectedIcon" />
+          <component :is="selectedIcon" />
         </template>
       </PawsDropdown>
     `
@@ -60,7 +58,9 @@ const meta: Meta<PawsDropdownStoryProps> = {
 		placeholder: "Select an option",
 		disabled: false,
 		options: ["Option 1", "Option 2", "Option 3"],
-		iconName: "None"
+		iconName: "None",
+		label: "",
+		tooltip: ""
 	}
 };
 
@@ -73,9 +73,31 @@ export const Default: Story = {
 	}
 };
 
-export const WithIcon: Story = {
+export const WithLabel: Story = {
 	args: {
-		modelValue: "Option 1",
-		iconName: "Folder"
+		label: "Ruleset",
+		modelValue: "Option 1"
+	}
+};
+
+export const WithIconAndLabel: Story = {
+	args: {
+		label: "Asset",
+		iconName: "Folder",
+		modelValue: "Skins"
+	}
+};
+
+export const WithTooltip: Story = {
+	args: {
+		tooltip: "This is a dropdown hint",
+		modelValue: "Option 1"
+	}
+};
+
+export const Disabled: Story = {
+	args: {
+		disabled: true,
+		modelValue: "Disabled Value"
 	}
 };

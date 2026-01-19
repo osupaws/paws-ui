@@ -1,34 +1,38 @@
 <script setup lang="ts">
-import { computed } from "vue";
-
+import { vPawsTooltip } from "../../directives/vTooltip";
 import styles from "./PawsCheckbox.module.css";
 
 export interface PawsCheckboxProps {
 	label: string;
-	labelFontSize?: "xs" | "sm" | "md" | "lg" | "xl";
+	tooltip?: string;
+	disabled?: boolean;
 }
 
 const model = defineModel<boolean>({
 	default: false
 });
 
-const { labelFontSize } = defineProps<PawsCheckboxProps>();
-
-const labelFontSizeComputed = computed(() => ({
-	[styles.labelFontSizeMd]: labelFontSize === undefined,
-	[styles.labelFontSizeXs]: labelFontSize === "xs",
-	[styles.labelFontSizeSm]: labelFontSize === "sm",
-	[styles.labelFontSizeMd]: labelFontSize === "md",
-	[styles.labelFontSizeLg]: labelFontSize === "lg",
-	[styles.labelFontSizeXl]: labelFontSize === "xl"
-}));
+withDefaults(defineProps<PawsCheckboxProps>(), {
+	tooltip: "",
+	disabled: false
+});
 </script>
 
 <template>
-	<label :class="styles.pawsCheckbox">
-		<input :checked="model" type="checkbox" :class="styles.input" />
-
-		<span :class="styles.checkbox" />
-		<span :class="[styles.label, labelFontSizeComputed]">{{ label }}</span>
+	<label
+		v-paws-tooltip="tooltip"
+		:class="[
+			styles.pawsCheckbox,
+			{ [styles.checked]: model, [styles.disabled]: disabled }
+		]"
+	>
+		<input
+			v-model="model"
+			type="checkbox"
+			:class="styles.input"
+			:disabled="disabled"
+		/>
+		<div :class="styles.square" />
+		<span :class="styles.label">{{ label }}</span>
 	</label>
 </template>

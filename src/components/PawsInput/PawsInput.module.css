@@ -2,97 +2,95 @@
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
+	font-family: var(--paws-font-family);
 }
 
 .title {
-	padding-left: 10px;
+	font-size: 11px;
+	font-weight: 550;
+	color: var(--paws-color-text-secondary);
+	padding-left: 4px;
+	user-select: none;
 }
 
 .inputWrapper {
 	display: flex;
 	align-items: center;
-	padding: 0 3px;
+	height: 24px;
+	border-radius: 8px;
 	background-color: var(--paws-color-bg-lighter);
-	border: 1px solid var(--paws-color-border);
-	border-radius: 10px;
-	transition: border-color 0.2s;
-	box-sizing: border-box;
-	height: 32px;
-
-	&.focused {
-		border-color: var(--paws-color-accent-primary);
-	}
-
-	&.disabled {
-		background-color: var(--paws-color-bg-disabled);
-		cursor: not-allowed;
-	}
+	transition: all 0.2s ease;
+	position: relative;
+	overflow: visible;
 }
 
-.pawsInput {
-	flex-grow: 1;
-	width: 100%;
-	padding: 7px 13px;
-	background-color: transparent;
-	border: none;
-	color: var(--paws-color-text-primary);
-	font-family: var(--paws-font-family);
-	font-size: 1em;
-
-	&:focus {
-		outline: none;
-	}
-
-	&:disabled {
-		color: var(--paws-color-text-disabled);
-		cursor: not-allowed;
-		background-color: transparent;
-	}
+.inputWrapper.focused {
+	background-color: var(--paws-color-bg-active);
 }
 
-.adornmentButton {
+.adornment {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: var(--paws-color-text-secondary);
-	background-color: var(--paws-color-bg-dark);
-	border: none;
-	border-radius: 7px;
-	height: 26px;
+	height: 20px;
+	margin-left: 2px;
 	padding: 0 8px;
-	gap: 4px;
-	cursor: pointer;
+	background-color: var(--paws-color-bg-dark);
+	border-radius: 6px;
+	border: none;
+	color: var(--paws-color-text-primary);
 	flex-shrink: 0;
-	font-family: var(--paws-font-family);
-
-	&:disabled {
-		background-color: var(--paws-color-button-disabled);
-		color: var(--paws-color-text-disabled);
-		cursor: not-allowed;
-	}
-
-	&.nonClickable {
-		cursor: default;
-		pointer-events: none;
-	}
-
-	> :deep(div) {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	:global(svg) {
-		width: 20px;
-		height: 20px;
-		display: block;
-	}
+	transition: all 0.2s ease;
+	gap: 6px;
 }
 
-.buttonText {
+button.adornment {
+	cursor: pointer;
+}
+
+button.adornment:hover:not(:disabled) {
+	background-color: var(--paws-color-bg-hover);
+}
+
+.adornmentText {
 	font-family: var(--paws-font-family);
-	font-size: 0.9em;
-	font-weight: 500;
-	color: var(--paws-color-text-primary);
+	font-size: 11px;
+	font-weight: 550;
 	white-space: nowrap;
+}
+
+.adornment :global(svg) {
+	width: 16px;
+	height: 16px;
+}
+
+.pawsInput {
+	flex: 1;
+	height: 100%;
+	border: none;
+	background: transparent;
+	padding: 0 10px;
+	font-family: var(--paws-font-family);
+	font-weight: 550;
+	font-size: 13px;
+	color: var(--paws-color-text-primary);
+	min-width: 0;
+}
+
+.pawsInput::placeholder {
+	color: var(--paws-color-text-secondary);
+	opacity: 0.6;
+}
+
+.pawsInput:focus {
+	outline: none;
+}
+
+.disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.disabled .adornment {
+	cursor: not-allowed;
 }

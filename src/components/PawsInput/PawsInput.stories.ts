@@ -10,7 +10,6 @@ const icons = {
 	Arrow: ArrowIcon
 };
 
-// Define a type for the story's args that includes our custom iconName control
 type PawsInputStoryProps = {
 	modelValue?: string;
 	placeholder?: string;
@@ -18,8 +17,8 @@ type PawsInputStoryProps = {
 	isIconClickable?: boolean;
 	buttonText?: string;
 	iconName?: keyof typeof icons;
-	onIconClick?: () => void;
 	title?: string;
+	tooltip?: string;
 };
 
 const meta: Meta<PawsInputStoryProps> = {
@@ -32,42 +31,40 @@ const meta: Meta<PawsInputStoryProps> = {
 		disabled: { control: "boolean" },
 		isIconClickable: { control: "boolean" },
 		buttonText: { control: "text" },
+		title: { control: "text" },
+		tooltip: { control: "text" },
 		iconName: {
 			name: "icon",
 			control: { type: "select" },
 			options: Object.keys(icons),
-			description: "Select an icon to display.",
-			table: {
-				category: "Slots"
-			}
-		},
-		onIconClick: { action: "icon-clicked" }
+			description: "Select an icon to display in the adornment.",
+			table: { category: "Slots" }
+		}
 	},
 	render: args => ({
-		components: { PawsInput, ArrowIcon },
+		components: { PawsInput, ArrowIcon, FolderIcon },
 		setup() {
 			const { iconName, ...props } = args;
 			const selectedIcon = icons[iconName || "None"];
-			const isComponent =
-				typeof selectedIcon !== "string" && selectedIcon !== null;
-			return { props, selectedIcon, isComponent };
+			return { props, selectedIcon };
 		},
 		template: `
       <PawsInput v-bind="props">
         <template #icon v-if="selectedIcon">
-          <div v-if="!isComponent" v-html="selectedIcon"></div>
-          <component v-else :is="selectedIcon" />
+          <component :is="selectedIcon" />
         </template>
       </PawsInput>
     `
 	}),
 	args: {
 		modelValue: "",
-		placeholder: "",
+		placeholder: "Enter text...",
 		disabled: false,
 		isIconClickable: false,
 		buttonText: "",
-		iconName: "None"
+		iconName: "None",
+		title: "",
+		tooltip: ""
 	}
 };
 
@@ -76,40 +73,38 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		placeholder: "Enter text here..."
+		placeholder: "Enter something..."
 	}
 };
 
 export const WithTitle: Story = {
 	args: {
-		...Default.args,
-		title: "Title"
+		title: "Username",
+		placeholder: "e.g. abstractdildo"
 	}
 };
 
-export const AdornedWithIcon: Story = {
+export const WithAdornment: Story = {
 	args: {
-		placeholder: "Path to folder...",
-		iconName: "Folder"
-	}
-};
-
-export const WithButton: Story = {
-	args: {
-		placeholder: "Path to file...",
+		buttonText: "Browse",
 		iconName: "Folder",
+		placeholder: "Select path..."
+	}
+};
+
+export const AsButton: Story = {
+	args: {
+		buttonText: "GO",
+		iconName: "Arrow",
 		isIconClickable: true,
-		buttonText: "Browse"
+		placeholder: "Execute command..."
 	}
 };
 
 export const Disabled: Story = {
 	args: {
-		placeholder: "Disabled",
-		modelValue: "some value",
 		disabled: true,
-		iconName: "Folder",
-		isIconClickable: true,
-		buttonText: "Browse"
+		buttonText: "Fixed",
+		modelValue: "Read only content"
 	}
 };

@@ -1,51 +1,56 @@
 .pawsCheckbox {
-	font-family: var(--paws-font-family);
-	display: flex;
+	display: inline-flex;
 	align-items: center;
+	height: 24px;
+	border-radius: 8px;
+	background-color: var(--paws-color-bg-lighter);
 	cursor: pointer;
 	user-select: none;
-	gap: 10px;
+	transition: all 0.2s ease;
+	overflow: hidden;
+	font-family: var(--paws-font-family);
+	font-weight: 550;
+	font-size: 13px;
+	color: var(--paws-color-text-primary);
+	padding-right: 10px; /* Right padding as requested */
+}
+
+.pawsCheckbox:hover:not(.disabled) {
+	background-color: var(--paws-color-bg-hover);
+}
+
+/* Specific background for checked state to match the pinkish look in images */
+.pawsCheckbox.checked {
+	background-color: #fcecef; /* Default fallback if vars are not sufficient */
+}
+
+.paws--dark-theme .pawsCheckbox.checked {
+	background-color: #3d1b24; /* Darker version for dark theme */
 }
 
 .input {
 	display: none;
 }
 
-.checkbox {
-	display: block;
+.square {
 	width: 24px;
 	height: 24px;
-	border-radius: 6px;
+	flex-shrink: 0;
+	border-radius: 8px;
 	background-color: var(--paws-color-bg-disabled);
-	transition: background-color 0.2s;
+	transition: all 0.2s ease;
 }
 
-.input:checked + .checkbox {
+.checked .square {
 	background-color: var(--paws-color-accent-primary);
 }
 
 .label {
-	font-weight: 600;
-	color: var(--paws-color-text-primary);
-	position: relative;
+	padding-left: 10px; /* 10px from the square as requested */
+	white-space: nowrap;
 }
 
-.labelFontSizeXs {
-	font-size: 11px;
-}
-
-.labelFontSizeSm {
-	font-size: 12px;
-}
-
-.labelFontSizeMd {
-	font-size: 14px;
-}
-
-.labelFontSizeLg {
-	font-size: 16px;
-}
-
-.labelFontSizeXl {
-	font-size: 20px;
+.disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
 }

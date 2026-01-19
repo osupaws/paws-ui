@@ -1,88 +1,78 @@
 .dropdownWrapper {
 	position: relative;
-	display: flex;
+	display: inline-flex;
 	align-items: center;
-	padding: 0 2px 0 3px;
 	background-color: var(--paws-color-bg-lighter);
-	border: 1px solid var(--paws-color-border);
-	border-radius: 10px;
-	transition: border-color 0.2s;
+	border-radius: 8px;
+	transition: background-color 0.2s ease;
 	box-sizing: border-box;
-	height: 32px;
+	height: 24px;
 	cursor: pointer;
+	user-select: none;
+	overflow: visible; /* To allow shadow of the list to show correctly */
+}
 
-	&.open {
-		border-color: var(--paws-color-accent-primary);
-	}
+.dropdownWrapper:hover:not(.disabled) {
+	background-color: var(--paws-color-bg-hover);
+}
 
-	&.disabled {
-		background-color: var(--paws-color-bg-disabled);
-		cursor: not-allowed;
-	}
+.dropdownWrapper.disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
 .dropdownButton {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	width: 100%;
 	height: 100%;
-	padding: 0 8px 0 0;
+	padding: 0;
 	background-color: transparent;
 	border: none;
 	color: var(--paws-color-text-primary);
 	font-family: var(--paws-font-family);
-	font-size: 1em;
+	font-size: 13px;
+	font-weight: 550;
 	cursor: pointer;
-	gap: 8px;
 }
 
 .iconWrapper {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: var(--paws-color-text-secondary);
 	background-color: var(--paws-color-bg-dark);
-	border: none;
-	border-radius: 7px;
-	height: 26px;
+	border-radius: 6px;
+	height: 20px;
+	margin-left: 2px;
 	padding: 0 8px;
-	gap: 4px;
-	cursor: pointer;
 	flex-shrink: 0;
-	font-family: var(--paws-font-family);
+}
 
-	> :deep(div) {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	:global(svg) {
-		width: 20px;
-		height: 20px;
-		display: block;
-	}
+/* Internal icon size inside the iconWrapper slot */
+.iconWrapper :global(svg) {
+	width: 20px;
+	height: 20px;
 }
 
 .selectedOption {
 	flex-grow: 1;
 	text-align: left;
-	color: var(--paws-color-text-primary);
+	padding: 0 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-.selectedOption:first-child {
-	margin-left: 11px;
-}
-
-.dropdownButton > :deep(svg) {
-	width: 20px;
-	height: 20px;
-	flex-shrink: 0;
-	transition: transform 0.2s ease-in-out;
+/* If there is no icon slot, the text should have padding from the left edge */
+.dropdownButton:not(:has(.iconWrapper)) .selectedOption {
+	padding-left: 10px;
 }
 
 .arrow {
+	width: 20px;
+	height: 20px;
+	margin-right: 4px;
+	flex-shrink: 0;
 	transition: transform 0.2s ease-in-out;
 }
 
@@ -92,33 +82,53 @@
 
 .optionsWrapper {
 	position: absolute;
-	top: 100%;
+	top: calc(100% + 4px);
 	left: 0;
 	right: 0;
-	background-color: var(--paws-color-bg-lighter);
-	border: 1px solid var(--paws-color-border);
-	border-radius: 10px;
-	margin-top: 4px;
-	z-index: 10;
-	overflow: hidden;
+	background-color: var(--paws-color-bg-darkest);
+	border: 1px solid var(--paws-color-bg-lighter);
+	border-radius: 8px;
+	z-index: 9999;
+	overflow-y: auto;
 	max-height: 0;
-	transition: max-height 0.2s ease-in-out;
+	opacity: 0;
+	visibility: hidden;
+	transition:
+		max-height 0.2s ease,
+		opacity 0.2s ease,
+		visibility 0.2s;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .optionsWrapper.open {
-	max-height: 200px; /* Adjust as needed */
+	max-height: 200px;
+	opacity: 1;
+	visibility: visible;
 }
 
-:global(.paws-dropdown-option) {
-	padding: 10px 16px;
+.option {
+	display: flex;
+	align-items: center;
+	height: 32px;
+	padding: 0 10px;
 	cursor: pointer;
 	font-family: var(--paws-font-family);
+	font-size: 13px;
+	font-weight: 550;
+	transition: background-color 0.15s ease;
 }
 
-:global(.paws-dropdown-option:hover) {
-	background-color: var(--paws-color-bg-darkest);
+.option:hover {
+	background-color: var(--paws-color-bg-hover);
 }
 
-.light-theme :global(.paws-dropdown-option:hover) {
-	background-color: var(--paws-color-bg-lighter);
+.labelText {
+	font-size: 11px;
+	font-weight: 550;
+	margin-left: 0;
+	white-space: nowrap;
+}
+
+.iconWrapper :global(svg) + .labelText {
+	margin-left: 6px;
 }

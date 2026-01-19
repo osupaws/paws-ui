@@ -1,47 +1,22 @@
-<template>
-	<div ref="switchRef" :class="[styles.pawsMultiSwitch, switchClass]">
-		<div :class="styles.highlighter" :style="highlighterStyle" />
-
-		<button
-			v-for="option in options"
-			:key="option"
-			:ref="el => (optionRefs[option] = el as HTMLButtonElement)"
-			:class="[styles.option, { [styles.active]: modelValue === option }]"
-			type="button"
-			@click="selectOption(option)"
-		>
-			{{ option }}
-		</button>
-	</div>
-</template>
-
 <script setup lang="ts">
-import { computed, onMounted, reactive, ref, watch } from "vue";
+import { onMounted, reactive, ref, watch } from "vue";
 
+import { vPawsTooltip } from "../../directives/vTooltip";
 import styles from "./PawsMultiSwitch.module.css";
 
 interface MultiSwitchProps {
 	options: string[];
 	modelValue: string;
-	size?: "small" | "large";
+	tooltip?: string;
 }
 
 const props = withDefaults(defineProps<MultiSwitchProps>(), {
-	size: "small"
+	tooltip: ""
 });
-
-export type { MultiSwitchProps };
 
 const emit = defineEmits<{
 	(e: "update:modelValue", value: string): void;
 }>();
-
-const switchClass = computed(() => {
-	return {
-		[styles.small]: props.size === "small",
-		[styles.large]: props.size === "large"
-	};
-});
 
 const switchRef = ref<HTMLDivElement | null>(null);
 const optionRefs = reactive<Record<string, HTMLButtonElement | null>>({});
@@ -78,23 +53,41 @@ const updateHighlighter = (): void => {
 };
 
 watch(
-	() => props.modelValue,
+	() => [props.modelValue, props.options],
 	() => {
-		updateHighlighter();
+		// Small delay to let DOM update if options changed
+		setTimeout(updateHighlighter, 0);
 	},
-	{ flush: "post" }
+	{ flush: "post", deep: true }
 );
 
 onMounted(() => {
-	if (!props.options.includes(props.modelValue)) {
-		console.warn(
-			`[MultiSwitch] Initial modelValue "${props.modelValue}" is not in the options array. Defaulting to the first option.`
-		);
-		if (props.options.length > 0) {
-			selectOption(props.options[0]);
-		}
+	if (props.options.length > 0 && !props.options.includes(props.modelValue)) {
+		selectOption(props.options[0]);
 	} else {
 		updateHighlighter();
 	}
 });
 </script>
+
+<template>
+	<div ref="switchRef" v-paws-tooltip="tooltip" :class="styles.pawsMultiSwitch">
+		<div :class="styles.highlighter" :style="highlighterStyle" />
+
+		<button
+			v-for="option in options"
+			:key="option"
+			:ref="el => (optionRefs[option] = el as HTMLButtonElement)"
+			:class="[styles.option, { [styles.active]: modelValue === option }]"
+			type="button"
+			@click="selectOption(option)"
+		>
+			<span :class="styles.text">
+				<!-- Default slot or dynamic slot based on option value -->
+				<slot :name="option">
+					{{ option }}
+				</slot>
+			</span>
+		</button>
+	</div>
+</template>

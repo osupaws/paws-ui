@@ -4,7 +4,7 @@ import { tooltipState } from "../services/TooltipService";
 
 let tooltipTimeout: number | null = null;
 
-export const vPawsTooltip: Directive<HTMLElement, string> = {
+export const vPawsTooltip: Directive<HTMLElement, string | undefined> = {
 	mounted(el, binding) {
 		const handleMouseEnter = () => {
 			if (!tooltipState.showTooltips || !binding.value) return;
@@ -17,7 +17,7 @@ export const vPawsTooltip: Directive<HTMLElement, string> = {
 				const windowHeight = window.innerHeight;
 				const tooltipGap = 8;
 
-				tooltipState.text = binding.value;
+				tooltipState.text = binding.value || "";
 				tooltipState.x = rect.left + rect.width / 2;
 
 				// Smart positioning: if it doesn't fit below, show it above

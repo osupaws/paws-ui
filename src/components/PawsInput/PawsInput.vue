@@ -1,28 +1,39 @@
 <script setup lang="ts">
 import { computed, ref, useSlots } from "vue";
 
-import PawsHeading from "../PawsHeading/PawsHeading.vue";
+import { vPawsTooltip } from "../../directives/vTooltip";
 import styles from "./PawsInput.module.css";
+
+interface Props {
+	placeholder?: string;
+	disabled?: boolean;
+	isIconClickable?: boolean; // If true, the adornment acts as a button
+	buttonText?: string;
+	title?: string;
+	tooltip?: string;
+}
 
 const model = defineModel<string>();
 
-const props = defineProps<{
-	placeholder?: string;
-	disabled?: boolean;
-	isIconClickable?: boolean;
-	buttonText?: string;
-	title?: string;
-}>();
+const props = withDefaults(defineProps<Props>(), {
+	placeholder: "",
+	disabled: false,
+	isIconClickable: false,
+	buttonText: "",
+	title: "",
+	tooltip: ""
+});
 
 const emit = defineEmits<{ (e: "icon-click"): void }>();
 
 const slots = useSlots();
 const hasIconSlot = computed(() => !!slots.icon);
+const hasAdornment = computed(() => hasIconSlot.value || !!props.buttonText);
 
 const isFocused = ref(false);
 
 const onIconClick = (): void => {
-	if (props.isIconClickable) {
+	if (props.isIconClickable && !props.disabled) {
 		emit("icon-click");
 	}
 };
@@ -30,30 +41,30 @@ const onIconClick = (): void => {
 
 <template>
 	<div :class="styles.wrapper">
-		<PawsHeading v-if="title" size="sm" :class="styles.title">
+		<span v-if="title" :class="styles.title">
 			{{ title }}
-		</PawsHeading>
+		</span>
 		<div
+			v-paws-tooltip="tooltip"
 			:class="[
 				styles.inputWrapper,
 				{ [styles.disabled]: disabled, [styles.focused]: isFocused }
 			]"
 		>
-			<button
-				v-if="hasIconSlot"
-				:class="[
-					styles.adornmentButton,
-					{ [styles.nonClickable]: !isIconClickable }
-				]"
+			<!-- Adornment area (Icon + Text) -->
+			<component
+				:is="isIconClickable ? 'button' : 'div'"
+				v-if="hasAdornment"
+				:class="styles.adornment"
 				:disabled="disabled"
+				type="button"
 				@click="onIconClick"
 			>
 				<slot name="icon" />
-
-				<span v-if="buttonText" :class="styles.buttonText">
+				<span v-if="buttonText" :class="styles.adornmentText">
 					{{ buttonText }}
 				</span>
-			</button>
+			</component>
 
 			<input
 				v-model="model"

@@ -1,75 +1,71 @@
 .pawsMultiSwitch {
 	display: inline-flex;
 	align-items: center;
-	align-self: flex-start;
+	height: 24px;
+	padding: 2px;
+	background-color: var(--paws-color-bg-lighter);
+	border-radius: 8px;
 	position: relative;
 	box-sizing: border-box;
 	user-select: none;
+	min-width: 32px; /* Minimum width of the whole switch */
+}
 
-	.highlighter {
-		position: absolute;
-		left: 0;
-		background-color: var(--paws-color-accent-primary);
-		box-sizing: border-box;
-		transition:
-			transform 0.3s ease-in-out,
-			width 0.3s ease-in-out;
-	}
+.highlighter {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	background-color: var(--paws-color-accent-primary);
+	border-radius: 6px;
+	box-sizing: border-box;
+	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	z-index: 2;
+	pointer-events: none;
+}
 
-	.option {
-		appearance: none;
-		border: none;
-		background-color: transparent;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		box-sizing: border-box;
-		font-family: var(--paws-font-family);
-		font-weight: 500;
-		color: var(--paws-color-text-primary);
-		white-space: nowrap;
-		position: relative;
-		z-index: 1;
-		outline: none;
-	}
+.option {
+	appearance: none;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 20px;
+	min-width: 32px; /* Each option is at least 32px wide */
+	padding: 0 8px;
+	box-sizing: border-box;
+	font-family: var(--paws-font-family);
+	font-weight: 550;
+	font-size: 13px;
+	color: var(--paws-color-text-primary);
+	white-space: nowrap;
+	position: relative;
+	outline: none;
+	transition: color 0.2s ease;
+}
 
-	&.small {
-		height: 24px;
-		background-color: var(--paws-color-bg-lighter);
-		border-radius: 4px;
-		padding: 2px;
+.text {
+	position: relative;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px; /* Space between icon and text if both present */
+}
 
-		.highlighter {
-			top: 2px;
-			border-radius: 3px;
-		}
+/* Ensure icons inside slots have consistent sizing */
+.text :global(svg) {
+	width: 16px;
+	height: 16px;
+	display: block;
+}
 
-		.option {
-			height: 20px;
-			padding: 0 4px;
-			font-size: 14px;
-			line-height: 20px;
-			transform: translateY(-1px);
-		}
-	}
+.option.active {
+	color: var(--paws-color-text-on-accent);
+}
 
-	&.large {
-		height: 48px;
-		background-color: var(--paws-color-bg-lighter);
-		border-radius: 12px;
-		padding: 4px;
-
-		.highlighter {
-			top: 4px;
-			border-radius: 10px;
-		}
-
-		.option {
-			height: 40px;
-			padding: 0 16px;
-			font-size: 16px;
-			line-height: 40px;
-		}
-	}
+.option:hover:not(.active) {
+	background-color: var(--paws-color-bg-hover);
+	border-radius: 6px;
 }

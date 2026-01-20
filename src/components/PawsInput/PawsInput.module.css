@@ -16,9 +16,11 @@
 .inputWrapper {
 	display: flex;
 	align-items: center;
-	height: 24px;
+	height: 32px;
 	border-radius: 8px;
 	background-color: var(--paws-color-bg-lighter);
+	padding: 3px;
+	box-sizing: border-box;
 	transition: all 0.2s ease;
 	position: relative;
 	overflow: visible;
@@ -32,9 +34,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 20px;
-	margin-left: 2px;
-	padding: 0 8px;
+	height: 26px;
+	margin-left: 0;
+	padding: 0 10px;
 	background-color: var(--paws-color-bg-dark);
 	border-radius: 6px;
 	border: none;
@@ -42,6 +44,7 @@
 	flex-shrink: 0;
 	transition: all 0.2s ease;
 	gap: 6px;
+	box-sizing: border-box;
 }
 
 button.adornment {
@@ -54,8 +57,8 @@ button.adornment:hover:not(:disabled) {
 
 .adornmentText {
 	font-family: var(--paws-font-family);
-	font-size: 11px;
-	font-weight: 550;
+	font-size: 12px;
+	font-weight: 450;
 	white-space: nowrap;
 }
 
@@ -69,10 +72,10 @@ button.adornment:hover:not(:disabled) {
 	height: 100%;
 	border: none;
 	background: transparent;
-	padding: 0 10px;
+	padding: 0 9px;
 	font-family: var(--paws-font-family);
-	font-weight: 550;
-	font-size: 13px;
+	font-weight: 450;
+	font-size: 14px;
 	color: var(--paws-color-text-primary);
 	min-width: 0;
 }

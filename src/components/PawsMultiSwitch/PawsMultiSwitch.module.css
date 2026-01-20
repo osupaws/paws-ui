@@ -1,19 +1,19 @@
 .pawsMultiSwitch {
 	display: inline-flex;
 	align-items: center;
-	height: 24px;
-	padding: 2px;
+	height: 32px;
+	padding: 3px;
 	background-color: var(--paws-color-bg-lighter);
 	border-radius: 8px;
 	position: relative;
 	box-sizing: border-box;
 	user-select: none;
-	min-width: 32px; /* Minimum width of the whole switch */
+	min-width: 40px; /* Minimum width of the whole switch */
 }
 
 .highlighter {
 	position: absolute;
-	top: 2px;
+	top: 3px;
 	left: 0;
 	background-color: var(--paws-color-accent-primary);
 	border-radius: 6px;
@@ -31,13 +31,13 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 20px;
-	min-width: 32px; /* Each option is at least 32px wide */
-	padding: 0 8px;
+	height: 26px;
+	min-width: 40px; /* Each option is at least 40px wide */
+	padding: 0 10px;
 	box-sizing: border-box;
 	font-family: var(--paws-font-family);
 	font-weight: 550;
-	font-size: 13px;
+	font-size: 14px;
 	color: var(--paws-color-text-primary);
 	white-space: nowrap;
 	position: relative;

@@ -1,4 +1,4 @@
-import "../src/css/fonts.css";
+import "./storybook-fonts.css";
 import "../src/css/themes/paws-light.css";
 import "../src/css/themes/paws-dark.css";
 

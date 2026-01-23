@@ -40,7 +40,7 @@ const onIconClick = (): void => {
 </script>
 
 <template>
-	<div :class="styles.wrapper">
+	<div :class="styles.wrapper" data-paws-ui="PawsInput">
 		<span v-if="title" :class="styles.title">
 			{{ title }}
 		</span>
@@ -58,6 +58,7 @@ const onIconClick = (): void => {
 				:class="styles.adornment"
 				:disabled="disabled"
 				type="button"
+				data-paws-part="adornment"
 				@click="onIconClick"
 			>
 				<slot name="icon" />
@@ -72,6 +73,7 @@ const onIconClick = (): void => {
 				:class="styles.pawsInput"
 				:placeholder="placeholder"
 				:disabled="disabled"
+				data-paws-part="input"
 				@focus="isFocused = true"
 				@blur="isFocused = false"
 			/>

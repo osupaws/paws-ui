@@ -49,14 +49,20 @@ const selectOption = (option: string) => {
 			styles.dropdownWrapper,
 			{ [styles.disabled]: disabled, [styles.open]: isOpen }
 		]"
+		data-paws-ui="PawsDropdown"
 	>
 		<button
 			:class="styles.dropdownButton"
 			:disabled="disabled"
 			type="button"
+			data-paws-part="button"
 			@click="toggleDropdown"
 		>
-			<div v-if="hasLeftContent" :class="styles.iconWrapper">
+			<div
+				v-if="hasLeftContent"
+				:class="styles.iconWrapper"
+				data-paws-part="label-area"
+			>
 				<slot name="icon" />
 				<span v-if="label" :class="styles.labelText">{{ label }}</span>
 			</div>
@@ -64,7 +70,10 @@ const selectOption = (option: string) => {
 			<ArrowIcon :class="[styles.arrow, { [styles.rotate]: isOpen }]" />
 		</button>
 
-		<div :class="[styles.optionsWrapper, { [styles.open]: isOpen }]">
+		<div
+			:class="[styles.optionsWrapper, { [styles.open]: isOpen }]"
+			data-paws-part="options"
+		>
 			<div
 				v-for="option in options"
 				:key="option"

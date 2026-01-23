@@ -3,8 +3,8 @@
 	align-items: center;
 	height: 32px;
 	padding: 3px;
-	background-color: var(--paws-color-bg-lighter);
-	border-radius: 8px;
+	background-color: var(--paws-color-bg-tertiary);
+	border-radius: var(--paws-rounding-medium);
 	position: relative;
 	box-sizing: border-box;
 	user-select: none;
@@ -15,8 +15,8 @@
 	position: absolute;
 	top: 3px;
 	left: 0;
-	background-color: var(--paws-color-accent-primary);
-	border-radius: 6px;
+	background-color: var(--paws-color-interactive-secondary);
+	border-radius: var(--paws-rounding-medium-inner);
 	box-sizing: border-box;
 	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 	z-index: 2;
@@ -32,13 +32,13 @@
 	align-items: center;
 	justify-content: center;
 	height: 26px;
-	min-width: 40px; /* Each option is at least 40px wide */
-	padding: 0 10px;
+	min-width: 32px; /* Each option is at least 32px wide */
+	padding: 0 8px;
 	box-sizing: border-box;
-	font-family: var(--paws-font-family);
+	font-family: var(--paws-font-primary);
 	font-weight: 550;
 	font-size: 14px;
-	color: var(--paws-color-text-primary);
+	color: var(--paws-color-inactive-secondary);
 	white-space: nowrap;
 	position: relative;
 	outline: none;
@@ -62,10 +62,10 @@
 }
 
 .option.active {
-	color: var(--paws-color-text-on-accent);
+	color: var(--paws-color-accent-secondary);
 }
 
 .option:hover:not(.active) {
-	background-color: var(--paws-color-bg-hover);
+	background-color: var(--paws-color-inactive-sub-hover);
 	border-radius: 6px;
 }

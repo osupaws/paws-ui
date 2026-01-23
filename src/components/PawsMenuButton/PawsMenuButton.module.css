@@ -4,28 +4,32 @@
 	justify-content: space-between;
 	height: 32px;
 	min-width: 32px;
-	padding: 0 12px; /* Increased padding slightly for bigger button */
-	border-radius: 8px;
+	padding: 0 12px;
+	border-radius: var(--paws-rounding-medium);
 	border: none;
-	background: transparent;
 	cursor: pointer;
 	transition: all 0.2s ease;
-	font-family: "Wix Madefor Display", sans-serif;
+	font-family: var(--paws-font-primary);
 	font-weight: 550;
 	font-size: 16px;
-	color: var(--paws-color-text-primary);
+	color: var(--paws-color-inactive-secondary);
 	gap: 8px;
 	user-select: none;
-	background: var(--paws-color-bg-lighter);
+	background: var(--paws-color-bg-tertiary);
 }
 
 .pawsMenuButton:hover:not(:disabled) {
-	background: var(--paws-color-bg-hover);
+	background: var(--paws-color-inactive-sub-hover);
 }
 
 .pawsMenuButton:active:not(:disabled),
 .pawsMenuButton.active {
-	background: var(--paws-color-bg-active);
+	background: var(--paws-color-accent-subprimary);
+	color: var(--paws-color-accent-secondary);
+}
+
+.pawsMenuButton.active:hover:not(:disabled) {
+	background: var(--paws-color-accent-subprimary-hover);
 }
 
 .pawsMenuButton:disabled {

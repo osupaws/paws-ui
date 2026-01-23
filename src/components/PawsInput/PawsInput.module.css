@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
-	font-family: var(--paws-font-family);
+	font-family: var(--paws-font-primary);
 }
 
 .title {
@@ -17,8 +17,8 @@
 	display: flex;
 	align-items: center;
 	height: 32px;
-	border-radius: 8px;
-	background-color: var(--paws-color-bg-lighter);
+	border-radius: var(--paws-rounding-medium);
+	background-color: var(--paws-color-interactive-primary);
 	padding: 3px;
 	box-sizing: border-box;
 	transition: all 0.2s ease;
@@ -27,7 +27,7 @@
 }
 
 .inputWrapper.focused {
-	background-color: var(--paws-color-bg-active);
+	background-color: var(--paws-color-accent-subprimary);
 }
 
 .adornment {
@@ -37,8 +37,8 @@
 	height: 26px;
 	margin-left: 0;
 	padding: 0 10px;
-	background-color: var(--paws-color-bg-dark);
-	border-radius: 6px;
+	background-color: var(--paws-color-interactive-secondary);
+	border-radius: var(--paws-rounding-medium-inner);
 	border: none;
 	color: var(--paws-color-text-primary);
 	flex-shrink: 0;
@@ -52,11 +52,11 @@ button.adornment {
 }
 
 button.adornment:hover:not(:disabled) {
-	background-color: var(--paws-color-bg-hover);
+	background-color: var(--paws-color-bg-primary);
 }
 
 .adornmentText {
-	font-family: var(--paws-font-family);
+	font-family: var(--paws-font-primary);
 	font-size: 12px;
 	font-weight: 450;
 	white-space: nowrap;
@@ -73,7 +73,7 @@ button.adornment:hover:not(:disabled) {
 	border: none;
 	background: transparent;
 	padding: 0 9px;
-	font-family: var(--paws-font-family);
+	font-family: var(--paws-font-primary);
 	font-weight: 450;
 	font-size: 14px;
 	color: var(--paws-color-text-primary);

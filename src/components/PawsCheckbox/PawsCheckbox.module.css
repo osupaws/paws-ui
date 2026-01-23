@@ -1,33 +1,48 @@
 .pawsCheckbox {
+	position: relative;
 	display: inline-flex;
 	align-items: center;
-	height: 32px;
-	border-radius: 8px;
-	background-color: var(--paws-color-bg-lighter);
+	height: 24px;
+	border-radius: var(--paws-rounding-normal);
+	background-color: transparent;
 	cursor: pointer;
 	user-select: none;
 	transition: all 0.2s ease;
 	overflow: hidden;
-	font-family: var(--paws-font-family);
-	font-weight: 450;
-	font-size: 14px;
-	color: var(--paws-color-text-primary);
-	padding: 3px;
-	padding-right: 12px;
-	box-sizing: border-box;
+	font-family: var(--paws-font-primary);
+	font-weight: 550;
+	font-size: 13px;
+	color: var(--paws-color-inactive-secondary);
+	padding-right: 10px;
+	z-index: 1;
 }
 
-.pawsCheckbox:hover:not(.disabled) {
-	background-color: var(--paws-color-bg-hover);
+.pawsCheckbox::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 12px;
+	right: 0;
+	bottom: 0;
+	background-color: var(--paws-color-inactive-sub);
+	z-index: -1;
+	transition: background-color 0.2s ease;
 }
 
-/* Specific background for checked state to match the pinkish look in images */
+.pawsCheckbox:hover:not(.disabled)::before {
+	background-color: var(--paws-color-inactive-sub-hover);
+}
+
 .pawsCheckbox.checked {
-	background-color: #fcecef; /* Default fallback if vars are not sufficient */
+	color: var(--paws-color-accent-secondary);
 }
 
-.paws--dark-theme .pawsCheckbox.checked {
-	background-color: #3d1b24; /* Darker version for dark theme */
+.pawsCheckbox.checked::before {
+	background-color: var(--paws-color-accent-subprimary);
+}
+
+.pawsCheckbox.checked:hover:not(.disabled)::before {
+	background-color: var(--paws-color-accent-subprimary-hover);
 }
 
 .input {
@@ -38,8 +53,8 @@
 	width: 26px;
 	height: 26px;
 	flex-shrink: 0;
-	border-radius: 8px;
-	background-color: var(--paws-color-bg-disabled);
+	border-radius: var(--paws-rounding-normal);
+	background-color: var(--paws-color-inactive-primary);
 	transition: all 0.2s ease;
 }
 
@@ -48,7 +63,7 @@
 }
 
 .label {
-	padding-left: 9px; /* Since we have 3px container padding + square, this keeps visual gap */
+	padding-left: 10px; /* 10px from the square */
 	white-space: nowrap;
 }
 

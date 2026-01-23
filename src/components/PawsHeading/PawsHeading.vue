@@ -30,6 +30,7 @@ const align = computed(() => ({
 	<h2
 		:style="{ '--paws-heading--font-weight': props.fontWeight }"
 		:class="[styles.heading, size, fontWeight, align]"
+		data-paws-ui="PawsHeading"
 	>
 		<slot />
 	</h2>

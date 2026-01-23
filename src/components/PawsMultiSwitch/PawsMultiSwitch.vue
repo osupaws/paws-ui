@@ -71,8 +71,17 @@ onMounted(() => {
 </script>
 
 <template>
-	<div ref="switchRef" v-paws-tooltip="tooltip" :class="styles.pawsMultiSwitch">
-		<div :class="styles.highlighter" :style="highlighterStyle" />
+	<div
+		ref="switchRef"
+		v-paws-tooltip="tooltip"
+		:class="styles.pawsMultiSwitch"
+		data-paws-ui="PawsMultiSwitch"
+	>
+		<div
+			:class="styles.highlighter"
+			:style="highlighterStyle"
+			data-paws-part="highlighter"
+		/>
 
 		<button
 			v-for="option in options"
@@ -80,6 +89,7 @@ onMounted(() => {
 			:ref="el => (optionRefs[option] = el as HTMLButtonElement)"
 			:class="[styles.option, { [styles.active]: modelValue === option }]"
 			type="button"
+			data-paws-part="option"
 			@click="selectOption(option)"
 		>
 			<span :class="styles.text">

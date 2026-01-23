@@ -23,7 +23,7 @@ const appearance = computed(() => ({
 </script>
 
 <template>
-	<div :class="[styles.card, appearance]">
+	<div :class="[styles.card, appearance]" data-paws-ui="PawsCard">
 		<slot name="heading" />
 
 		<div
@@ -31,6 +31,7 @@ const appearance = computed(() => ({
 				styles.cardContent,
 				{ [styles.cardContentNoHeading]: !hasHeading }
 			]"
+			data-paws-part="content"
 		>
 			<slot />
 		</div>

@@ -1,5 +1,5 @@
 .heading {
-	font-family: var(--paws-font-family);
+	font-family: var(--paws-font-primary);
 	font-weight: var(--paws-heading--font-weight);
 	color: var(--paws-color-text-primary);
 	margin: 0;

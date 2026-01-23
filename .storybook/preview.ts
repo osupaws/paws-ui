@@ -1,6 +1,6 @@
 import "./storybook-fonts.css";
-import "../src/css/themes/paws-light.css";
-import "../src/css/themes/paws-dark.css";
+import "../src/css/themes/paws-light-base.css";
+import "../src/css/themes/paws-dark-base.css";
 
 import { setup } from "@storybook/vue3";
 import type { Preview } from "@storybook/vue3-vite";
@@ -36,8 +36,10 @@ const preview: Preview = {
 			setPawsUiConfig({ theme: theme as "light" | "dark" });
 			return {
 				template: `
-          <div class="paws--${theme}-theme" style="padding: 2.5rem; min-height: 100vh; background-color: var(--paws-color-bg-dark); color: var(--paws-color-text-primary);">
-            <story/>
+          <div class="paws--${theme}-theme" style="padding: 2.5rem; min-height: 200px; display: flex; align-items: flex-start; justify-content: center; background-color: var(--paws-color-bg-primary); color: var(--paws-color-text-primary);">
+            <div style="width: 100%; max-width: 600px;">
+              <story/>
+            </div>
             <PawsTooltip />
           </div>
         `

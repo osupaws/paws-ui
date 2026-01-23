@@ -1,5 +1,5 @@
 .field {
-	font-family: var(--paws-font-family);
+	font-family: var(--paws-font-primary);
 	color: var(--paws-color-text-primary);
 }
 

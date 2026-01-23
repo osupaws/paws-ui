@@ -23,6 +23,7 @@ const positionClass = computed(() =>
 					v-if="tooltipState.visible && tooltipState.text"
 					:class="[styles.tooltip, positionClass]"
 					:style="tooltipStyle"
+					data-paws-ui="PawsTooltip"
 				>
 					{{ tooltipState.text }}
 				</div>

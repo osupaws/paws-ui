@@ -1,6 +1,6 @@
 import "./storybook-fonts.css";
-import "../src/css/themes/paws-light-base.css";
-import "../src/css/themes/paws-dark-base.css";
+import "./themes/paws-light-base.css";
+import "./themes/paws-dark-base.css";
 
 import { setup } from "@storybook/vue3";
 import type { Preview } from "@storybook/vue3-vite";

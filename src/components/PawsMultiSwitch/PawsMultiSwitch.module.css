@@ -8,7 +8,7 @@
 	position: relative;
 	box-sizing: border-box;
 	user-select: none;
-	min-width: 32px; /* Minimum width of the whole switch */
+	min-width: 40px; /* Minimum width of the whole switch */
 }
 
 .highlighter {

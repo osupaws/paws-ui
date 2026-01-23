@@ -7,7 +7,6 @@ dist
 dist-ssr
 storybook-static
 *.tgz
-.npmrc
 
 # Logs
 logs

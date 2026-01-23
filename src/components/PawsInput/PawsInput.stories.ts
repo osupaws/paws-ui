@@ -80,7 +80,7 @@ export const Default: Story = {
 export const WithTitle: Story = {
 	args: {
 		title: "Username",
-		placeholder: "e.g. abstractdildo"
+		placeholder: "e.g. shxsha"
 	}
 };
 

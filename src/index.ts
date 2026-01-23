@@ -1,6 +1,5 @@
-import "./css/fonts.css";
-import "./css/themes/paws-light.css";
-import "./css/themes/paws-dark.css";
+import "./css/themes/paws-light-base.css";
+import "./css/themes/paws-dark-base.css";
 
 import type { App } from "vue";
 

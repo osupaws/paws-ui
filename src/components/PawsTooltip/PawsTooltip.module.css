@@ -2,11 +2,11 @@
 	position: fixed;
 	z-index: 9999;
 	padding: 4px 8px;
-	background-color: var(--paws-color-bg-darkest);
+	background-color: var(--paws-color-bg-secondary);
 	color: var(--paws-color-text-primary);
-	border: 1px solid var(--paws-color-bg-lighter);
+	border: 1px solid var(--paws-color-interactive-primary);
 	border-radius: 4px;
-	font-family: "Wix Madefor Display", sans-serif;
+	font-family: var(--paws-font-primary);
 	font-weight: 500;
 	font-size: 11px;
 	pointer-events: none;

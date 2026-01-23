@@ -1,0 +1,43 @@
+.paws--light-theme {
+	/* Colors */
+	--paws-color-accent-primary: #ffa4c1; /* Accent, used for checkbox square, some buttons, etc*/
+	--paws-color-accent-subprimary: #ffe5ed; /* Subaccent, used for secondary objects like checkbox body and other "selected" state elements*/
+	--paws-color-accent-secondary: #73092a; /* Secondary accent, used mostly for text and icons on accent and subaccent bgs */
+	--paws-color-accent-primary-hover: #e790ac; /* Accent hover, will probably be deprecated in the future */
+	--paws-color-accent-subprimary-hover: #ecccd6; /* Subaccent hover, will probably be deprecated in the future */
+
+	--paws-color-inactive-primary: #cecece; /* Inactive, used as accent for elements in not "selected" state */
+	--paws-color-inactive-sub: #e4e4e4; /*  Subaccent for elements in not "selected" state */
+	--paws-color-inactive-secondary: #474747; /* Secondary accent for elements in not "selected" state */
+	--paws-color-inactive-primary-hover: #c4c4c4; /* Inactive hover, will probably be deprecated in the future */
+	--paws-color-inactive-sub-hover: #dddddd; /* Subaccent hover, will probably be deprecated in the future */
+
+	--paws-color-text-primary: #252525; /* Primary text color, no use yet, might be used in high contrast environments */
+	--paws-color-text-secondary: #a1a1a1; /* Secondary text color, used for card titles and other secondary text that is not intended to attract attention */
+
+	--paws-color-bg-primary: #fafafa; /* Primary background color, used for iframe background */
+	--paws-color-bg-subprimary: #eaeaea; /* Subprimary background color, used for secondary background, no use yet, will probably be deprecated in the future */
+	--paws-color-bg-secondary: #f4f4f4; /* Secondary background color, used for tertiary background, intended to be used for cards */
+	--paws-color-bg-translucent: #00000005; /* Translucent background color, used for translucent background, TEST: may be used in cards */
+	--paws-color-bg-tertiary: #efefef; /* Tertiary background color, used for progressbar background */
+	--paws-color-bg-titlebar: #eeeeee; /* Titlebar background color, used for titlebar background (technically, whole window color) */
+
+	--paws-color-interactive-primary: #e4e4e4; /* Interactive primary color, used for elements like inputs and dropdowns */
+	--paws-color-interactive-secondary: #fafafa; /* Interactive secondary color, used for pills in elements like inputs and dropdowns */
+
+	--paws-color-success: #6ec071;
+	--paws-color-warning: #fcd45e;
+	--paws-color-error: #f56f66;
+
+	/* Rounding */
+
+	--paws-rounding-normal: 8px;
+	--paws-rounding-normal-inner: 6px;
+	--paws-rounding-medium: 12px;
+	--paws-rounding-medium-inner: 9px;
+	--paws-rounding-big: 16px;
+
+	/* Fonts */
+
+	--paws-font-primary: "Wix Madefor Display", system-ui, sans-serif;
+}

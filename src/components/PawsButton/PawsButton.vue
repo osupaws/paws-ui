@@ -1,5 +1,5 @@
 <template>
-	<button :class="[styles.pawsButton, buttonClass]">
+	<button :class="[styles.pawsButton, buttonClass]" data-paws-ui="PawsButton">
 		{{ label }}
 	</button>
 </template>

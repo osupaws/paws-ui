@@ -25,6 +25,7 @@ withDefaults(defineProps<PawsCheckboxProps>(), {
 			styles.pawsCheckbox,
 			{ [styles.checked]: model, [styles.disabled]: disabled }
 		]"
+		data-paws-ui="PawsCheckbox"
 	>
 		<input
 			v-model="model"
@@ -32,7 +33,7 @@ withDefaults(defineProps<PawsCheckboxProps>(), {
 			:class="styles.input"
 			:disabled="disabled"
 		/>
-		<div :class="styles.square" />
-		<span :class="styles.label">{{ label }}</span>
+		<div :class="styles.square" data-paws-part="square" />
+		<span :class="styles.label" data-paws-part="label">{{ label }}</span>
 	</label>
 </template>

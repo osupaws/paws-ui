@@ -21,11 +21,12 @@ withDefaults(defineProps<Props>(), {
 		:class="[styles.pawsMenuButton, { [styles.active]: active }]"
 		:disabled="disabled"
 		:style="{ width: width }"
+		data-paws-ui="PawsMenuButton"
 	>
-		<div v-if="$slots.default" :class="styles.label">
+		<div v-if="$slots.default" :class="styles.label" data-paws-part="label">
 			<slot />
 		</div>
-		<div v-if="$slots.icon" :class="styles.icon">
+		<div v-if="$slots.icon" :class="styles.icon" data-paws-part="icon">
 			<slot name="icon" />
 		</div>
 	</button>

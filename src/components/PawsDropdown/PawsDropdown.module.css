@@ -2,18 +2,19 @@
 	position: relative;
 	display: inline-flex;
 	align-items: center;
-	background-color: var(--paws-color-bg-lighter);
-	border-radius: 8px;
+	background-color: var(--paws-color-interactive-primary);
+	border-radius: var(--paws-rounding-medium);
 	transition: background-color 0.2s ease;
 	box-sizing: border-box;
-	height: 24px;
+	height: 32px;
+	padding: 3px;
 	cursor: pointer;
 	user-select: none;
 	overflow: visible; /* To allow shadow of the list to show correctly */
 }
 
 .dropdownWrapper:hover:not(.disabled) {
-	background-color: var(--paws-color-bg-hover);
+	background-color: var(--paws-color-inactive-sub-hover);
 }
 
 .dropdownWrapper.disabled {
@@ -30,9 +31,9 @@
 	background-color: transparent;
 	border: none;
 	color: var(--paws-color-text-primary);
-	font-family: var(--paws-font-family);
-	font-size: 13px;
-	font-weight: 550;
+	font-family: var(--paws-font-primary);
+	font-size: 14px;
+	font-weight: 450;
 	cursor: pointer;
 }
 
@@ -40,11 +41,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: var(--paws-color-bg-dark);
-	border-radius: 6px;
-	height: 20px;
-	margin-left: 2px;
-	padding: 0 8px;
+	background-color: var(--paws-color-interactive-secondary);
+	border-radius: var(--paws-rounding-medium-inner);
+	height: 26px;
+	margin-left: 0;
+	padding: 0 10px;
 	flex-shrink: 0;
 }
 
@@ -57,7 +58,7 @@
 .selectedOption {
 	flex-grow: 1;
 	text-align: left;
-	padding: 0 10px;
+	padding: 0 9px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -85,8 +86,8 @@
 	top: calc(100% + 4px);
 	left: 0;
 	right: 0;
-	background-color: var(--paws-color-bg-darkest);
-	border: 1px solid var(--paws-color-bg-lighter);
+	background-color: var(--paws-color-bg-secondary);
+	border: 1px solid var(--paws-color-interactive-primary);
 	border-radius: 8px;
 	z-index: 9999;
 	overflow-y: auto;
@@ -110,16 +111,17 @@
 	display: flex;
 	align-items: center;
 	height: 32px;
-	padding: 0 10px;
+	padding: 0 12px;
 	cursor: pointer;
-	font-family: var(--paws-font-family);
-	font-size: 13px;
-	font-weight: 550;
+	font-family: var(--paws-font-primary);
+	font-size: 14px;
+	font-weight: 450;
 	transition: background-color 0.15s ease;
+	color: var(--paws-color-text-primary);
 }
 
 .option:hover {
-	background-color: var(--paws-color-bg-hover);
+	background-color: var(--paws-color-bg-primary);
 }
 
 .labelText {

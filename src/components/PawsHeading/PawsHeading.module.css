@@ -1,7 +1,7 @@
 .heading {
 	font-family: var(--paws-font-primary);
 	font-weight: var(--paws-heading--font-weight);
-	color: var(--paws-color-text-primary);
+	color: var(--paws-color-text-secondary);
 	margin: 0;
 }
 

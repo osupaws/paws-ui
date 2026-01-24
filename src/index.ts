@@ -1,5 +1,7 @@
 import type { App } from "vue";
 
+import ArrowIcon from "@/components/Icon/ArrowIcon.vue";
+import FolderIcon from "@/components/Icon/FolderIcon.vue";
 import PawsButton from "@/components/PawsButton/PawsButton.vue";
 import PawsCard from "@/components/PawsCard/PawsCard.vue";
 import PawsCheckbox from "@/components/PawsCheckbox/PawsCheckbox.vue";
@@ -25,6 +27,8 @@ const install = (app: App): void => {
 	app.component("PawsMenuButton", PawsMenuButton);
 	app.component("PawsMultiSwitch", PawsMultiSwitch);
 	app.component("PawsTooltip", PawsTooltip);
+	app.component("FolderIcon", FolderIcon);
+	app.component("ArrowIcon", ArrowIcon);
 
 	app.directive("paws-tooltip", vPawsTooltip);
 };
@@ -32,6 +36,8 @@ const install = (app: App): void => {
 export default install;
 
 export {
+	ArrowIcon,
+	FolderIcon,
 	PawsButton,
 	PawsCard,
 	PawsCheckbox,

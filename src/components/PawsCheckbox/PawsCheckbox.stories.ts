@@ -13,7 +13,7 @@ const meta: Meta<typeof PawsCheckbox> = {
 		modelValue: { control: "boolean" }
 	},
 	args: {
-		label: "Checkbox",
+		label: "checkbox",
 		tooltip: "",
 		disabled: false,
 		modelValue: false
@@ -25,7 +25,7 @@ type Story = StoryObj<typeof PawsCheckbox>;
 
 export const Default: Story = {
 	args: {
-		label: "Checkbox",
+		label: "checkbox",
 		modelValue: false
 	}
 };

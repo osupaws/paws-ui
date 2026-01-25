@@ -55,9 +55,9 @@ const meta: Meta<PawsDropdownStoryProps> = {
     `
 	}),
 	args: {
-		placeholder: "Select an option",
+		placeholder: "select an option",
 		disabled: false,
-		options: ["Option 1", "Option 2", "Option 3"],
+		options: ["option 1", "option 2", "option 3"],
 		iconName: "None",
 		label: "",
 		tooltip: ""
@@ -69,35 +69,35 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		modelValue: "Option 1"
+		modelValue: "option 1"
 	}
 };
 
 export const WithLabel: Story = {
 	args: {
-		label: "Ruleset",
-		modelValue: "Option 1"
+		label: "ruleset",
+		modelValue: "option 1"
 	}
 };
 
 export const WithIconAndLabel: Story = {
 	args: {
-		label: "Asset",
+		label: "asset",
 		iconName: "Folder",
-		modelValue: "Skins"
+		modelValue: "skins"
 	}
 };
 
 export const WithTooltip: Story = {
 	args: {
-		tooltip: "This is a dropdown hint",
-		modelValue: "Option 1"
+		tooltip: "this is a dropdown hint",
+		modelValue: "option 1"
 	}
 };
 
 export const Disabled: Story = {
 	args: {
 		disabled: true,
-		modelValue: "Disabled Value"
+		modelValue: "disabled value"
 	}
 };

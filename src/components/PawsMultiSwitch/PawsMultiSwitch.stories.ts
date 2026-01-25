@@ -32,14 +32,14 @@ const meta: Meta<typeof PawsMultiSwitch> = {
         </template>
         <template #with_icon>
           <FolderIcon />
-          <span>Plugins</span>
+          <span>plugins</span>
         </template>
       </PawsMultiSwitch>
     `
 	}),
 	args: {
-		options: ["Settings", "Window", "Interface"],
-		modelValue: "Settings",
+		options: ["settings", "window", "interface"],
+		modelValue: "settings",
 		tooltip: ""
 	}
 };
@@ -49,8 +49,8 @@ type Story = StoryObj<typeof PawsMultiSwitch>;
 
 export const Default: Story = {
 	args: {
-		options: ["Active", "Paused", "Stopped"],
-		modelValue: "Active"
+		options: ["active", "paused", "stopped"],
+		modelValue: "active"
 	}
 };
 
@@ -76,7 +76,7 @@ export const IconsOnly: Story = {
 
 export const IconsAndText: Story = {
 	args: {
-		options: ["with_icon", "Settings"],
+		options: ["with_icon", "settings"],
 		modelValue: "with_icon"
 	}
 };

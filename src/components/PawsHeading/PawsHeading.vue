@@ -5,7 +5,7 @@ import styles from "./PawsHeading.module.css";
 
 export interface PawsHeadingProps {
 	size?: "sm" | "lg" | "xl";
-	fontWeight?: "500" | "600" | number | string;
+	fontWeight?: "light" | "normal" | "medium" | "bold" | number | string;
 	align?: "left" | "center";
 }
 
@@ -15,21 +15,32 @@ const props = withDefaults(defineProps<PawsHeadingProps>(), {
 	align: "left"
 });
 
-const size = computed(() => ({
+const sizeClasses = computed(() => ({
 	[styles.sizeSm]: props.size === "sm",
 	[styles.sizeLg]: props.size === "lg",
 	[styles.sizeXl]: props.size === "xl"
 }));
-const align = computed(() => ({
+
+const alignClasses = computed(() => ({
 	[styles.alignLeft]: props.align === "left",
 	[styles.alignCenter]: props.align === "center"
 }));
+
+const fontWeightStyle = computed(() => {
+	const map: Record<string, string> = {
+		light: "var(--paws-font-weight-light)",
+		normal: "var(--paws-font-weight-normal)",
+		medium: "var(--paws-font-weight-medium)",
+		bold: "var(--paws-font-weight-bold)"
+	};
+	return map[props.fontWeight as string] || props.fontWeight;
+});
 </script>
 
 <template>
 	<h2
-		:style="{ '--paws-heading--font-weight': props.fontWeight }"
-		:class="[styles.heading, size, fontWeight, align]"
+		:style="{ '--paws-heading--font-weight': fontWeightStyle }"
+		:class="[styles.heading, sizeClasses, alignClasses]"
 		data-paws-ui="PawsHeading"
 	>
 		<slot />

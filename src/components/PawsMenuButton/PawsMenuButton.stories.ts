@@ -27,7 +27,7 @@ export const Default: Story = {
 		setup() {
 			return { args };
 		},
-		template: '<PawsMenuButton v-bind="args">Menu Item</PawsMenuButton>'
+		template: '<PawsMenuButton v-bind="args">menu item</PawsMenuButton>'
 	})
 };
 
@@ -42,7 +42,7 @@ export const WithIcon: Story = {
 		},
 		template: `
       <PawsMenuButton v-bind="args">
-        Plugins
+        plugins
         <template #icon>
           <FolderIcon />
         </template>
@@ -76,7 +76,7 @@ export const FullWidth: Story = {
 		setup() {
 			return { args };
 		},
-		template: '<PawsMenuButton v-bind="args">Full Width Item</PawsMenuButton>'
+		template: '<PawsMenuButton v-bind="args">full width item</PawsMenuButton>'
 	})
 };
 
@@ -90,20 +90,20 @@ export const Active: Story = {
 		setup() {
 			return { args };
 		},
-		template: '<PawsMenuButton v-bind="args">Active Item</PawsMenuButton>'
+		template: '<PawsMenuButton v-bind="args">active item</PawsMenuButton>'
 	})
 };
 
 export const WithTooltip: Story = {
 	args: {
 		width: "200px",
-		tooltip: "This is a helpful tooltip!"
+		tooltip: "this is a helpful tooltip!"
 	},
 	render: args => ({
 		components: { PawsMenuButton },
 		setup() {
 			return { args };
 		},
-		template: '<PawsMenuButton v-bind="args">Hover me for 1s</PawsMenuButton>'
+		template: '<PawsMenuButton v-bind="args">hover me for 1s</PawsMenuButton>'
 	})
 };

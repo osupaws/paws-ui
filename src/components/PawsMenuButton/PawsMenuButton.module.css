@@ -10,7 +10,7 @@
 	cursor: pointer;
 	transition: all 0.2s ease;
 	font-family: var(--paws-font-primary);
-	font-weight: 550;
+	font-weight: var(--paws-font-weight-normal);
 	font-size: 16px;
 	color: var(--paws-color-inactive-secondary);
 	gap: 8px;

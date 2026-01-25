@@ -17,7 +17,7 @@ interface Props {
 const model = defineModel<string>();
 
 const props = withDefaults(defineProps<Props>(), {
-	placeholder: "Select...",
+	placeholder: "select...",
 	disabled: false,
 	options: () => [],
 	tooltip: "",

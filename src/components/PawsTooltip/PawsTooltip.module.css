@@ -7,7 +7,7 @@
 	border: 1px solid var(--paws-color-interactive-primary);
 	border-radius: 4px;
 	font-family: var(--paws-font-primary);
-	font-weight: 500;
+	font-weight: var(--paws-font-weight-normal);
 	font-size: 11px;
 	pointer-events: none;
 	white-space: pre-wrap;

@@ -32,22 +32,22 @@ export const Default: Story = {
 
 export const Checked: Story = {
 	args: {
-		label: "Checked State",
+		label: "checked state",
 		modelValue: true
 	}
 };
 
 export const WithTooltip: Story = {
 	args: {
-		label: "Hover me",
-		tooltip: "This is a checkbox hint!",
+		label: "hover me",
+		tooltip: "this is a checkbox hint!",
 		modelValue: false
 	}
 };
 
 export const Disabled: Story = {
 	args: {
-		label: "Disabled State",
+		label: "disabled state",
 		disabled: true,
 		modelValue: false
 	}

@@ -45,53 +45,53 @@ export default meta;
 
 export const Default: Story = {
 	args: {
-		default: "Heading"
+		default: "heading"
 	}
 };
 
 export const SizeSm: Story = {
-	name: "Size: sm",
+	name: "size: sm",
 	args: {
-		default: "Heading"
+		default: "heading"
 	}
 };
 
 export const SizeLg: Story = {
-	name: "Size: lg",
+	name: "size: lg",
 	args: {
-		default: "Heading",
+		default: "heading",
 		size: "lg"
 	}
 };
 
 export const SizeXl: Story = {
-	name: "Size: xl",
+	name: "size: xl",
 	args: {
-		default: "Heading",
+		default: "heading",
 		size: "xl"
 	}
 };
 
 export const fontWeightMedium: Story = {
-	name: "Font Weight: medium",
+	name: "font weight: medium",
 	args: {
-		default: "Heading",
+		default: "heading",
 		fontWeight: "500"
 	}
 };
 
 export const fontWeightSemibold: Story = {
-	name: "Font Weight: semibold",
+	name: "font weight: semibold",
 	args: {
-		default: "Heading",
+		default: "heading",
 		fontWeight: "600"
 	}
 };
 
 export const fontWeightBold: Story = {
-	name: "Font Weight: bold",
+	name: "font weight: bold",
 	args: {
-		default: "Heading",
+		default: "heading",
 		fontWeight: "700"
 	}
 };

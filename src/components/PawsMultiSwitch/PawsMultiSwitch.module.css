@@ -36,7 +36,7 @@
 	padding: 0 8px;
 	box-sizing: border-box;
 	font-family: var(--paws-font-primary);
-	font-weight: 550;
+	font-weight: var(--paws-font-weight-normal);
 	font-size: 14px;
 	color: var(--paws-color-inactive-secondary);
 	white-space: nowrap;

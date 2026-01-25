@@ -33,7 +33,7 @@
 	color: var(--paws-color-text-primary);
 	font-family: var(--paws-font-primary);
 	font-size: 14px;
-	font-weight: 450;
+	font-weight: var(--paws-font-weight-light);
 	cursor: pointer;
 }
 
@@ -115,7 +115,7 @@
 	cursor: pointer;
 	font-family: var(--paws-font-primary);
 	font-size: 14px;
-	font-weight: 450;
+	font-weight: var(--paws-font-weight-light);
 	transition: background-color 0.15s ease;
 	color: var(--paws-color-text-primary);
 }
@@ -125,8 +125,8 @@
 }
 
 .labelText {
-	font-size: 12px;
-	font-weight: 450;
+	font-size: 14px;
+	font-weight: var(--paws-font-weight-normal);
 	margin-left: 0;
 	white-space: nowrap;
 }

@@ -58,7 +58,7 @@ const meta: Meta<PawsInputStoryProps> = {
 	}),
 	args: {
 		modelValue: "",
-		placeholder: "Enter text...",
+		placeholder: "enter text...",
 		disabled: false,
 		isIconClickable: false,
 		buttonText: "",
@@ -73,38 +73,38 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		placeholder: "Enter something..."
+		placeholder: "enter something..."
 	}
 };
 
 export const WithTitle: Story = {
 	args: {
-		title: "Username",
+		title: "username",
 		placeholder: "e.g. shxsha"
 	}
 };
 
 export const WithAdornment: Story = {
 	args: {
-		buttonText: "Browse",
+		buttonText: "browse",
 		iconName: "Folder",
-		placeholder: "Select path..."
+		placeholder: "select path..."
 	}
 };
 
 export const AsButton: Story = {
 	args: {
-		buttonText: "GO",
+		buttonText: "go",
 		iconName: "Arrow",
 		isIconClickable: true,
-		placeholder: "Execute command..."
+		placeholder: "execute command..."
 	}
 };
 
 export const Disabled: Story = {
 	args: {
 		disabled: true,
-		buttonText: "Fixed",
-		modelValue: "Read only content"
+		buttonText: "fixed",
+		modelValue: "read only content"
 	}
 };

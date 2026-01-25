@@ -29,13 +29,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		default: "Field Component"
+		default: "field component"
 	}
 };
 
 export const Multiple: Story = {
 	args: {
-		default: "Multiple Fields"
+		default: "multiple fields"
 	},
 	render: args => ({
 		components: { PawsField },

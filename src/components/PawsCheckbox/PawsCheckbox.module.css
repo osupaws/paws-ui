@@ -10,7 +10,7 @@
 	transition: all 0.2s ease;
 	overflow: hidden;
 	font-family: var(--paws-font-primary);
-	font-weight: 600;
+	font-weight: var(--paws-font-weight-medium);
 	font-size: 16px;
 	color: var(--paws-color-inactive-secondary);
 	padding-right: 10px;

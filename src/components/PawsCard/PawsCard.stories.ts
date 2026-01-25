@@ -28,7 +28,7 @@ const meta = {
 				<PawsCard :appearance="args.appearance">
 					<template #heading>
 						<PawsHeading size="xl" font-weight="semibold">
-							Card
+							card
 						</PawsHeading>
 					</template>
 
@@ -45,7 +45,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		default: "Card Content",
+		default: "card content",
 		appearance: "dark"
 	}
 };

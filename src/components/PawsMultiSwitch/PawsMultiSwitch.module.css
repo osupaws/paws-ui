@@ -1,14 +1,9 @@
 .pawsMultiSwitch {
+	composes: controlShell from "../../styles/control-shell.module.css";
 	display: inline-flex;
-	align-items: center;
-	height: 32px;
-	padding: 3px;
 	background-color: var(--paws-color-bg-tertiary);
-	border-radius: var(--paws-rounding-medium);
-	position: relative;
-	box-sizing: border-box;
-	user-select: none;
 	min-width: 40px; /* Minimum width of the whole switch */
+	user-select: none;
 }
 
 .highlighter {

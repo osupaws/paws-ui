@@ -21,7 +21,7 @@ const meta = {
 	},
 	args: {
 		size: "sm",
-		fontWeight: "500",
+		fontWeight: "medium",
 		align: "left"
 	},
 	render: args => ({
@@ -72,19 +72,19 @@ export const SizeXl: Story = {
 	}
 };
 
+export const fontWeightNormal: Story = {
+	name: "font weight: normal",
+	args: {
+		default: "heading",
+		fontWeight: "normal"
+	}
+};
+
 export const fontWeightMedium: Story = {
 	name: "font weight: medium",
 	args: {
 		default: "heading",
-		fontWeight: "500"
-	}
-};
-
-export const fontWeightSemibold: Story = {
-	name: "font weight: semibold",
-	args: {
-		default: "heading",
-		fontWeight: "600"
+		fontWeight: "medium"
 	}
 };
 
@@ -92,6 +92,6 @@ export const fontWeightBold: Story = {
 	name: "font weight: bold",
 	args: {
 		default: "heading",
-		fontWeight: "700"
+		fontWeight: "bold"
 	}
 };

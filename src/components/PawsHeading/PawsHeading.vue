@@ -5,7 +5,7 @@ import styles from "./PawsHeading.module.css";
 
 export interface PawsHeadingProps {
 	size?: "sm" | "lg" | "xl";
-	fontWeight?: "light" | "normal" | "medium" | "bold" | number | string;
+	fontWeight?: "light" | "normal" | "medium" | "bold";
 	align?: "left" | "center";
 }
 
@@ -33,7 +33,12 @@ const fontWeightStyle = computed(() => {
 		medium: "var(--paws-font-weight-medium)",
 		bold: "var(--paws-font-weight-bold)"
 	};
-	return map[props.fontWeight as string] || props.fontWeight;
+	// We can trust props.fontWeight is a valid key or undefined because of strict typing,
+	// checking map just in case to be safe, but fallback is no longer arbitrary string
+	return (
+		map[props.fontWeight as keyof typeof map] ||
+		"var(--paws-font-weight-medium)"
+	);
 });
 </script>
 

@@ -14,16 +14,7 @@
 }
 
 .inputWrapper {
-	display: flex;
-	align-items: center;
-	height: 32px;
-	border-radius: var(--paws-rounding-medium);
-	background-color: var(--paws-color-interactive-primary);
-	padding: 3px;
-	box-sizing: border-box;
-	transition: all 0.2s ease;
-	position: relative;
-	overflow: visible;
+	composes: controlShell from "../../styles/control-shell.module.css";
 }
 
 .inputWrapper.focused {

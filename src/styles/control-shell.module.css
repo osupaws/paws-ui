@@ -1,0 +1,21 @@
+.controlShell {
+	display: flex;
+	align-items: center;
+	height: 32px;
+	border-radius: var(--paws-rounding-medium);
+	background-color: var(--paws-color-interactive-primary);
+	padding: 3px;
+	box-sizing: border-box;
+	transition: all 0.2s ease;
+	position: relative;
+	overflow: visible;
+}
+
+.controlShell:hover:not(.disabled) {
+	background-color: var(--paws-color-inactive-sub-hover);
+}
+
+.controlShell.disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}

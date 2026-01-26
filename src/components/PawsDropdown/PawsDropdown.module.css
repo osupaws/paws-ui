@@ -1,15 +1,6 @@
 .dropdownWrapper {
-	position: relative;
+	composes: controlShell from "../../styles/control-shell.module.css";
 	display: inline-flex;
-	align-items: center;
-	background-color: var(--paws-color-interactive-primary);
-	border-radius: var(--paws-rounding-medium);
-	transition: background-color 0.2s ease;
-	box-sizing: border-box;
-	height: 32px;
-	padding: 3px;
-	cursor: pointer;
-	user-select: none;
 	overflow: visible; /* To allow shadow of the list to show correctly */
 }
 

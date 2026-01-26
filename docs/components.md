@@ -1,6 +1,6 @@
 # Components Reference
 
-Every component in Paws UI follows strict visual standards to ensure interface consistency, specifically designed for a compact 24px height vertical rhythm.
+Every component in Paws UI follows strict visual standards to ensure interface consistency, specifically designed for a standard 32px height vertical rhythm.
 
 ## Visual Standards
 
@@ -14,8 +14,8 @@ All interactive components provide the following automatic states:
 
 ### Geometry
 
-- **Standard Height**: 24px for all primary controls.
-- **Corner Radius**: 8px for containers, 6px for internal elements (pills, buttons).
+- **Standard Height**: 32px for all primary controls (Inputs, Buttons, Dropdowns).
+- **Corner Radius**: 12px across the board.
 
 ---
 
@@ -107,7 +107,7 @@ The library assumes **"Wix Madefor Display"** is the primary font. It must be pr
 The library exports standard SVG icons:
 
 ```javascript
-import { FolderIcon, ArrowIcon } from "@osupaws/paws-ui";
+import { FolderIcon, ArrowIcon, SettingsIcon } from "@osupaws/paws-ui";
 ```
 
 They accept a `color` prop and follow a standard viewBox coordinate system.

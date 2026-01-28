@@ -1,0 +1,62 @@
+.spoilerCard {
+	border-radius: var(--paws-rounding-medium);
+	overflow: hidden;
+	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	align-self: flex-start;
+	width: 100%;
+}
+
+.appearanceDark {
+	background-color: var(--paws-color-bg-secondary);
+}
+
+.appearanceLight {
+	background-color: var(--paws-color-bg-primary);
+}
+
+.header {
+	height: 32px;
+	display: flex;
+	align-items: center;
+	padding: 0 4px;
+	cursor: pointer;
+	user-select: none;
+	position: relative;
+}
+
+.headerContent {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+.arrow {
+	width: 18px;
+	height: 18px;
+	margin-right: 6px; /* 4px (padding) + 6px = 10px from edge */
+	flex-shrink: 0;
+	transition: transform 0.2s ease-in-out;
+}
+
+.rotate {
+	transform: rotate(-90deg);
+}
+
+.contentWrapper {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expandedWrapper {
+	grid-template-rows: 1fr;
+}
+
+.contentInner {
+	min-height: 0;
+}
+
+.content {
+	padding: 2px 16px 24px;
+}

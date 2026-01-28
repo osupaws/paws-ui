@@ -15,6 +15,7 @@ import MinimizeIcon from "@/components/Icon/MinimizeIcon.vue";
 import PluginIcon from "@/components/Icon/PluginIcon.vue";
 import SettingsIcon from "@/components/Icon/SettingsIcon.vue";
 import ThemeIcon from "@/components/Icon/ThemeIcon.vue";
+import PawsBadge from "@/components/PawsBadge/PawsBadge.vue";
 // Components
 import PawsButton from "@/components/PawsButton/PawsButton.vue";
 import PawsCard from "@/components/PawsCard/PawsCard.vue";
@@ -26,6 +27,7 @@ import PawsInput from "@/components/PawsInput/PawsInput.vue";
 import PawsInstallButton from "@/components/PawsInstallButton/PawsInstallButton.vue";
 import PawsMenuButton from "@/components/PawsMenuButton/PawsMenuButton.vue";
 import PawsMultiSwitch from "@/components/PawsMultiSwitch/PawsMultiSwitch.vue";
+import PawsSpoilerCard from "@/components/PawsSpoilerCard/PawsSpoilerCard.vue";
 import PawsTooltip from "@/components/PawsTooltip/PawsTooltip.vue";
 
 // Utils
@@ -45,6 +47,8 @@ const install = (app: App): void => {
 	app.component("PawsMultiSwitch", PawsMultiSwitch);
 	app.component("PawsTooltip", PawsTooltip);
 	app.component("PawsInstallButton", PawsInstallButton);
+	app.component("PawsBadge", PawsBadge);
+	app.component("PawsSpoilerCard", PawsSpoilerCard);
 
 	// Icons
 	app.component("ArrowIcon", ArrowIcon);
@@ -81,6 +85,7 @@ export {
 	LightModeIcon,
 	MigrateIcon,
 	MinimizeIcon,
+	PawsBadge,
 	// Components
 	PawsButton,
 	PawsCard,
@@ -92,6 +97,7 @@ export {
 	PawsInstallButton,
 	PawsMenuButton,
 	PawsMultiSwitch,
+	PawsSpoilerCard,
 	PawsTooltip,
 	PluginIcon,
 	// Utils

@@ -1,0 +1,19 @@
+.badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 18px;
+	padding: 0 8px;
+	border-radius: var(--paws-rounding-normal-inner);
+	background-color: var(--paws-color-accent-subprimary);
+	color: var(--paws-color-accent-secondary);
+	font-family: var(--paws-font-primary);
+	font-weight: var(--paws-font-weight-normal);
+	font-size: 12px;
+	white-space: nowrap;
+	user-select: none;
+}
+
+.label {
+	transform: translateY(-1px);
+}

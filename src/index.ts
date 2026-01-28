@@ -23,6 +23,7 @@ import PawsDropdown from "@/components/PawsDropdown/PawsDropdown.vue";
 import PawsField from "@/components/PawsField/PawsField.vue";
 import PawsHeading from "@/components/PawsHeading/PawsHeading.vue";
 import PawsInput from "@/components/PawsInput/PawsInput.vue";
+import PawsInstallButton from "@/components/PawsInstallButton/PawsInstallButton.vue";
 import PawsMenuButton from "@/components/PawsMenuButton/PawsMenuButton.vue";
 import PawsMultiSwitch from "@/components/PawsMultiSwitch/PawsMultiSwitch.vue";
 import PawsTooltip from "@/components/PawsTooltip/PawsTooltip.vue";
@@ -43,6 +44,7 @@ const install = (app: App): void => {
 	app.component("PawsMenuButton", PawsMenuButton);
 	app.component("PawsMultiSwitch", PawsMultiSwitch);
 	app.component("PawsTooltip", PawsTooltip);
+	app.component("PawsInstallButton", PawsInstallButton);
 
 	// Icons
 	app.component("ArrowIcon", ArrowIcon);
@@ -87,6 +89,7 @@ export {
 	PawsField,
 	PawsHeading,
 	PawsInput,
+	PawsInstallButton,
 	PawsMenuButton,
 	PawsMultiSwitch,
 	PawsTooltip,

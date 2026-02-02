@@ -13,7 +13,7 @@
 	cursor: not-allowed;
 }
 
-.compact {
+.dropdownWrapper.compact {
 	height: 24px;
 	border-radius: var(--paws-rounding-normal);
 	padding: 2px;

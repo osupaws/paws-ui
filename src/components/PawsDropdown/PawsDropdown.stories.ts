@@ -19,6 +19,7 @@ type PawsDropdownStoryProps = {
 	label?: string;
 	tooltip?: string;
 	size?: "normal" | "compact";
+	defaultValue?: string;
 };
 
 const meta: Meta<PawsDropdownStoryProps> = {
@@ -42,7 +43,8 @@ const meta: Meta<PawsDropdownStoryProps> = {
 		size: {
 			control: { type: "select" },
 			options: ["normal", "compact"]
-		}
+		},
+		defaultValue: { control: "text" }
 	},
 	render: args => ({
 		components: { PawsDropdown, ArrowIcon, FolderIcon },
@@ -112,5 +114,15 @@ export const Compact: Story = {
 		size: "compact",
 		modelValue: "option 1",
 		placeholder: "compact select"
+	}
+};
+
+export const Highlighted: Story = {
+	args: {
+		label: "highlighted",
+		modelValue: "option 2",
+		defaultValue: "option 1",
+		options: ["option 1", "option 2", "option 3"],
+		tooltip: "Highlighted because value differs from default"
 	}
 };

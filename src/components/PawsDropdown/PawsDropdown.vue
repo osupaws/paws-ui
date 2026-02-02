@@ -13,6 +13,7 @@ interface Props {
 	tooltip?: string;
 	label?: string; // Information/Label shown in the darkened area on the left
 	size?: "normal" | "compact";
+	defaultValue?: string; // If provided, the dropdown is highlighted when model value differs
 }
 
 const model = defineModel<string>();
@@ -23,12 +24,18 @@ const props = withDefaults(defineProps<Props>(), {
 	options: () => [],
 	tooltip: "",
 	label: "",
-	size: "normal"
+	size: "normal",
+	defaultValue: undefined
 });
 
 const slots = useSlots();
 const hasIconSlot = computed(() => !!slots.icon);
 const hasLeftContent = computed(() => hasIconSlot.value || !!props.label);
+
+const isHighlighted = computed(() => {
+	if (props.defaultValue === undefined) return false;
+	return model.value !== props.defaultValue;
+});
 
 const isOpen = ref(false);
 
@@ -52,7 +59,8 @@ const selectOption = (option: string) => {
 			{
 				[styles.disabled]: disabled,
 				[styles.open]: isOpen,
-				[styles.compact]: size === 'compact'
+				[styles.compact]: size === 'compact',
+				[styles.highlighted]: isHighlighted
 			}
 		]"
 		data-paws-ui="PawsDropdown"

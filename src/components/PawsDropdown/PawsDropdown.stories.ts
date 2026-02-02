@@ -18,6 +18,7 @@ type PawsDropdownStoryProps = {
 	iconName?: keyof typeof icons;
 	label?: string;
 	tooltip?: string;
+	size?: "normal" | "compact";
 };
 
 const meta: Meta<PawsDropdownStoryProps> = {
@@ -37,6 +38,10 @@ const meta: Meta<PawsDropdownStoryProps> = {
 			options: Object.keys(icons),
 			description: "Select an icon to display in the left area.",
 			table: { category: "Slots" }
+		},
+		size: {
+			control: { type: "select" },
+			options: ["normal", "compact"]
 		}
 	},
 	render: args => ({
@@ -99,5 +104,13 @@ export const Disabled: Story = {
 	args: {
 		disabled: true,
 		modelValue: "disabled value"
+	}
+};
+
+export const Compact: Story = {
+	args: {
+		size: "compact",
+		modelValue: "option 1",
+		placeholder: "compact select"
 	}
 };

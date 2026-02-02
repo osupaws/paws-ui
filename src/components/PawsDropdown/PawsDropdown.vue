@@ -12,6 +12,7 @@ interface Props {
 	options?: string[];
 	tooltip?: string;
 	label?: string; // Information/Label shown in the darkened area on the left
+	size?: "normal" | "compact";
 }
 
 const model = defineModel<string>();
@@ -21,7 +22,8 @@ const props = withDefaults(defineProps<Props>(), {
 	disabled: false,
 	options: () => [],
 	tooltip: "",
-	label: ""
+	label: "",
+	size: "normal"
 });
 
 const slots = useSlots();
@@ -47,7 +49,11 @@ const selectOption = (option: string) => {
 		v-paws-tooltip="tooltip"
 		:class="[
 			styles.dropdownWrapper,
-			{ [styles.disabled]: disabled, [styles.open]: isOpen }
+			{
+				[styles.disabled]: disabled,
+				[styles.open]: isOpen,
+				[styles.compact]: size === 'compact'
+			}
 		]"
 		data-paws-ui="PawsDropdown"
 	>

@@ -20,26 +20,27 @@
 }
 
 /* Highlighted State (Accent) */
-.highlighted {
+/* Highlighted State (Accent) */
+.dropdownWrapper.highlighted {
 	background-color: var(--paws-color-accent-subprimary);
 	color: var(--paws-color-accent-secondary);
 	border-color: transparent;
 }
 
-.highlighted:hover:not(.disabled) {
+.dropdownWrapper.highlighted:hover:not(.disabled) {
 	background-color: var(--paws-color-accent-subprimary-hover);
 }
 
-.highlighted .dropdownButton {
+.dropdownWrapper.highlighted .dropdownButton {
 	color: var(--paws-color-accent-secondary);
 }
 
-.highlighted .option {
+.dropdownWrapper.highlighted .option {
 	color: var(--paws-color-text-primary); /* Keep options list standard */
 }
 
 /* Icon Wrapper in Highlighted State */
-.highlighted .iconWrapper {
+.dropdownWrapper.highlighted .iconWrapper {
 	background-color: var(--paws-color-accent-primary);
 }
 

@@ -1,0 +1,51 @@
+.subButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--paws-color-inactive-sub);
+	border: none;
+	border-radius: var(--paws-rounding-normal);
+	cursor: pointer;
+	padding: 0;
+	transition: background-color 0.2s ease;
+	outline: none;
+	box-sizing: border-box;
+}
+
+.subButton:hover {
+	background-color: var(--paws-color-inactive-sub-hover);
+}
+
+.iconContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--paws-color-inactive-secondary);
+	width: 100%;
+	height: 100%;
+}
+
+.iconContainer :global(svg) {
+	display: block;
+}
+
+.large {
+	width: 32px;
+	height: 32px;
+}
+
+.large .iconContainer :global(svg) {
+	width: 20px;
+	height: 20px;
+}
+
+.medium {
+	width: 24px;
+	height: 24px;
+	border-radius: var(--paws-rounding-normal-inner);
+}
+
+.medium .iconContainer :global(svg) {
+	width: 16px;
+	height: 16px;
+}

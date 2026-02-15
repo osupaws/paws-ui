@@ -24,3 +24,11 @@
 .appearanceLight {
 	background-color: var(--paws-color-bg-primary);
 }
+
+.compact {
+	padding: 4px;
+}
+
+.compact .cardContent {
+	margin-top: 0;
+}

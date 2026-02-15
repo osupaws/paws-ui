@@ -5,11 +5,12 @@ import styles from "./PawsCard.module.css";
 
 export interface PawsCardProps {
 	appearance?: "dark" | "light";
+	variant?: "default" | "compact";
 }
 
 const props = withDefaults(defineProps<PawsCardProps>(), {
 	appearance: "dark",
-	headingAlign: "left"
+	variant: "default"
 });
 
 const slots = useSlots();
@@ -23,7 +24,14 @@ const appearance = computed(() => ({
 </script>
 
 <template>
-	<div :class="[styles.card, appearance]" data-paws-ui="PawsCard">
+	<div
+		:class="[
+			styles.card,
+			appearance,
+			{ [styles.compact]: variant === 'compact' }
+		]"
+		data-paws-ui="PawsCard"
+	>
 		<slot name="heading" />
 
 		<div

@@ -25,8 +25,8 @@ const meta = {
 		},
 		template: `
 			<div style="max-width: 420px">
-				<PawsCard :appearance="args.appearance">
-					<template #heading>
+				<PawsCard v-bind="args">
+					<template #heading v-if="args.variant !== 'compact'">
 						<PawsHeading size="xl" font-weight="semibold">
 							card
 						</PawsHeading>
@@ -47,5 +47,13 @@ export const Default: Story = {
 	args: {
 		default: "card content",
 		appearance: "dark"
+	}
+};
+
+export const Compact: Story = {
+	args: {
+		default: "compact card content (4px padding, no heading)",
+		appearance: "dark",
+		variant: "compact"
 	}
 };

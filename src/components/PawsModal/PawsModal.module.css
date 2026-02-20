@@ -1,3 +1,13 @@
+.backdrop {
+	position: fixed;
+	inset: 0;
+	z-index: var(--paws-z-modal, 1000);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: opacity 0.3s ease;
+}
+
 .modal {
 	width: 520px;
 	height: 500px;
@@ -8,6 +18,34 @@
 	display: flex;
 	flex-direction: column;
 	overflow: hidden; /* Main container clips everything */
+	box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5); /* Added depth for modal */
+	transition:
+		transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+		opacity 0.3s ease;
+}
+
+/* Transition styles */
+.modalFade-enter-from,
+.modalFade-leave-to {
+	opacity: 0;
+}
+
+.modalFade-enter-from .modal,
+.modalFade-leave-to .modal {
+	opacity: 0;
+	transform: scale(0.9) translateY(-20px);
+}
+
+.modalFade-enter-active,
+.modalFade-leave-active {
+	transition: opacity 0.3s ease;
+}
+
+.modalFade-enter-active .modal,
+.modalFade-leave-active .modal {
+	transition:
+		transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+		opacity 0.3s ease;
 }
 
 .header {

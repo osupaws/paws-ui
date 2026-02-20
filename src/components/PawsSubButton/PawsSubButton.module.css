@@ -42,7 +42,6 @@
 .medium {
 	width: 24px;
 	height: 24px;
-	border-radius: var(--paws-rounding-normal-inner);
 }
 
 .medium .iconContainer :global(svg) {

@@ -20,6 +20,7 @@ import PawsBadge from "@/components/PawsBadge/PawsBadge.vue";
 // Components
 import PawsButton from "@/components/PawsButton/PawsButton.vue";
 import PawsCard from "@/components/PawsCard/PawsCard.vue";
+import PawsCardNew from "@/components/PawsCardNew/PawsCardNew.vue";
 import PawsCheckbox from "@/components/PawsCheckbox/PawsCheckbox.vue";
 import PawsDropdown from "@/components/PawsDropdown/PawsDropdown.vue";
 import PawsField from "@/components/PawsField/PawsField.vue";
@@ -41,6 +42,7 @@ const install = (app: App): void => {
 	// Components
 	app.component("PawsButton", PawsButton);
 	app.component("PawsCard", PawsCard);
+	app.component("PawsCardNew", PawsCardNew);
 	app.component("PawsCheckbox", PawsCheckbox);
 	app.component("PawsDropdown", PawsDropdown);
 	app.component("PawsField", PawsField);
@@ -83,6 +85,7 @@ export {
 	PawsBadge,
 	PawsButton,
 	PawsCard,
+	PawsCardNew,
 	PawsCheckbox,
 	PawsDropdown,
 	PawsField,

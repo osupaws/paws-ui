@@ -1,0 +1,154 @@
+.modal {
+	width: 520px;
+	height: 500px;
+	padding: 0 4px; /* Base horizontal padding */
+	border-radius: 16px;
+	background-color: var(--paws-color-bg-secondary);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden; /* Main container clips everything */
+}
+
+.appearanceDark {
+	background-color: var(--paws-color-bg-secondary);
+}
+
+.appearanceLight {
+	background-color: var(--paws-color-bg-primary);
+}
+
+.header {
+	height: 30px;
+	margin-top: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* Specific padding: 16px Left (Title) + 4px Card Padding = 20px offset */
+	/* 4px Right (Action) + 4px Card Padding = 8px offset */
+	padding: 0 4px 0 16px;
+	flex-shrink: 0;
+	box-sizing: border-box;
+}
+
+.headingWrapper {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	margin-left: 8px;
+	/* Pushes button down 1px: 4px card padding + 3px centering (30h-24h)/2 + 1px = 8px from top of card */
+	padding-top: 1px;
+}
+
+.contentAreaWrapper {
+	flex-grow: 1;
+	min-height: 0; /* Important for scroll container inside flex */
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.maskWrapper,
+.bottomMaskWrapper {
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 10px;
+	z-index: 10;
+	pointer-events: none;
+}
+
+.maskWrapper {
+	top: 0;
+}
+
+.bottomMaskWrapper {
+	bottom: 0;
+}
+
+/* Hard shield: 4px to block interaction where content is invisible */
+.topShield,
+.bottomShield {
+	height: 4px;
+	width: 100%;
+	pointer-events: auto;
+}
+
+.topGradient,
+.bottomGradient {
+	height: 10px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+}
+
+.topGradient {
+	top: 0;
+	background: linear-gradient(
+		to bottom,
+		var(--paws-color-bg-secondary) 0%,
+		var(--paws-color-bg-secondary) 20%,
+		rgba(0, 0, 0, 0) 100%
+	);
+}
+
+.bottomGradient {
+	bottom: 0;
+	background: linear-gradient(
+		to top,
+		var(--paws-color-bg-secondary) 0%,
+		var(--paws-color-bg-secondary) 20%,
+		rgba(0, 0, 0, 0) 100%
+	);
+}
+
+.appearanceLight .topGradient {
+	background: linear-gradient(
+		to bottom,
+		var(--paws-color-bg-primary) 0%,
+		var(--paws-color-bg-primary) 20%,
+		rgba(0, 0, 0, 0) 100%
+	);
+}
+
+.appearanceLight .bottomGradient {
+	background: linear-gradient(
+		to top,
+		var(--paws-color-bg-primary) 0%,
+		var(--paws-color-bg-primary) 20%,
+		rgba(0, 0, 0, 0) 100%
+	);
+}
+
+.contentArea {
+	flex-grow: 1;
+	overflow-y: auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+.contentArea::before {
+	content: "";
+	height: 10px;
+	width: 100%;
+	flex-shrink: 0;
+	display: block;
+}
+
+.contentArea::after {
+	content: "";
+	height: 20px;
+	width: 100%;
+	flex-shrink: 0;
+	display: block;
+}

@@ -27,6 +27,7 @@ import PawsHeading from "@/components/PawsHeading/PawsHeading.vue";
 import PawsInput from "@/components/PawsInput/PawsInput.vue";
 import PawsInstallButton from "@/components/PawsInstallButton/PawsInstallButton.vue";
 import PawsMenuButton from "@/components/PawsMenuButton/PawsMenuButton.vue";
+import PawsModal from "@/components/PawsModal/PawsModal.vue";
 import PawsMultiSwitch from "@/components/PawsMultiSwitch/PawsMultiSwitch.vue";
 import PawsProgressbar from "@/components/PawsProgressbar/PawsProgressbar.vue";
 import PawsSpoilerCard from "@/components/PawsSpoilerCard/PawsSpoilerCard.vue";
@@ -47,6 +48,7 @@ const install = (app: App): void => {
 	app.component("PawsHeading", PawsHeading);
 	app.component("PawsInput", PawsInput);
 	app.component("PawsMenuButton", PawsMenuButton);
+	app.component("PawsModal", PawsModal);
 	app.component("PawsMultiSwitch", PawsMultiSwitch);
 	app.component("PawsTooltip", PawsTooltip);
 	app.component("PawsInstallButton", PawsInstallButton);
@@ -90,6 +92,7 @@ export {
 	PawsInput,
 	PawsInstallButton,
 	PawsMenuButton,
+	PawsModal,
 	PawsMultiSwitch,
 	PawsProgressbar,
 	PawsSpoilerCard,

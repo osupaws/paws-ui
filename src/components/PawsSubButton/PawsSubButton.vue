@@ -4,12 +4,14 @@
 			styles.subButton,
 			{
 				[styles.large]: size === 'large',
-				[styles.medium]: size === 'medium'
+				[styles.medium]: size === 'medium',
+				[styles.hasText]: !!text
 			}
 		]"
 		data-paws-ui="PawsSubButton"
 	>
-		<div :class="styles.iconContainer">
+		<span v-if="text" :class="styles.text">{{ text }}</span>
+		<div v-if="$slots.icon" :class="styles.iconContainer">
 			<slot name="icon"></slot>
 		</div>
 	</button>
@@ -20,10 +22,12 @@ import styles from "./PawsSubButton.module.css";
 
 interface Props {
 	size?: "large" | "medium";
+	text?: string;
 }
 
 withDefaults(defineProps<Props>(), {
-	size: "large"
+	size: "large",
+	text: ""
 });
 </script>
 

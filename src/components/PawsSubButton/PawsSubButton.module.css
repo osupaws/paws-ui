@@ -1,5 +1,5 @@
 .subButton {
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	background-color: var(--paws-color-inactive-sub);
@@ -10,6 +10,8 @@
 	transition: background-color 0.2s ease;
 	outline: none;
 	box-sizing: border-box;
+	vertical-align: middle;
+	min-width: min-content;
 }
 
 .subButton:hover {
@@ -21,15 +23,30 @@
 	align-items: center;
 	justify-content: center;
 	color: var(--paws-color-inactive-secondary);
-	width: 100%;
-	height: 100%;
+	flex-shrink: 0;
 }
 
 .iconContainer :global(svg) {
 	display: block;
 }
 
-.large {
+.text {
+	font-family: var(--paws-font-primary);
+	font-weight: var(--paws-font-weight-medium);
+	font-size: 16px;
+	color: var(--paws-color-inactive-secondary);
+	line-height: 1;
+	white-space: nowrap;
+	transform: translateY(-1px);
+}
+
+/* Hide text on large buttons as requested */
+.large .text {
+	display: none;
+}
+
+/* Styles for pure icon mode (current behavior) */
+.large:not(.hasText) {
 	width: 32px;
 	height: 32px;
 }
@@ -39,7 +56,7 @@
 	height: 20px;
 }
 
-.medium {
+.medium:not(.hasText) {
 	width: 24px;
 	height: 24px;
 }
@@ -47,4 +64,32 @@
 .medium .iconContainer :global(svg) {
 	width: 16px;
 	height: 16px;
+}
+
+/* Styles for text mode (with or without icon) - ONLY on medium */
+.medium.hasText {
+	width: auto;
+	height: 24px;
+	padding: 0 8px;
+}
+
+/* Specific request: Text + Icon */
+.medium.hasText .iconContainer {
+	width: 24px;
+	height: 24px;
+}
+
+.medium.hasText .iconContainer :global(svg) {
+	width: 16px;
+	height: 16px;
+}
+
+/* When both are present: [8px space] TEXT [10px total space] ICON [4px icon padding] */
+.medium.hasText.subButton:has(.text):has(.iconContainer) {
+	padding-left: 8px;
+	padding-right: 0;
+}
+
+.medium.hasText .text + .iconContainer {
+	margin-left: 6px;
 }

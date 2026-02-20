@@ -55,3 +55,38 @@ export const Medium: Story = {
 		size: "medium"
 	}
 };
+export const TextAndIcon: Story = {
+	render: args => ({
+		components: { PawsSubButton, SettingsIcon },
+		setup() {
+			return { args };
+		},
+		template: `
+      <PawsSubButton v-bind="args">
+        <template #icon>
+          <SettingsIcon />
+        </template>
+      </PawsSubButton>
+    `
+	}),
+	args: {
+		size: "medium",
+		text: "settings"
+	}
+};
+
+export const OnlyText: Story = {
+	render: args => ({
+		components: { PawsSubButton },
+		setup() {
+			return { args };
+		},
+		template: `
+      <PawsSubButton v-bind="args" />
+    `
+	}),
+	args: {
+		size: "medium",
+		text: "only text"
+	}
+};

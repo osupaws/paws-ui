@@ -1,29 +1,13 @@
 <script setup lang="ts">
-import { computed } from "vue";
-
 import styles from "./PawsModal.module.css";
 
-export interface PawsModalProps {
-	appearance?: "dark" | "light";
-}
+export interface PawsModalProps {}
 
-const props = withDefaults(defineProps<PawsModalProps>(), {
-	appearance: "dark"
-});
-
-const appearanceClass = computed(() => {
-	switch (props.appearance) {
-		case "light":
-			return styles.appearanceLight;
-		case "dark":
-		default:
-			return styles.appearanceDark;
-	}
-});
+withDefaults(defineProps<PawsModalProps>(), {});
 </script>
 
 <template>
-	<div :class="[styles.modal, appearanceClass]" data-paws-ui="PawsModal">
+	<div :class="styles.modal" data-paws-ui="PawsModal">
 		<!-- Header with Title and Actions -->
 		<div :class="styles.header">
 			<div :class="styles.headingWrapper">

@@ -2,20 +2,10 @@
 	padding: 0 4px; /* Default horizontal padding */
 	border-radius: 16px;
 	align-self: flex-start;
-	background-color: var(
-		--paws-color-bg-secondary
-	); /* Default dark appearance */
-	box-sizing: border-box; /* Usually implicit but explicit is good */
-	display: flex; /* Assuming flex to handle content vertical stacking and potential layout */
-	flex-direction: column;
-}
-
-.appearanceDark {
 	background-color: var(--paws-color-bg-secondary);
-}
-
-.appearanceLight {
-	background-color: var(--paws-color-bg-primary);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
 }
 
 .contentSimple {

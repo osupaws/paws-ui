@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { ref } from "vue";
 
 import ArrowIcon from "@/components/Icon/ArrowIcon.vue";
 
@@ -7,17 +7,12 @@ import styles from "./PawsSpoilerCard.module.css";
 
 export interface PawsSpoilerCardProps {
 	/**
-	 * Visual appearance of the card
-	 */
-	appearance?: "dark" | "light";
-	/**
 	 * Initial expanded state
 	 */
 	isExpanded?: boolean;
 }
 
 const props = withDefaults(defineProps<PawsSpoilerCardProps>(), {
-	appearance: "dark",
 	isExpanded: false
 });
 
@@ -33,18 +28,10 @@ const toggle = () => {
 	emit("update:isExpanded", expanded.value);
 	emit("toggle", expanded.value);
 };
-
-const appearanceClass = computed(() => ({
-	[styles.appearanceDark]: props.appearance === "dark",
-	[styles.appearanceLight]: props.appearance === "light"
-}));
 </script>
 
 <template>
-	<div
-		:class="[styles.spoilerCard, appearanceClass]"
-		data-paws-ui="PawsSpoilerCard"
-	>
+	<div :class="styles.spoilerCard" data-paws-ui="PawsSpoilerCard">
 		<div :class="styles.header" data-paws-part="header" @click="toggle">
 			<div :class="styles.headerContent">
 				<slot name="header"> spoiler card </slot>

@@ -10,15 +10,8 @@ const meta = {
 	title: "Paws UI/Modal",
 	component: PawsModal,
 	tags: ["autodocs"],
-	argTypes: {
-		appearance: {
-			control: "select",
-			options: ["dark", "light"]
-		}
-	},
-	args: {
-		appearance: "dark"
-	}
+	argTypes: {},
+	args: {}
 } satisfies Meta<typeof PawsModal>;
 
 export default meta;

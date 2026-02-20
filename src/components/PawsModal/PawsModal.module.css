@@ -3,19 +3,11 @@
 	height: 500px;
 	padding: 0 4px; /* Base horizontal padding */
 	border-radius: 16px;
-	background-color: var(--paws-color-bg-secondary);
+	background-color: var(--paws-color-bg-primary);
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden; /* Main container clips everything */
-}
-
-.appearanceDark {
-	background-color: var(--paws-color-bg-secondary);
-}
-
-.appearanceLight {
-	background-color: var(--paws-color-bg-primary);
 }
 
 .header {
@@ -94,32 +86,14 @@
 	top: 0;
 	background: linear-gradient(
 		to bottom,
-		var(--paws-color-bg-secondary) 0%,
-		var(--paws-color-bg-secondary) 20%,
-		rgba(0, 0, 0, 0) 100%
-	);
-}
-
-.bottomGradient {
-	bottom: 0;
-	background: linear-gradient(
-		to top,
-		var(--paws-color-bg-secondary) 0%,
-		var(--paws-color-bg-secondary) 20%,
-		rgba(0, 0, 0, 0) 100%
-	);
-}
-
-.appearanceLight .topGradient {
-	background: linear-gradient(
-		to bottom,
 		var(--paws-color-bg-primary) 0%,
 		var(--paws-color-bg-primary) 20%,
 		rgba(0, 0, 0, 0) 100%
 	);
 }
 
-.appearanceLight .bottomGradient {
+.bottomGradient {
+	bottom: 0;
 	background: linear-gradient(
 		to top,
 		var(--paws-color-bg-primary) 0%,

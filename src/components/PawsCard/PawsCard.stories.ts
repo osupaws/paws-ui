@@ -11,18 +11,13 @@ const meta = {
 	component: PawsCard,
 	tags: ["autodocs"],
 	argTypes: {
-		appearance: {
-			control: "select",
-			options: ["dark", "light"]
-		},
 		mode: {
 			control: "select",
 			options: ["empty", "simple", "titled"]
 		}
 	},
 	args: {
-		mode: "simple",
-		appearance: "dark"
+		mode: "simple"
 	}
 } satisfies Meta<typeof PawsCard>;
 

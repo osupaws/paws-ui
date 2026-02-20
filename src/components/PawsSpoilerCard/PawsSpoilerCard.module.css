@@ -4,14 +4,7 @@
 	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 	align-self: flex-start;
 	width: 100%;
-}
-
-.appearanceDark {
 	background-color: var(--paws-color-bg-secondary);
-}
-
-.appearanceLight {
-	background-color: var(--paws-color-bg-primary);
 }
 
 .header {

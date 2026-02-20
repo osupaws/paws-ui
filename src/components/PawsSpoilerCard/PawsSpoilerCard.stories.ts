@@ -6,14 +6,8 @@ const meta = {
 	title: "Paws UI/Spoiler Card",
 	component: PawsSpoilerCard,
 	tags: ["autodocs"],
-	argTypes: {
-		appearance: {
-			control: "select",
-			options: ["dark", "light"]
-		}
-	},
+	argTypes: {},
 	args: {
-		appearance: "dark",
 		isExpanded: false
 	}
 } satisfies Meta<typeof PawsSpoilerCard>;

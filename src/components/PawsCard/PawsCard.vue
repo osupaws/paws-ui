@@ -1,31 +1,17 @@
 <script setup lang="ts">
-import { computed } from "vue";
-
 import styles from "./PawsCard.module.css";
 
 export interface PawsCardProps {
-	appearance?: "dark" | "light"; // Visual style
 	mode?: "empty" | "simple" | "titled"; // Structural layout
 }
 
-const props = withDefaults(defineProps<PawsCardProps>(), {
-	appearance: "dark",
+withDefaults(defineProps<PawsCardProps>(), {
 	mode: "simple"
-});
-
-const appearanceClass = computed(() => {
-	switch (props.appearance) {
-		case "light":
-			return styles.appearanceLight;
-		case "dark":
-		default:
-			return styles.appearanceDark;
-	}
 });
 </script>
 
 <template>
-	<div :class="[styles.card, appearanceClass]" data-paws-ui="PawsCard">
+	<div :class="styles.card" data-paws-ui="PawsCard">
 		<!-- Titled Mode -->
 		<template v-if="mode === 'titled'">
 			<div :class="styles.header">

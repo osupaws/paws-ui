@@ -22,6 +22,7 @@ import PawsButton from "@/components/PawsButton/PawsButton.vue";
 import PawsCard from "@/components/PawsCard/PawsCard.vue";
 import PawsCheckbox from "@/components/PawsCheckbox/PawsCheckbox.vue";
 import PawsDropdown from "@/components/PawsDropdown/PawsDropdown.vue";
+import PawsEdgeGradient from "@/components/PawsEdgeGradient/PawsEdgeGradient.vue";
 import PawsField from "@/components/PawsField/PawsField.vue";
 import PawsHeading from "@/components/PawsHeading/PawsHeading.vue";
 import PawsInput from "@/components/PawsInput/PawsInput.vue";
@@ -44,6 +45,7 @@ const install = (app: App): void => {
 	app.component("PawsCard", PawsCard);
 	app.component("PawsCheckbox", PawsCheckbox);
 	app.component("PawsDropdown", PawsDropdown);
+	app.component("PawsEdgeGradient", PawsEdgeGradient);
 	app.component("PawsField", PawsField);
 	app.component("PawsHeading", PawsHeading);
 	app.component("PawsInput", PawsInput);
@@ -87,6 +89,7 @@ export {
 	PawsCard,
 	PawsCheckbox,
 	PawsDropdown,
+	PawsEdgeGradient,
 	PawsField,
 	PawsHeading,
 	PawsInput,

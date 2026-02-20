@@ -48,60 +48,6 @@
 	overflow: hidden;
 }
 
-.maskWrapper,
-.bottomMaskWrapper {
-	position: absolute;
-	left: 0;
-	right: 0;
-	height: 10px;
-	z-index: 10;
-	pointer-events: none;
-}
-
-.maskWrapper {
-	top: 0;
-}
-
-.bottomMaskWrapper {
-	bottom: 0;
-}
-
-/* Hard shield: 4px to block interaction where content is invisible */
-.topShield,
-.bottomShield {
-	height: 4px;
-	width: 100%;
-	pointer-events: auto;
-}
-
-.topGradient,
-.bottomGradient {
-	height: 10px;
-	width: 100%;
-	position: absolute;
-	left: 0;
-}
-
-.topGradient {
-	top: 0;
-	background: linear-gradient(
-		to bottom,
-		var(--paws-color-bg-primary) 0%,
-		var(--paws-color-bg-primary) 20%,
-		rgba(0, 0, 0, 0) 100%
-	);
-}
-
-.bottomGradient {
-	bottom: 0;
-	background: linear-gradient(
-		to top,
-		var(--paws-color-bg-primary) 0%,
-		var(--paws-color-bg-primary) 20%,
-		rgba(0, 0, 0, 0) 100%
-	);
-}
-
 .contentArea {
 	flex-grow: 1;
 	overflow-y: auto;

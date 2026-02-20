@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import PawsEdgeGradient from "../PawsEdgeGradient/PawsEdgeGradient.vue";
 import styles from "./PawsModal.module.css";
 
 export interface PawsModalProps {}
@@ -20,16 +21,9 @@ withDefaults(defineProps<PawsModalProps>(), {});
 
 		<!-- Scrollable Content Area -->
 		<div :class="styles.contentAreaWrapper">
-			<div :class="styles.maskWrapper">
-				<div :class="styles.topShield"></div>
-				<div :class="styles.topGradient"></div>
-			</div>
+			<PawsEdgeGradient side="both" color="var(--paws-color-bg-primary)" />
 			<div :class="styles.contentArea">
 				<slot></slot>
-			</div>
-			<div :class="styles.bottomMaskWrapper">
-				<div :class="styles.bottomGradient"></div>
-				<div :class="styles.bottomShield"></div>
 			</div>
 		</div>
 	</div>

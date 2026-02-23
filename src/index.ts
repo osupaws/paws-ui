@@ -30,6 +30,7 @@ import PawsInstallButton from "@/components/PawsInstallButton/PawsInstallButton.
 import PawsMenuButton from "@/components/PawsMenuButton/PawsMenuButton.vue";
 import PawsModal from "@/components/PawsModal/PawsModal.vue";
 import PawsMultiSwitch from "@/components/PawsMultiSwitch/PawsMultiSwitch.vue";
+import PawsPluginShell from "@/components/PawsPluginShell/PawsPluginShell.vue";
 import PawsProgressbar from "@/components/PawsProgressbar/PawsProgressbar.vue";
 import PawsSpoilerCard from "@/components/PawsSpoilerCard/PawsSpoilerCard.vue";
 import PawsSubButton from "@/components/PawsSubButton/PawsSubButton.vue";
@@ -52,6 +53,7 @@ const install = (app: App): void => {
 	app.component("PawsMenuButton", PawsMenuButton);
 	app.component("PawsModal", PawsModal);
 	app.component("PawsMultiSwitch", PawsMultiSwitch);
+	app.component("PawsPluginShell", PawsPluginShell);
 	app.component("PawsTooltip", PawsTooltip);
 	app.component("PawsInstallButton", PawsInstallButton);
 	app.component("PawsBadge", PawsBadge);
@@ -97,6 +99,7 @@ export {
 	PawsMenuButton,
 	PawsModal,
 	PawsMultiSwitch,
+	PawsPluginShell,
 	PawsProgressbar,
 	PawsSpoilerCard,
 	PawsSubButton,
@@ -124,3 +127,7 @@ export {
 
 // Utils
 export { setPawsUiConfig, vPawsTooltip };
+
+// Plugin Shell Types & Keys
+export type { PawsShellState } from "@/components/PawsPluginShell/context";
+export { PawsShellStateKey } from "@/components/PawsPluginShell/context";

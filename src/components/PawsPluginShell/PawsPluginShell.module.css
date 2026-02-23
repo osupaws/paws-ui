@@ -1,0 +1,16 @@
+.pluginShell {
+	width: 100vw;
+	height: 100vh;
+	box-sizing: border-box;
+	overflow: hidden; /* Recommended default, content scrolling should happen inside nested containers */
+	margin: 0;
+	color: var(--paws-color-text-primary);
+	font-family: var(--paws-font-primary);
+	background-color: transparent; /* Assuming plugins might sit on top of something or have their own bg */
+	display: flex;
+	flex-direction: column;
+}
+
+.padded {
+	padding: var(--paws-spacing-large, 24px);
+}

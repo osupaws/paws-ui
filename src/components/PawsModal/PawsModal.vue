@@ -62,8 +62,13 @@ const handleEscape = (event: KeyboardEvent) => {
 	}
 };
 
+const handleGlobalClose = () => {
+	emit("close");
+};
+
 onMounted(() => {
 	window.addEventListener("keydown", handleEscape);
+	window.addEventListener("paws:close-modals", handleGlobalClose);
 	updateTheme();
 
 	// Create an observer to track theme changes on html/body if needed
@@ -77,6 +82,7 @@ onMounted(() => {
 
 onUnmounted(() => {
 	window.removeEventListener("keydown", handleEscape);
+	window.removeEventListener("paws:close-modals", handleGlobalClose);
 });
 
 watch(

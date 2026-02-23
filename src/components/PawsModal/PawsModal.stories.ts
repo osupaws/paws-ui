@@ -10,7 +10,7 @@ import PawsSubButton from "@/components/PawsSubButton/PawsSubButton.vue";
 import PawsModal from "./PawsModal.vue";
 
 const meta = {
-	title: "Paws UI/Modal",
+	title: "Paws Core/Modal",
 	component: PawsModal,
 	tags: ["autodocs"],
 	argTypes: {

@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, watch } from "vue";
 
+import CloseIcon from "../Icon/CloseIcon.vue";
 import PawsEdgeGradient from "../PawsEdgeGradient/PawsEdgeGradient.vue";
+import PawsHeading from "../PawsHeading/PawsHeading.vue";
+import PawsSubButton from "../PawsSubButton/PawsSubButton.vue";
 import styles from "./PawsModal.module.css";
 
 export interface PawsModalProps {
@@ -17,6 +20,10 @@ export interface PawsModalProps {
 	teleportTo?: string;
 	/** Explicit theme override ('light' | 'dark'). If not provided, tries to detect from environment. */
 	theme?: "light" | "dark";
+	/** Standard title for the modal. Used if 'heading' slot is not provided. */
+	title?: string;
+	/** Whether to show a default close button. Default: true. */
+	showCloseButton?: boolean;
 }
 
 const props = withDefaults(defineProps<PawsModalProps>(), {
@@ -25,7 +32,9 @@ const props = withDefaults(defineProps<PawsModalProps>(), {
 	closeOnOverlayClick: true,
 	closeOnEsc: true,
 	teleportTo: "body",
-	theme: undefined
+	theme: undefined,
+	title: "",
+	showCloseButton: true
 });
 
 const emit = defineEmits<{ (e: "close"): void }>();
@@ -117,10 +126,25 @@ watch(
 				<div :class="styles.modal" data-paws-ui="PawsModal">
 					<div :class="styles.header">
 						<div :class="styles.headingWrapper">
-							<slot name="heading"></slot>
+							<slot name="heading">
+								<PawsHeading v-if="title" size="lg">
+									{{ title }}
+								</PawsHeading>
+							</slot>
 						</div>
-						<div v-if="$slots.actions" :class="styles.actions">
-							<slot name="actions"></slot>
+						<div :class="styles.actions">
+							<slot name="actions">
+								<PawsSubButton
+									v-if="showCloseButton"
+									size="medium"
+									text="close"
+									@click="emit('close')"
+								>
+									<template #icon>
+										<CloseIcon />
+									</template>
+								</PawsSubButton>
+							</slot>
 						</div>
 					</div>
 

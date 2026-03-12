@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, watch } from "vue";
+import { onMounted, onUnmounted } from "vue";
 
 import CloseIcon from "../Icon/CloseIcon.vue";
 import PawsEdgeGradient from "../PawsEdgeGradient/PawsEdgeGradient.vue";
@@ -18,8 +18,6 @@ export interface PawsModalProps {
 	closeOnEsc?: boolean;
 	/** Teleport destination */
 	teleportTo?: string;
-	/** Explicit theme override ('light' | 'dark'). If not provided, tries to detect from environment. */
-	theme?: "light" | "dark";
 	/** Standard title for the modal. Used if 'heading' slot is not provided. */
 	title?: string;
 	/** Whether to show a default close button. Default: true. */
@@ -32,31 +30,11 @@ const props = withDefaults(defineProps<PawsModalProps>(), {
 	closeOnOverlayClick: true,
 	closeOnEsc: true,
 	teleportTo: "body",
-	theme: undefined,
 	title: "",
 	showCloseButton: true
 });
 
 const emit = defineEmits<{ (e: "close"): void }>();
-
-// Simple theme detection for teleported content
-const currentTheme = ref<"light" | "dark">("dark");
-
-const updateTheme = () => {
-	if (props.theme) {
-		currentTheme.value = props.theme;
-		return;
-	}
-	const html = document.documentElement;
-	const { body } = document;
-	// Check root levels first, then a broad check for Storybook compatibility
-	const isLight =
-		html.classList.contains("paws--light-theme") ||
-		body.classList.contains("paws--light-theme") ||
-		document.querySelector(".paws--light-theme") !== null;
-
-	currentTheme.value = isLight ? "light" : "dark";
-};
 
 const handleBackdropClick = (event: MouseEvent) => {
 	if (props.closeOnOverlayClick && event.target === event.currentTarget) {
@@ -78,33 +56,12 @@ const handleGlobalClose = () => {
 onMounted(() => {
 	window.addEventListener("keydown", handleEscape);
 	window.addEventListener("paws:close-modals", handleGlobalClose);
-	updateTheme();
-
-	// Create an observer to track theme changes on html/body if needed
-	const observer = new MutationObserver(updateTheme);
-	observer.observe(document.documentElement, {
-		attributes: true,
-		attributeFilter: ["class"]
-	});
-	onUnmounted(() => observer.disconnect());
 });
 
 onUnmounted(() => {
 	window.removeEventListener("keydown", handleEscape);
 	window.removeEventListener("paws:close-modals", handleGlobalClose);
 });
-
-watch(
-	() => props.isOpen,
-	newValue => {
-		if (newValue) {
-			document.body.style.overflow = "hidden";
-			updateTheme();
-		} else {
-			document.body.style.overflow = "";
-		}
-	}
-);
 </script>
 
 <template>
@@ -119,7 +76,7 @@ watch(
 		>
 			<div
 				v-if="isOpen"
-				:class="[`paws--${currentTheme}-theme`, styles.backdrop]"
+				:class="styles.backdrop"
 				:style="{ backgroundColor: overlayColor }"
 				@click.self="handleBackdropClick"
 			>

@@ -60,7 +60,7 @@
 	color: var(--paws-color-accent-secondary);
 }
 
-.option:hover:not(.active) {
+/* .option:hover:not(.active) {
 	background-color: var(--paws-color-inactive-sub-hover);
 	border-radius: 6px;
-}
+} */

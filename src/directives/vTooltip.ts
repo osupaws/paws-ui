@@ -53,6 +53,9 @@ export const vPawsTooltip: Directive<HTMLElement, string | undefined> = {
 	unmounted(el) {
 		const handlers = (el as any)._pawsTooltipHandlers;
 		if (handlers) {
+			// Fix: Hide tooltip if the element is destroyed while hovered
+			handlers.handleMouseLeave();
+
 			el.removeEventListener("mouseenter", handlers.handleMouseEnter);
 			el.removeEventListener("mouseleave", handlers.handleMouseLeave);
 			el.removeEventListener("mousedown", handlers.handleMouseLeave);

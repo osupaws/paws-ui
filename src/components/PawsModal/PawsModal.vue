@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, watch } from "vue";
 
 import CloseIcon from "../Icon/CloseIcon.vue";
 import PawsEdgeGradient from "../PawsEdgeGradient/PawsEdgeGradient.vue";
@@ -54,9 +54,17 @@ const handleGlobalClose = () => {
 };
 
 onMounted(() => {
+	console.log("[PawsModal] Mounted. isOpen:", props.isOpen);
 	window.addEventListener("keydown", handleEscape);
 	window.addEventListener("paws:close-modals", handleGlobalClose);
 });
+
+watch(
+	() => props.isOpen,
+	val => {
+		console.log("[PawsModal] isOpen changed:", val);
+	}
+);
 
 onUnmounted(() => {
 	window.removeEventListener("keydown", handleEscape);

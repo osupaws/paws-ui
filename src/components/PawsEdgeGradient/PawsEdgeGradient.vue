@@ -7,11 +7,6 @@ export interface PawsEdgeGradientProps {
 	 * @default "both"
 	 */
 	side?: "top" | "bottom" | "both";
-	/**
-	 * Override the background color of the gradient.
-	 * If not provided, it will use --paws-color-bg-primary by default.
-	 */
-	color?: string;
 }
 
 withDefaults(defineProps<PawsEdgeGradientProps>(), {
@@ -20,11 +15,7 @@ withDefaults(defineProps<PawsEdgeGradientProps>(), {
 </script>
 
 <template>
-	<div
-		:class="styles.edgeGradientContainer"
-		:style="color ? { '--paws-edge-gradient-color': color } : {}"
-		data-paws-ui="PawsEdgeGradient"
-	>
+	<div :class="styles.edgeGradientContainer" data-paws-ui="PawsEdgeGradient">
 		<!-- Top Gradient -->
 		<div v-if="side === 'top' || side === 'both'" :class="styles.topMask">
 			<div :class="styles.shield"></div>

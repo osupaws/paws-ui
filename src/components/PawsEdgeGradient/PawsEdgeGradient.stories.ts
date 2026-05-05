@@ -10,9 +10,6 @@ const meta = {
 		side: {
 			control: "select",
 			options: ["top", "bottom", "both"]
-		},
-		color: {
-			control: "text"
 		}
 	},
 	args: {

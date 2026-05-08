@@ -43,18 +43,14 @@
 
 .topMask .gradient {
 	top: 0;
-	background: linear-gradient(
-		to bottom,
-		var(--paws-color-bg-primary) 0%,
-		rgba(0, 0, 0, 0) 100%
-	);
+	background-color: var(--paws-color-bg-primary); /* Use a solid color */
+	-webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+	mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
 }
 
 .bottomMask .gradient {
 	bottom: 0;
-	background: linear-gradient(
-		to top,
-		var(--paws-color-bg-primary) 0%,
-		rgba(0, 0, 0, 0) 100%
-	);
+	background-color: var(--paws-color-bg-primary); /* Use a solid color */
+	-webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
+	mask-image: linear-gradient(to top, black 0%, transparent 100%);
 }
